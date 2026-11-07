@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a0d">
+<meta name="description" content="DUK LEAGUE — duck-themed gaming community.">
+<title>DUK LEAGUE — Official HQ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg:#090a0d;
+--panel:#111319;
+--panel2:#171920;
+--gold:#ffd34e;
+--gold2:#f5ad19;
+--white:#f5f6f8;
+--muted:#9a9eaa;
+--line:#292c35;
+--green:#72e2a4;
+--red:#ff7777;
+--radius:20px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+button,a{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-1;
+background:radial-gradient(ellipse at 70% 0%,#6d4e0d22,transparent 45%),radial-gradient(ellipse at 0% 45%,#2b321822,transparent 35%);
+}
+
+header{
+position:sticky;
+top:0;
+z-index:20;
+background:#090a0de8;
+backdrop-filter:blur(18px);
+border-bottom:1px solid #ffffff0d;
+}
+
+.nav{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand{
+display:flex;
+gap:11px;
+align-items:center;
+font:900 19px Orbitron,sans-serif;
+letter-spacing:1.3px;
+}
+
+.brandmark{
+display:grid;
+place-items:center;
+width:39px;
+height:39px;
+border-radius:12px;
+background:linear-gradient(145deg,var(--gold),var(--gold2));
+color:#17130a;
+font-size:22px;
+box-shadow:0 0 28px #ffd34e25;
+}
+
+.brand span{color:var(--gold)}
+
+.navlinks{
+display:flex;
+align-items:center;
+gap:27px;
+color:#b8bbc4;
+font-size:13px;
+font-weight:700;
+}
+
+.navlinks a:hover{color:var(--gold)}
+
+.navjoin,.primary{
+border:0;
+border-radius:12px;
+padding:12px 18px;
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+color:#191306;
+font-weight:900;
+box-shadow:0 8px 28px #ffcb3520;
+transition:transform .18s,filter .18s;
+}
+
+.navjoin:hover,.primary:hover{
+transform:translateY(-2px);
+filter:brightness(1.07);
+}
+
+.hero{padding:92px 0 82px;position:relative}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:55px;
+align-items:center;
+}
+
+.eyebrow{
+display:inline-flex;
+gap:9px;
+align-items:center;
+border:1px solid #ffd34e35;
+background:#ffd34e0b;
+color:var(--gold);
+border-radius:99px;
+padding:9px 13px;
+font-size:10px;
+letter-spacing:1.7px;
+font-weight:900;
+}
+
+.dot{
+width:7px;
+height:7px;
+border-radius:50%;
+background:var(--green);
+box-shadow:0 0 12px var(--green);
+}
+
+h1{
+font:900 clamp(44px,7vw,82px)/.99 Orbitron,sans-serif;
+letter-spacing:-3.5px;
+margin:25px 0 20px;
+}
+
+h1 span{color:var(--gold)}
+
+.hero p{
+max-width:560px;
+color:var(--muted);
+line-height:1.85;
+font-size:15px;
+}
+
+.hero-actions{
+display:flex;
+gap:13px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.secondary{
+background:#ffffff06;
+border:1px solid var(--line);
+color:var(--white);
+border-radius:12px;
+padding:12px 18px;
+font-weight:800;
+}
+
+.secondary:hover{
+border-color:#ffd34e66;
+color:var(--gold);
+}
+
+.hero-art{
+min-height:330px;
+display:grid;
+place-items:center;
+position:relative;
+}
+
+.halo{
+width:min(330px,78vw);
+aspect-ratio:1;
+border-radius:50%;
+border:1px solid #ffd34e20;
+background:radial-gradient(circle,#ffd34e15 0%,#ffd34e05 46%,transparent 70%);
+display:grid;
+place-items:center;
+position:relative;
+}
+
+.halo:before,.halo:after{
+content:"";
+position:absolute;
+inset:15%;
+border:1px dashed #ffd34e28;
+border-radius:50%;
+animation:spin 28s linear infinite;
+}
+
+.halo:after{
+inset:4%;
+animation-direction:reverse;
+animation-duration:40s;
+}
+
+.duck{
+font-size:clamp(115px,18vw,190px);
+filter:drop-shadow(0 18px 32px #ffd34e20);
+animation:float 4s ease-in-out infinite;
+}
+
+.artbadge{
+position:absolute;
+bottom:8%;
+right:0;
+border:1px solid var(--line);
+background:#15171df2;
+border-radius:14px;
+padding:14px 17px;
+box-shadow:0 15px 40px #0005;
+}
+
+.artbadge strong{
+display:block;
+font:800 12px Orbitron;
+color:var(--gold);
+}
+
+.artbadge small{color:var(--muted);font-size:10px}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-13px) rotate(3deg)}}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+margin-top:32px;
+}
+
+.stat{
+border:1px solid var(--line);
+background:#ffffff03;
+border-radius:14px;
+padding:16px;
+}
+
+.stat strong{
+display:block;
+font:800 20px Orbitron;
+color:var(--gold);
+}
+
+.stat span{
+font-size:10px;
+color:var(--muted);
+letter-spacing:1px;
+font-weight:800;
+}
+
+section.content{padding:75px 0}
+
+.sectionhead{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:20px;
+margin-bottom:28px;
+}
+
+.kicker{
+color:var(--gold);
+font-size:10px;
+letter-spacing:2px;
+font-weight:900;
+}
+
+.sectionhead h2{
+font:800 clamp(26px,4vw,38px) Orbitron;
+margin:9px 0 0;
+letter-spacing:-1px;
+}
+
+.sectionhead h2 span{color:var(--gold)}
+
+.sectionhead p{
+max-width:450px;
+color:var(--muted);
+font-size:13px;
+line-height:1.7;
+margin:0;
+}
+
+.rankgrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.rankcard{
+border:1px solid var(--line);
+background:linear-gradient(160deg,#171920,#101116);
+border-radius:17px;
+padding:24px;
+min-height:175px;
+transition:.2s;
+}
+
+.rankcard:hover{
+transform:translateY(-4px);
+border-color:#ffd34e55;
+}
+
+.rankicon{font-size:24px;margin-bottom:20px}
+
+.rankcard h3{
+font:800 14px Orbitron;
+color:var(--gold);
+margin:0 0 9px;
+}
+
+.rankcard p{
+font-size:12px;
+color:var(--muted);
+line-height:1.7;
+margin:0;
+}
+
+.rosterpanel{
+border:1px solid var(--line);
+border-radius:var(--radius);
+background:var(--panel);
+overflow:hidden;
+}
+
+.rosterbar{
+padding:21px 24px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+border-bottom:1px solid var(--line);
+}
+
+.rosterbar h3{
+font:800 15px Orbitron;
+margin:0;
+}
+
+.rosterbar h3 span{color:var(--gold)}
+
+.live{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:10px;
+font-weight:900;
+letter-spacing:1px;
+color:var(--green);
+}
+
+.rosterlist{min-height:125px}
+
+.member{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+padding:17px 24px;
+border-bottom:1px solid #ffffff08;
+}
+
+.member:last-child{border:0}
+
+.memberleft{
+display:flex;
+align-items:center;
+gap:13px;
+min-width:0;
+}
+
+.avatar{
+display:grid;
+place-items:center;
+width:39px;
+height:39px;
+flex-shrink:0;
+border-radius:12px;
+background:#ffd34e12;
+border:1px solid #ffd34e22;
+}
+
+.membername{
+font-weight:800;
+font-size:13px;
+overflow-wrap:anywhere;
+}
+
+.joined{
+font-size:10px;
+color:var(--muted);
+margin-top:4px;
+}
+
+.rankpill{
+border:1px solid #ffd34e30;
+background:#ffd34e0c;
+color:var(--gold);
+border-radius:99px;
+padding:7px 10px;
+font-size:9px;
+font-weight:900;
+letter-spacing:1px;
+white-space:nowrap;
+}
+
+.empty{
+padding:42px 20px;
+text-align:center;
+color:var(--muted);
+font-size:13px;
+line-height:1.8;
+}
+
+.empty .big{font-size:30px;margin-bottom:10px}
+
+.notice{
+border:1px solid #ffd34e20;
+background:#ffd34e07;
+color:#b8bac3;
+border-radius:13px;
+padding:15px 17px;
+font-size:11px;
+line-height:1.7;
+margin-top:15px;
+}
+
+.notice b{color:var(--gold)}
+
+.cta{
+border:1px solid #ffd34e22;
+background:linear-gradient(115deg,#ffd34e0d,#ffffff02);
+border-radius:24px;
+padding:38px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:25px;
+}
+
+.cta h2{
+font:800 clamp(24px,4vw,36px) Orbitron;
+margin:0 0 12px;
+}
+
+.cta h2 span{color:var(--gold)}
+
+.cta p{
+color:var(--muted);
+font-size:13px;
+line-height:1.7;
+margin:0;
+max-width:540px;
+}
+
+footer{
+border-top:1px solid #ffffff0c;
+padding:27px 0;
+color:#747783;
+font-size:11px;
+}
+
+.foot{
+display:flex;
+justify-content:space-between;
+gap:15px;
+align-items:center;
+}
+
+.foot strong{
+font-family:Orbitron;
+color:var(--gold);
+}
+
+/* JOIN MODAL */
+
+.modal{
+position:fixed;
+inset:0;
+z-index:60;
+background:#000b;
+backdrop-filter:blur(10px);
+display:none;
+align-items:center;
+justify-content:center;
+padding:16px;
+}
+
+.modal.open{display:flex}
+
+.dialog{
+width:min(620px,100%);
+max-height:88vh;
+overflow:auto;
+border:1px solid #ffd34e35;
+background:#111319;
+border-radius:22px;
+box-shadow:0 30px 100px #0009;
+}
+
+.dialoghead{
+position:sticky;
+top:0;
+background:#111319f5;
+backdrop-filter:blur(12px);
+padding:22px 23px;
+border-bottom:1px solid var(--line);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:2;
+}
+
+.dialoghead h2{
+font:800 17px Orbitron;
+margin:0;
+}
+
+.dialoghead h2 span{color:var(--gold)}
+
+.x{
+border:0;
+background:#ffffff08;
+color:#b7bac4;
+border-radius:9px;
+width:35px;
+height:35px;
+font-size:24px;
+}
+
+.dialogbody{padding:22px}
+
+.dialogbody>p{
+color:var(--muted);
+font-size:12px;
+line-height:1.7;
+margin:0 0 18px;
+}
+
+.namegrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+}
+
+.namebtn{
+padding:13px 10px;
+text-align:left;
+background:#191b22;
+border:1px solid #2c2f38;
+border-radius:11px;
+color:#f0f1f4;
+font-size:12px;
+font-weight:800;
+transition:.15s;
+}
+
+.namebtn:hover:not(:disabled){
+border-color:var(--gold);
+color:var(--gold);
+transform:translateY(-1px);
+}
+
+.namebtn:disabled{
+opacity:.36;
+cursor:not-allowed;
+}
+
+.namebtn.taken:after{
+content:" • TAKEN";
+display:block;
+font-size:8px;
+color:var(--red);
+margin-top:5px;
+letter-spacing:.5px;
+}
+
+.msg{
+font-size:12px;
+line-height:1.7;
+margin-top:15px;
+color:var(--gold);
+min-height:18px;
+}
+
+.msg.error{color:var(--red)}
+.msg.success{color:var(--green)}
+
+.smallnote{
+font-size:10px!important;
+margin:14px 0 0!important;
+color:#777b86!important;
+}
+
+@media(max-width:800px){
+.hero-grid{grid-template-columns:1fr;gap:20px}
+.hero{padding:70px 0 45px}
+.hero-art{min-height:270px}
+.rankgrid{grid-template-columns:repeat(2,1fr)}
+.sectionhead{display:block}
+.sectionhead p{margin-top:12px}
+.cta{display:block;padding:28px}
+.cta .primary{margin-top:22px}
+.navlinks{gap:13px}
+.navlinks>a:not(.navjoin){display:none}
+}
+
+@media(max-width:480px){
+.wrap{width:calc(100% - 28px)}
+h1{letter-spacing:-2px}
+.stats{gap:8px}
+.stat{padding:12px}
+.stat strong{font-size:16px}
+.stat span{font-size:8px}
+.rankgrid{gap:10px}
+.rankcard{padding:18px}
+.namegrid{grid-template-columns:repeat(2,1fr)}
+.rosterbar,.member{padding-left:16px;padding-right:16px}
+.foot{flex-direction:column;text-align:center}
+.hero-actions>*{flex:1}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="#home">
+<span class="brandmark">🦆</span>DUK <span>LEAGUE</span>
+</a>
+
+<nav class="navlinks">
+<a href="#home">HOME</a>
+<a href="#ranks">RANKS</a>
+<a href="#roster">ROSTER</a>
+<button class="navjoin" onclick="openJoin()">JOIN LEAGUE ↗</button>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="wrap hero-grid">
+
+<div>
+<div class="eyebrow"><i class="dot"></i> DUCK ESPORTS COMMUNITY</div>
+
+<h1>BUILT DIFFERENT.<br><span>QUACK DIFFERENT.</span></h1>
+
+<p>
+Welcome to DUK LEAGUE — a gaming community for the chaotic,
+the competitive, and the legendary. Pick your duck identity
+and get on the roster.
+</p>
+
+<div class="hero-actions">
+<button class="primary" onclick="openJoin()">JOIN THE LEAGUE ↗</button>
+<a class="secondary" href="#roster">VIEW ROSTER ↓</a>
+</div>
+
+<div class="stats">
+<div class="stat">
+<strong id="statMembers">—</strong>
+<span>ROSTER MEMBERS</span>
+</div>
+<div class="stat">
+<strong>DUCK</strong>
+<span>OFFICIAL SPECIES</span>
+</div>
+<div class="stat">
+<strong>∞</strong>
+<span>CHAOS LEVEL</span>
+</div>
+</div>
+</div>
+
+<div class="hero-art">
+<div class="halo">
+<div class="duck" aria-label="Duck">🦆</div>
+</div>
+<div class="artbadge">
+<strong>DUK LEAGUE HQ</strong>
+<small>THE FLOCK IS GROWING</small>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="content" id="ranks">
+<div class="wrap">
+
+<div class="sectionhead">
+<div>
+<div class="kicker">YOUR PLACE IN THE FLOCK</div>
+<h2>THE <span>RANKS</span></h2>
+</div>
+<p>
+Every member starts somewhere. Ranks are displayed here;
+only trusted league admins should assign elevated roles.
+</p>
+</div>
+
+<div class="rankgrid">
+
+<article class="rankcard">
+<div class="rankicon">👑</div>
+<h3>FOUNDER</h3>
+<p>The creator of the league. One crown, one duck.</p>
+</article>
+
+<article class="rankcard">
+<div class="rankicon">⚡</div>
+<h3>ELITE</h3>
+<p>Trusted veterans who help keep the flock flying.</p>
+</article>
+
+<article class="rankcard">
+<div class="rankicon">🛡️</div>
+<h3>MEMBER</h3>
+<p>Official members of the DUK LEAGUE community.</p>
+</article>
+
+<article class="rankcard">
+<div class="rankicon">🐣</div>
+<h3>RECRUIT</h3>
+<p>Fresh ducks joining the chaos for the first time.</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="content" id="roster">
+<div class="wrap">
+
+<div class="sectionhead">
+<div>
+<div class="kicker">LIVE CLOUD ROSTER</div>
+<h2>THE <span>FLOCK</span></h2>
+</div>
+<p>
+One shared roster for everyone visiting this website.
+When a duck joins, the list updates live.
+</p>
+</div>
+
+<div class="rosterpanel">
+
+<div class="rosterbar">
+<h3>OFFICIAL <span>MEMBERS</span></h3>
+<div class="live">
+<i class="dot"></i>
+<span id="connectionLabel">CONNECTING</span>
+</div>
+</div>
+
+<div class="rosterlist" id="rosterList">
+<div class="empty">
+<div class="big">🛰️</div>
+Connecting to DUK LEAGUE database…
+</div>
+</div>
+
+</div>
+
+<div class="notice">
+<b>DATABASE NOTE:</b>
+Names are reserved in the shared cloud roster.
+This page does not provide public rank-editing controls.
+Configure Firebase security rules before going live.
+</div>
+
+</div>
+</section>
+
+<section class="content">
+<div class="wrap">
+
+<div class="cta">
+<div>
+<h2>READY TO <span>QUACK UP?</span></h2>
+<p>
+Pick your official name from the roster list.
+Choose wisely — once a name is taken, another duck can't claim it.
+</p>
+</div>
+
+<button class="primary" onclick="openJoin()">PICK YOUR NAME ↗</button>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap foot">
+<div>© 2026 <strong>DUK LEAGUE</strong> · ALL DUCKS RESERVED.</div>
+<div>MADE FOR THE FLOCK 🦆</div>
+</div>
+</footer>
+
+<div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+
+<div class="dialog">
+
+<div class="dialoghead">
+<h2 id="dialogTitle">CHOOSE YOUR <span>DUCK ID</span></h2>
+<button class="x" onclick="closeJoin()" aria-label="Close">×</button>
+</div>
+
+<div class="dialogbody">
+
+<p>
+Tap an available name to join. Taken names are disabled.
+Your choice is stored in the shared database.
+</p>
+
+<div class="namegrid" id="nameGrid"></div>
+
+<div class="msg" id="joinMessage" role="status"></div>
+
+<p class="smallnote">
+Your membership is tied to a temporary anonymous sign-in
+on this browser. Keep your chosen name in mind.
+</p>
+
+</div>
+</div>
+</div>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+onSnapshot,
+doc,
+runTransaction,
+serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+getAuth,
+signInAnonymously
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+/* ==========================================
+   FIREBASE CONFIGURATION
+   REPLACE THESE VALUES WITH YOUR REAL CONFIG
+========================================== */
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+/* ==========================================
+   AVAILABLE DUCK NAMES
+========================================== */
+
+const names = [
+"Mr.Weak","Mr.Strong","Mr.Sussy","Mr.Noob",
+"Mr.Duck","Mr.Froggy","Mr.Beast","Mr.Chicken",
+"Mr.Unknown","Mr.Legend","Mr.Cooked","Mr.Pro",
+"Mr.Sigma","Mr.Banana","Mr.Goofy","Mr.Chaos",
+"Mr.Nobody","Mr.Rizz","Mr.Skibidi","Mr.God",
+"Mr.Quack","Mr.Epic","Mr.Bot","Mr.W",
+"Mr.Drippy","Mr.Cracked","Mr.Slow","Mr.Fast",
+"Mr.Cool","Mr.Bruh","Mr.Hari","Mr.Gamer",
+"Mr.Toxic","Mr.Crazy","Mr.Waffle","Mr.Meme",
+"Mr.Dino","Mr.NPC","Mr.Hacker","Mr.Fearless"
+];
+
+/* ==========================================
+   DATABASE VARIABLES
+========================================== */
+
+const listEl = document.getElementById("rosterList");
+const gridEl = document.getElementById("nameGrid");
+const messageEl = document.getElementById("joinMessage");
+const connectionEl = document.getElementById("connectionLabel");
+
+let db;
+let auth;
+let signedUser = null;
+let members = new Map();
+let ready = false;
+
+const setMessage = (text,type="") => {
+messageEl.textContent = text;
+messageEl.className = "msg " + type;
+};
+
+const safeText = value => String(value ?? "");
+
+/* ==========================================
+   RENDER LIVE ROSTER
+========================================== */
+
+function renderRoster(){
+
+const sorted = [...members.values()].sort(
+(a,b) => safeText(a.name).localeCompare(safeText(b.name))
+);
+
+document.getElementById("statMembers").textContent = sorted.length;
+
+if(!sorted.length){
+
+listEl.innerHTML = `
+<div class="empty">
+<div class="big">🦆</div>
+No ducks on the roster yet. Be the first!
+</div>`;
+
+return;
+}
+
+listEl.replaceChildren();
+
+for(const member of sorted){
+
+const row = document.createElement("div");
+row.className = "member";
+
+const left = document.createElement("div");
+left.className = "memberleft";
+
+const avatar = document.createElement("div");
+avatar.className = "avatar";
+avatar.textContent = "🦆";
+
+const info = document.createElement("div");
+
+const name = document.createElement("div");
+name.className = "membername";
+name.textContent = safeText(member.name);
+
+const joined = document.createElement("div");
+joined.className = "joined";
+joined.textContent = "DUK LEAGUE MEMBER";
+
+info.append(name,joined);
+left.append(avatar,info);
+
+const rank = document.createElement("span");
+rank.className = "rankpill";
+rank.textContent = "RECRUIT";
+
+row.append(left,rank);
+listEl.append(row);
+
+}
+}
+
+/* ==========================================
+   RENDER AVAILABLE NAME BUTTONS
+========================================== */
+
+function renderNames(){
+
+gridEl.replaceChildren();
+
+for(const name of names){
+
+const taken = members.has(name);
+
+const button = document.createElement("button");
+
+button.type = "button";
+button.className = "namebtn" + (taken ? " taken" : "");
+button.textContent = name;
+
+button.disabled = taken || !ready;
+
+button.title = taken
+? "This name is already taken"
+: "Join as " + name;
+
+button.addEventListener("click", () => joinWithName(name));
+
+gridEl.append(button);
+
+}
+}
+
+/* ==========================================
+   JOIN MODAL
+========================================== */
+
+window.openJoin = () => {
+
+document.getElementById("joinModal").classList.add("open");
+
+renderNames();
+
+};
+
+window.closeJoin = () => {
+
+document.getElementById("joinModal").classList.remove("open");
+
+};
+
+document.getElementById("joinModal").addEventListener("click",e=>{
+
+if(e.target.id === "joinModal"){
+
+window.closeJoin();
+
+}
+
+});
+
+document.addEventListener("keydown",e=>{
+
+if(e.key === "Escape"){
+
+window.closeJoin();
+
+}
+
+});
+
+/* ==========================================
+   JOIN WITH SELECTED NAME
+========================================== */
+
+async function joinWithName(name){
+
+if(!ready || !signedUser){
+
+setMessage("Still connecting. Try again in a moment.","error");
+
+return;
+
+}
+
+setMessage("Reserving your duck name…");
+
+renderNames();
+
+try{
+
+const memberRef = doc(db,"members",name);
+
+await runTransaction(db,async transaction=>{
+
+const existing = await transaction.get(memberRef);
+
+if(existing.exists()){
+
+throw new Error("NAME_TAKEN");
+
+}
+
+transaction.set(memberRef,{
+
+name:name,
+rank:"Recruit",
+uid:signedUser.uid,
+createdAt:serverTimestamp()
+
+});
+
+});
+
+setMessage("QUACK! You're on the roster as "+name+".","success");
+
+renderNames();
+
+}catch(error){
+
+console.error("Join failed:",error);
+
+setMessage(
+error.message === "NAME_TAKEN"
+? "Oops — that name was just taken. Pick another duck!"
+: "Couldn't join. Check Firebase setup and security rules.",
+"error"
+);
+
+}
+
+}
+
+/* ==========================================
+   CONNECT FIREBASE
+========================================== */
+
+async function start(){
+
+try{
+
+if(
+firebaseConfig.apiKey === "YOUR_API_KEY" ||
+firebaseConfig.projectId === "YOUR_PROJECT_ID"
+){
+
+connectionEl.textContent = "SETUP NEEDED";
+
+listEl.innerHTML = `
+<div class="empty">
+<div class="big">⚙️</div>
+Firebase is not configured yet.<br>
+Paste your Firebase web config into the code.
+</div>`;
+
+renderNames();
+
+return;
+
+}
+
+const app = initializeApp(firebaseConfig);
+
+db = getFirestore(app);
+
+auth = getAuth(app);
+
+await signInAnonymously(auth);
+
+signedUser = auth.currentUser;
+
+ready = true;
+
+connectionEl.textContent = "LIVE ROSTER";
+
+onSnapshot(
+collection(db,"members"),
+
+snapshot=>{
+
+members.clear();
+
+snapshot.forEach(item=>{
+
+const data = item.data();
+
+if(
+data &&
+typeof data.name === "string" &&
+names.includes(data.name)
+){
+
+members.set(data.name,data);
+
+}
+
+});
+
+renderRoster();
+renderNames();
+
+},
+
+error=>{
+
+console.error("Roster listener:",error);
+
+connectionEl.textContent = "DATABASE ERROR";
+
+listEl.innerHTML = `
+<div class="empty">
+Unable to read roster. Check Firestore rules.
+</div>`;
+
+}
+
+);
+
+renderNames();
+
+}catch(error){
+
+console.error("Firebase initialization:",error);
+
+connectionEl.textContent = "CONNECTION FAILED";
+
+listEl.innerHTML = `
+<div class="empty">
+Firebase connection failed.
+Check config, Authentication and Firestore rules.
+</div>`;
+
+setMessage("Firebase setup isn't complete yet.","error");
+
+}
+
+}
+
+start();
+
+</script>
+
+</body>
+</html>
