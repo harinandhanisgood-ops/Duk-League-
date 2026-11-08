@@ -3,45 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f6f2e8">
-<title>DUK LEAGUE | Official Website</title>
+<title>DUK LEAGUE — Official Community</title>
 
 <style>
-
-/* =====================================================
-   01. DESIGN SYSTEM
-===================================================== */
-
 :root {
-    --cream: #f6f2e8;
-    --black: #171914;
-    --yellow: #e7f45a;
-    --orange: #ff8757;
-    --white: #ffffff;
-    --gray: #77796e;
-    --border: #deded1;
-    --green: #527e3b;
+    --bg: #0b0d0b;
+    --panel: #141714;
+    --panel-light: #1b201a;
+    --green: #c8f169;
+    --text: #f4f5ef;
+    --muted: #92998c;
+    --border: #292e27;
+    --radius: 18px;
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
-    background: var(--cream);
-    color: var(--black);
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
 }
 
-button,
-input {
+button, input, textarea {
     font: inherit;
 }
 
@@ -54,1600 +42,1401 @@ a {
     text-decoration: none;
 }
 
-/* =====================================================
-   02. NAVIGATION
-===================================================== */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    height: 76px;
-    border-bottom: 2px solid var(--black);
-    background: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 7%;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 19px;
-    font-weight: 1000;
-    letter-spacing: -1px;
-}
-
-.logo-icon {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    background: var(--yellow);
-    border: 2px solid var(--black);
-    border-radius: 12px;
-    font-size: 24px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 27px;
-}
-
-.nav-links a {
-    font-size: 12px;
-    font-weight: 900;
-    transition: .2s;
-}
-
-.nav-links a:hover {
-    color: #8d941e;
-}
-
-.nav-join {
-    background: var(--yellow);
-    padding: 11px 17px;
-    border: 2px solid var(--black);
-    border-radius: 8px;
-}
-
-/* =====================================================
-   03. GENERAL COMPONENTS
-===================================================== */
-
 .container {
-    width: 84%;
-    max-width: 1250px;
+    width: min(1180px, 92%);
     margin: auto;
 }
 
-.section {
-    padding: 65px 0;
-}
+/* NAVIGATION */
 
-.section-label {
-    display: inline-block;
-    background: var(--yellow);
-    border: 2px solid var(--black);
-    padding: 7px 12px;
-    font-size: 10px;
-    font-weight: 1000;
-    letter-spacing: 1.5px;
-}
-
-.section-title {
-    font-size: clamp(30px, 5vw, 46px);
-    letter-spacing: -2px;
-    margin-top: 12px;
-}
-
-.section-description {
-    max-width: 550px;
-    color: var(--gray);
-    line-height: 1.8;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.button {
-    display: inline-flex;
+nav {
+    height: 76px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 21px;
-    border: 2px solid var(--black);
-    border-radius: 9px;
-    font-weight: 1000;
-    font-size: 12px;
-    transition: .2s;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: rgba(11,13,11,.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow: 4px 4px 0 var(--black);
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
-.button-yellow {
-    background: var(--yellow);
-    color: var(--black);
+.logo span {
+    color: var(--green);
 }
 
-.button-dark {
-    background: var(--black);
-    color: var(--white);
+.navlinks {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    color: var(--muted);
 }
 
-.button-orange {
-    background: var(--orange);
-    color: var(--black);
+.navlinks a:hover {
+    color: var(--green);
 }
 
-/* =====================================================
-   04. HOMEPAGE HERO
-===================================================== */
+.nav-button {
+    background: var(--green);
+    color: #10130c;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+/* HERO */
 
 .hero {
-    min-height: 580px;
-    padding: 75px 8%;
+    min-height: 570px;
     display: grid;
     grid-template-columns: 1.1fr .9fr;
-    gap: 45px;
     align-items: center;
+    gap: 50px;
+    padding: 70px 0;
 }
 
-.hero-title {
-    font-size: clamp(65px, 9vw, 112px);
-    line-height: .85;
-    letter-spacing: -8px;
-    font-weight: 1000;
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border: 1px solid #39452a;
+    background: #192017;
+    color: var(--green);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .95;
+    letter-spacing: -6px;
     margin: 25px 0;
+    font-weight: 1000;
 }
 
-.hero-title span {
-    color: #a4b324;
+.hero h1 span {
+    color: var(--green);
 }
 
-.hero-description {
-    max-width: 440px;
-    color: var(--gray);
-    font-size: 15px;
+.hero p {
+    max-width: 500px;
+    color: var(--muted);
     line-height: 1.9;
+    font-size: 15px;
 }
 
 .hero-buttons {
     display: flex;
-    flex-wrap: wrap;
     gap: 12px;
-    margin-top: 27px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
-.hero-art {
-    position: relative;
-    min-height: 335px;
+.primary {
+    background: var(--green);
+    color: #10130c;
+    border: none;
+    padding: 15px 22px;
+    border-radius: 11px;
+    font-weight: 900;
+}
+
+.secondary {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 15px 22px;
+    border-radius: 11px;
+    font-weight: 800;
+}
+
+.hero-card {
+    background:
+        radial-gradient(circle at 50% 35%, #37432a, transparent 65%),
+        var(--panel);
+    border: 1px solid #333b2d;
+    border-radius: 28px;
+    min-height: 350px;
     display: grid;
     place-items: center;
-    background: var(--yellow);
-    border: 3px solid var(--black);
-    border-radius: 30px;
-    transform: rotate(2deg);
+    position: relative;
     overflow: hidden;
 }
 
-.hero-art::before {
-    content: "";
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    border: 2px solid rgba(23,25,20,.2);
-    border-radius: 50%;
-}
-
-.hero-art::after {
-    content: "DUK LEAGUE";
-    position: absolute;
-    bottom: 18px;
-    right: 20px;
-    font-weight: 1000;
-    letter-spacing: 3px;
-    font-size: 11px;
-}
-
 .hero-duck {
-    font-size: 160px;
-    animation: floatDuck 3s ease-in-out infinite;
-    filter: drop-shadow(10px 12px 0 rgba(0,0,0,.12));
+    font-size: 150px;
+    filter: drop-shadow(0 20px 30px #0008);
+    animation: floating 3s ease-in-out infinite;
 }
 
-@keyframes floatDuck {
-    0%, 100% {
-        transform: translateY(0) rotate(-5deg);
-    }
-    50% {
-        transform: translateY(-16px) rotate(5deg);
-    }
+@keyframes floating {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
-/* =====================================================
-   05. INTRODUCTION
-===================================================== */
+/* SECTION */
 
-.intro-grid {
+section {
+    padding: 75px 0;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: -2px;
+    margin: 14px 0;
+}
+
+.section-desc {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 600px;
+    font-size: 14px;
+}
+
+/* CARDS */
+
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 18px;
     margin-top: 30px;
 }
 
-.intro-card {
-    background: var(--white);
-    border: 2px solid var(--black);
-    border-radius: 17px;
-    padding: 25px;
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 27px;
+    border-radius: var(--radius);
     transition: .2s;
 }
 
-.intro-card:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 5px 5px 0 var(--black);
+    border-color: #52633b;
 }
 
 .card-icon {
-    font-size: 33px;
+    font-size: 32px;
 }
 
-.intro-card h3 {
-    font-size: 19px;
-    margin: 14px 0 9px;
+.card h3 {
+    margin: 17px 0 10px;
+    font-size: 18px;
 }
 
-.intro-card p {
-    color: var(--gray);
-    font-size: 13px;
+.card p {
+    color: var(--muted);
     line-height: 1.8;
-}
-
-/* =====================================================
-   06. LEAGUE ANNOUNCEMENT
-===================================================== */
-
-.announcement {
-    background: var(--black);
-    color: var(--white);
-    border-radius: 20px;
-    padding: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.announcement h2 {
-    font-size: 27px;
-}
-
-.announcement p {
-    color: #c2c7ba;
     font-size: 13px;
-    line-height: 1.7;
-    margin-top: 9px;
 }
 
-/* =====================================================
-   07. MEMBERSHIP ACCESS
-===================================================== */
+/* DASHBOARD */
 
-.access-box {
-    display: grid;
-    grid-template-columns: 1fr .8fr;
-    align-items: center;
-    gap: 30px;
-    background: white;
-    border: 2px solid var(--black);
-    border-radius: 20px;
+.dashboard {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
     padding: 30px;
-    box-shadow: 7px 7px 0 var(--black);
+    margin-top: 30px;
+}
+
+.dashboard-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    background: #263020;
+    border: 1px solid #4c6034;
+    border-radius: 16px;
+    font-size: 30px;
+}
+
+.profile h3 {
+    font-size: 21px;
+}
+
+.profile p {
+    color: var(--green);
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
     margin-top: 25px;
 }
 
-.access-box h3 {
-    font-size: 25px;
-    margin: 12px 0;
-}
-
-.access-box p {
-    color: var(--gray);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.access-form {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
-
-.access-form input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid var(--black);
-    border-radius: 9px;
-    background: var(--cream);
-    outline: none;
-}
-
-.access-form input:focus {
-    border-color: #a4b324;
-}
-
-#accessMessage {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* =====================================================
-   08. ARCADE
-===================================================== */
-
-.arcade {
-    background: #20251e;
-    color: white;
-    border: 3px solid var(--black);
-    border-radius: 23px;
-    padding: 25px;
-    box-shadow: 8px 8px 0 var(--black);
-    margin-top: 28px;
-}
-
-.arcade.locked {
-    opacity: .55;
-    pointer-events: none;
-}
-
-.arcade-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.arcade-header h3 {
-    font-size: 24px;
-}
-
-.arcade-tag {
-    padding: 8px 13px;
-    background: var(--yellow);
-    color: var(--black);
-    border-radius: 20px;
-    font-size: 10px;
-    font-weight: 1000;
-}
-
-#gameCanvas {
-    display: block;
-    width: 100%;
-    height: auto;
-    background: #c9e1a8;
-    border: 3px solid var(--black);
-    border-radius: 13px;
-    touch-action: manipulation;
-}
-
-.game-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 17px;
-}
-
 .stat {
-    background: #30362d;
-    padding: 14px;
-    border-radius: 10px;
+    background: var(--panel-light);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 20px;
 }
 
 .stat span {
     display: block;
-    color: #b6bea9;
-    font-size: 10px;
-    font-weight: 900;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
 .stat strong {
     display: block;
-    font-size: 25px;
-    margin-top: 5px;
+    font-size: 28px;
+    margin-top: 10px;
+    color: var(--green);
 }
 
-.game-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 18px;
-}
+/* FORMS */
 
-.game-buttons button {
-    flex: 1;
-    min-width: 110px;
-}
-
-#gameMessage {
-    color: #c8d0bc;
-    font-size: 13px;
-    margin-top: 15px;
-}
-
-.game-instructions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    color: #c8d0bc;
-    font-size: 12px;
-}
-
-.game-instructions span {
-    background: #30362d;
-    padding: 9px 13px;
-    border-radius: 7px;
-}
-
-/* =====================================================
-   09. GAME INFORMATION
-===================================================== */
-
-.game-info-grid {
+.form {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 13px;
+    max-width: 500px;
     margin-top: 25px;
 }
 
-.game-info {
-    background: white;
-    border: 2px solid var(--black);
-    border-radius: 15px;
-    padding: 22px;
+input, textarea {
+    width: 100%;
+    background: #101310;
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+    outline: none;
 }
 
-.game-info h3 {
-    margin: 11px 0;
-    font-size: 17px;
+input:focus, textarea:focus {
+    border-color: var(--green);
 }
 
-.game-info p {
-    color: var(--gray);
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-message {
+    color: var(--green);
     font-size: 13px;
+}
+
+/* MEMBERS */
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.member {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.member-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.member-avatar {
+    width: 45px;
+    height: 45px;
+    background: #283322;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.member h3 {
+    font-size: 15px;
+}
+
+.member .title {
+    color: var(--green);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.member .bio {
+    color: var(--muted);
+    margin-top: 15px;
+    font-size: 12px;
     line-height: 1.7;
 }
 
-/* =====================================================
-   10. LEAGUE RULES
-===================================================== */
+/* RULES */
 
-.rules-list {
+.rules {
     display: grid;
-    gap: 13px;
-    margin-top: 27px;
+    gap: 12px;
+    margin-top: 30px;
 }
 
 .rule {
-    display: grid;
-    grid-template-columns: 55px 1fr;
-    gap: 15px;
-    align-items: start;
-    background: white;
-    border: 2px solid var(--black);
+    display: flex;
+    gap: 18px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 22px;
     border-radius: 14px;
-    padding: 21px;
-    transition: .2s;
-}
-
-.rule:hover {
-    transform: translateX(4px);
 }
 
 .rule-number {
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    background: var(--yellow);
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 1000;
+    color: var(--green);
+    font-size: 17px;
+    font-weight: 900;
 }
 
 .rule h3 {
-    font-size: 17px;
-    margin-bottom: 7px;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .rule p {
-    color: var(--gray);
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.8;
 }
 
-/* =====================================================
-   11. FOOTER
-===================================================== */
+/* ARCADE */
 
-.footer {
-    margin-top: 55px;
-    background: var(--black);
-    color: white;
-    padding: 35px 8%;
+.arcade {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+#gameCanvas {
+    width: 100%;
+    height: auto;
+    background: #d5e9b8;
+    border-radius: 13px;
+    margin-top: 20px;
+}
+
+.game-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 35px 5%;
+    color: var(--muted);
+    font-size: 12px;
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
     flex-wrap: wrap;
-}
-
-.footer p {
-    color: #b6bea9;
-    font-size: 12px;
-    line-height: 1.8;
-}
-
-.footer-links {
-    display: flex;
     gap: 20px;
-    font-size: 12px;
-    font-weight: bold;
 }
 
-/* =====================================================
-   12. RESPONSIVE DESIGN
-===================================================== */
+/* RESPONSIVE */
 
 @media(max-width: 800px) {
-
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 50px;
     }
 
-    .hero-art {
-        min-height: 250px;
-    }
-
-    .access-box {
+    .grid, .members {
         grid-template-columns: 1fr;
     }
 
-    .announcement {
-        flex-direction: column;
-        align-items: flex-start;
+    .navlinks {
+        gap: 12px;
+        font-size: 10px;
     }
 
-    .intro-grid,
-    .game-info-grid {
-        grid-template-columns: 1fr;
+    .hero h1 {
+        letter-spacing: -3px;
     }
-
 }
 
-@media(max-width: 600px) {
-
-    .container {
-        width: 90%;
-    }
-
-    .navbar {
-        padding: 0 4%;
-        height: 68px;
+@media(max-width: 500px) {
+    nav {
+        padding: 0 3%;
     }
 
     .logo {
         font-size: 14px;
     }
 
-    .logo-icon {
-        width: 36px;
-        height: 36px;
+    .navlinks {
+        display: none;
     }
 
-    .nav-links {
-        gap: 11px;
+    .stats {
+        grid-template-columns: 1fr;
     }
 
-    .nav-links a {
-        font-size: 9px;
-    }
-
-    .hero {
-        padding: 45px 5%;
-    }
-
-    .hero-title {
-        font-size: 70px;
-        letter-spacing: -5px;
-    }
-
-    .hero-duck {
-        font-size: 120px;
-    }
-
-    .section {
-        padding: 45px 0;
-    }
-
-    .access-box {
+    .dashboard {
         padding: 20px;
     }
-
-    .arcade {
-        padding: 13px;
-    }
-
-    .arcade-header h3 {
-        font-size: 17px;
-    }
-
-    .game-instructions {
-        gap: 8px;
-    }
-
-    .game-stats {
-        gap: 6px;
-    }
-
-    .stat {
-        padding: 9px;
-    }
-
-    .stat strong {
-        font-size: 20px;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     01. NAVIGATION
-===================================================== -->
+<nav>
+    <a class="logo" href="#home">🦆 DUK <span>LEAGUE</span></a>
 
-<header class="navbar">
-
-    <a href="#home" class="logo">
-        <span class="logo-icon">🦆</span>
-        DUK LEAGUE
-    </a>
-
-    <nav class="nav-links">
-        <a href="#home">HOME</a>
+    <div class="navlinks">
         <a href="#about">ABOUT</a>
-        <a href="#arcade-section">ARCADE</a>
+        <a href="#dashboard">DASHBOARD</a>
+        <a href="#members">MEMBERS</a>
+        <a href="#arcade">ARCADE</a>
         <a href="#rules">RULES</a>
-    </nav>
+    </div>
 
-    <a href="#membership" class="nav-join">JOIN</a>
-
-</header>
-
-<!-- =====================================================
-     02. HOMEPAGE
-===================================================== -->
+    <a href="#join">
+        <button class="nav-button">JOIN LEAGUE</button>
+    </a>
+</nav>
 
 <main>
 
+<!-- HERO -->
+
+<div class="container">
 <section class="hero" id="home">
 
     <div>
+        <span class="badge">● OFFICIAL DUK LEAGUE COMMUNITY</span>
 
-        <span class="section-label">
-            THE OFFICIAL DUK LEAGUE WEBSITE
-        </span>
+        <h1>WELCOME TO<br>DUK <span>LEAGUE.</span></h1>
 
-        <h1 class="hero-title">
-            DU<span>K</span><br>
-            LEAGUE.
-        </h1>
-
-        <p class="hero-description">
-            Welcome to DUK LEAGUE. A community built around
-            teamwork, creativity, games and friendship.
-
-            Explore the League, read the rules and enter
-            our exclusive arcade.
+        <p>
+            A community built around friendship, competition,
+            creativity and gaming. Make your mark. Earn RP.
+            Become part of the League.
         </p>
 
         <div class="hero-buttons">
-
-            <a href="#membership" class="button button-yellow">
-                JOIN THE LEAGUE →
-            </a>
-
-            <a href="#about" class="button button-dark">
-                EXPLORE
-            </a>
-
+            <a href="#join"><button class="primary">JOIN THE LEAGUE →</button></a>
+            <a href="#about"><button class="secondary">EXPLORE</button></a>
         </div>
-
     </div>
 
-    <div class="hero-art">
-
-        <span class="hero-duck">🦆</span>
-
+    <div class="hero-card">
+        <div class="hero-duck">🦆</div>
     </div>
 
 </section>
+</div>
 
-<!-- =====================================================
-     03. ABOUT THE LEAGUE
-===================================================== -->
+<!-- ABOUT -->
 
-<section class="section" id="about">
+<section id="about">
+<div class="container">
 
-    <div class="container">
+    <span class="section-label">ABOUT THE COMMUNITY</span>
+    <h2 class="section-title">MORE THAN JUST A CLAN.</h2>
 
-        <span class="section-label">WHO WE ARE</span>
+    <p class="section-desc">
+        DUK LEAGUE is a growing community with its own
+        member system, titles, RP and exclusive activities.
+    </p>
 
-        <h2 class="section-title">
-            MORE THAN JUST A GROUP.
-        </h2>
+    <div class="grid">
 
-        <p class="section-description">
-            DUK LEAGUE is a community with its own membership,
-            titles, activities and games. Our goal is to build
-            a fun and organized place for everyone.
+        <div class="card">
+            <div class="card-icon">👥</div>
+            <h3>Community</h3>
+            <p>Meet members, make friends and participate in League activities.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>Progression</h3>
+            <p>Build your reputation and earn RP through approved activities.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎮</div>
+            <h3>Arcade</h3>
+            <p>Play exclusive mini-games designed for DUK LEAGUE members.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- JOIN -->
+
+<section id="join">
+<div class="container">
+
+    <span class="section-label">MEMBERSHIP</span>
+    <h2 class="section-title">JOIN THE LEAGUE.</h2>
+
+    <p class="section-desc">
+        Create your member profile. Your profile will be
+        stored in the DUK LEAGUE Firebase database.
+    </p>
+
+    <div class="dashboard">
+
+        <form class="form" id="joinForm">
+
+            <input
+                id="username"
+                type="text"
+                maxlength="20"
+                placeholder="Your League username"
+                required>
+
+            <input
+                id="title"
+                type="text"
+                value="Duckling"
+                disabled>
+
+            <textarea
+                id="bio"
+                maxlength="200"
+                placeholder="Introduce yourself to the League..."></textarea>
+
+            <button class="primary" type="submit">
+                CREATE MY PROFILE →
+            </button>
+
+            <p class="form-message" id="joinMessage"></p>
+
+        </form>
+
+    </div>
+
+</div>
+</section>
+
+<!-- DASHBOARD -->
+
+<section id="dashboard">
+<div class="container">
+
+    <span class="section-label">YOUR ACCOUNT</span>
+    <h2 class="section-title">MEMBER DASHBOARD.</h2>
+
+    <div class="dashboard">
+
+        <div class="dashboard-top">
+
+            <div class="profile">
+
+                <div class="avatar">🦆</div>
+
+                <div>
+                    <h3 id="myName">Guest</h3>
+                    <p id="myTitle">Not registered</p>
+                </div>
+
+            </div>
+
+            <button class="secondary" id="editProfile">
+                EDIT PROFILE
+            </button>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <span>YOUR RP</span>
+                <strong id="myRP">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>YOUR TITLE</span>
+                <strong id="myTitleStat">—</strong>
+            </div>
+
+            <div class="stat">
+                <span>MEMBERS</span>
+                <strong id="memberCount">0</strong>
+            </div>
+
+        </div>
+
+        <form class="form" id="editForm" style="display:none">
+
+            <input id="editName" maxlength="20" placeholder="Username">
+
+            <textarea id="editBio" maxlength="200" placeholder="Your bio"></textarea>
+
+            <button class="primary" type="submit">SAVE PROFILE</button>
+
+        </form>
+
+        <p class="form-message" id="dashboardMessage"></p>
+
+    </div>
+
+</div>
+</section>
+
+<!-- MEMBERS -->
+
+<section id="members">
+<div class="container">
+
+    <span class="section-label">COMMUNITY DIRECTORY</span>
+    <h2 class="section-title">LEAGUE MEMBERS.</h2>
+
+    <p class="section-desc">
+        Meet the members of DUK LEAGUE.
+    </p>
+
+    <div class="members" id="membersList">
+        <p class="section-desc">Loading members...</p>
+    </div>
+
+</div>
+</section>
+
+<!-- ARCADE -->
+
+<section id="arcade">
+<div class="container">
+
+    <span class="section-label">DUK LEAGUE ARCADE</span>
+    <h2 class="section-title">DUCK DASH.</h2>
+
+    <p class="section-desc">
+        Jump over obstacles and collect stars.
+    </p>
+
+    <div class="arcade">
+
+        <canvas id="gameCanvas" width="900" height="350"></canvas>
+
+        <div class="stats">
+
+            <div class="stat">
+                <span>SCORE</span>
+                <strong id="gameScore">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>BEST</span>
+                <strong id="gameBest">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>STARS</span>
+                <strong id="gameStars">0</strong>
+            </div>
+
+        </div>
+
+        <div class="game-controls">
+            <button class="primary" id="startGame">START GAME</button>
+            <button class="secondary" id="jumpGame">JUMP ↑</button>
+        </div>
+
+        <p class="form-message" id="gameMessage">
+            Press START GAME to play.
         </p>
 
-        <div class="intro-grid">
-
-            <article class="intro-card">
-
-                <span class="card-icon">👥</span>
-
-                <h3>THE COMMUNITY</h3>
-
-                <p>
-                    Meet other members, participate in activities
-                    and contribute to the League.
-                </p>
-
-            </article>
-
-            <article class="intro-card">
-
-                <span class="card-icon">🏆</span>
-
-                <h3>THE SYSTEM</h3>
-
-                <p>
-                    DUK LEAGUE has titles, RP and leadership roles
-                    managed by authorized administrators.
-                </p>
-
-            </article>
-
-            <article class="intro-card">
-
-                <span class="card-icon">🎮</span>
-
-                <h3>THE ARCADE</h3>
-
-                <p>
-                    Play exclusive mini-games made for members
-                    of the League.
-                </p>
-
-            </article>
-
-        </div>
-
     </div>
 
+</div>
 </section>
 
-<!-- =====================================================
-     04. ANNOUNCEMENT
-===================================================== -->
+<!-- RULES -->
 
-<section class="section">
+<section id="rules">
+<div class="container">
 
-    <div class="container">
+    <span class="section-label">OFFICIAL COMMUNITY POLICY</span>
+    <h2 class="section-title">LEAGUE RULES.</h2>
 
-        <div class="announcement">
+    <div class="rules">
 
+        <div class="rule">
+            <div class="rule-number">01</div>
             <div>
-
-                <h2>WELCOME TO THE DUCK SIDE. 🦆</h2>
-
-                <p>
-                    Respect the members. Follow the rules.
-                    Make your place in DUK LEAGUE.
-                </p>
-
+                <h3>Respect Members</h3>
+                <p>Bullying, harassment and discrimination are not allowed.</p>
             </div>
-
-            <a href="#rules" class="button button-yellow">
-                READ THE RULES →
-            </a>
-
         </div>
 
-    </div>
-
-</section>
-
-<!-- =====================================================
-     05. MEMBERSHIP ACCESS
-===================================================== -->
-
-<section class="section" id="membership">
-
-    <div class="container">
-
-        <span class="section-label">PRIVATE ACCESS</span>
-
-        <h2 class="section-title">
-            MEMBERSHIP VERIFICATION.
-        </h2>
-
-        <p class="section-description">
-            DUK LEAGUE members can use the private access
-            code provided by an administrator to unlock
-            the arcade.
-        </p>
-
-        <div class="access-box">
-
+        <div class="rule">
+            <div class="rule-number">02</div>
             <div>
-
-                <span class="section-label">MEMBERS ONLY</span>
-
-                <h3>Got your League access code?</h3>
-
-                <p>
-                    Enter the code provided by your DUK LEAGUE
-                    administrator to access the arcade.
-
-                    Your access is remembered on this browser.
-                </p>
-
+                <h3>No Cheating</h3>
+                <p>Do not manipulate RP, game scores or League systems.</p>
             </div>
-
-            <div class="access-form">
-
-                <input
-                    type="password"
-                    id="accessCode"
-                    placeholder="Enter your access code"
-                    autocomplete="off"
-                >
-
-                <button class="button button-yellow" id="unlockButton">
-                    UNLOCK ARCADE →
-                </button>
-
-                <p id="accessMessage"></p>
-
-            </div>
-
         </div>
 
-    </div>
-
-</section>
-
-<!-- =====================================================
-     06. DUCK DASH ARCADE
-===================================================== -->
-
-<section class="section" id="arcade-section">
-
-    <div class="container">
-
-        <span class="section-label">DUK LEAGUE ARCADE 001</span>
-
-        <h2 class="section-title">
-            DUCK DASH.
-        </h2>
-
-        <p class="section-description">
-            One duck. Endless obstacles. How long can you survive?
-        </p>
-
-        <div class="arcade locked" id="arcade">
-
-            <div class="arcade-header">
-
-                <h3>🦆 THE GREAT DUCK DASH</h3>
-
-                <span class="arcade-tag" id="gameStatus">
-                    LOCKED
-                </span>
-
-            </div>
-
-            <canvas
-                id="gameCanvas"
-                width="900"
-                height="430">
-            </canvas>
-
-            <div class="game-stats">
-
-                <div class="stat">
-
-                    <span>SCORE</span>
-
-                    <strong id="score">0</strong>
-
-                </div>
-
-                <div class="stat">
-
-                    <span>STARS</span>
-
-                    <strong id="stars">0</strong>
-
-                </div>
-
-                <div class="stat">
-
-                    <span>PERSONAL BEST</span>
-
-                    <strong id="best">0</strong>
-
-                </div>
-
-            </div>
-
-            <div class="game-buttons">
-
-                <button
-                    class="button button-yellow"
-                    id="startButton"
-                    disabled>
-                    START GAME
-                </button>
-
-                <button
-                    class="button button-orange"
-                    id="jumpButton"
-                    disabled>
-                    JUMP ↑
-                </button>
-
-                <button
-                    class="button button-dark"
-                    id="restartButton"
-                    disabled>
-                    RESTART
-                </button>
-
-            </div>
-
-            <p id="gameMessage">
-                Unlock the arcade to play Duck Dash.
-            </p>
-
-            <div class="game-instructions">
-
-                <span>SPACE = JUMP</span>
-
-                <span>↑ = JUMP</span>
-
-                <span>TOUCH SCREEN = JUMP</span>
-
-            </div>
-
-        </div>
-
-        <div class="game-info-grid">
-
-            <article class="game-info">
-
-                <span class="card-icon">⚡</span>
-
-                <h3>INCREASING SPEED</h3>
-
-                <p>
-                    The longer you survive, the faster the
-                    obstacles become.
-                </p>
-
-            </article>
-
-            <article class="game-info">
-
-                <span class="card-icon">⭐</span>
-
-                <h3>COLLECT STARS</h3>
-
-                <p>
-                    Collect stars during your run to increase
-                    your arcade score.
-                </p>
-
-            </article>
-
-            <article class="game-info">
-
-                <span class="card-icon">🏆</span>
-
-                <h3>BEAT YOUR RECORD</h3>
-
-                <p>
-                    Your personal best is saved in your
-                    current browser.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     07. LEAGUE RULES
-===================================================== -->
-
-<section class="section" id="rules">
-
-    <div class="container">
-
-        <span class="section-label">OFFICIAL DOCUMENT</span>
-
-        <h2 class="section-title">
-            THE LEAGUE RULES.
-        </h2>
-
-        <p class="section-description">
-            Every member is expected to follow these rules.
-            Keep DUK LEAGUE fair, organized and enjoyable.
-        </p>
-
-        <div class="rules-list">
-
-            <article class="rule">
-
-                <div class="rule-number">01</div>
-
-                <div>
-
-                    <h3>RESPECT EVERY MEMBER</h3>
-
-                    <p>
-                        Treat other members fairly. Harassment,
-                        bullying, discrimination and unnecessary
-                        arguments are not acceptable.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">02</div>
-
-                <div>
-
-                    <h3>RESPECT ADMINISTRATORS</h3>
-
-                    <p>
-                        Administrators help manage the League.
-                        Follow reasonable instructions and report
-                        problems properly.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">03</div>
-
-                <div>
-
-                    <h3>NO CHEATING</h3>
-
-                    <p>
-                        Do not exploit League systems, manipulate
-                        scores, impersonate another member or
-                        use unfair methods.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">04</div>
-
-                <div>
-
-                    <h3>PROTECT PRIVATE INFORMATION</h3>
-
-                    <p>
-                        Do not share another member's personal
-                        details or private conversations without
-                        permission.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">05</div>
-
-                <div>
-
-                    <h3>NO IMPERSONATION</h3>
-
-                    <p>
-                        Do not pretend to be an administrator,
-                        owner or another League member.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">06</div>
-
-                <div>
-
-                    <h3>USE THE ARCADE FAIRLY</h3>
-
-                    <p>
-                        Do not use modified game files or claim
-                        fake records as legitimate achievements.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">07</div>
-
-                <div>
-
-                    <h3>RESPECT TITLES AND RANKS</h3>
-
-                    <p>
-                        Titles and ranks must be assigned by
-                        authorized administrators. Members must
-                        not grant themselves positions.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">08</div>
-
-                <div>
-
-                    <h3>DO NOT ABUSE ACCESS CODES</h3>
-
-                    <p>
-                        Access codes are intended for League
-                        members. Do not share them publicly.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">09</div>
-
-                <div>
-
-                    <h3>KEEP THE COMMUNITY ENJOYABLE</h3>
-
-                    <p>
-                        Help other members, cooperate and
-                        contribute positively to League activities.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="rule">
-
-                <div class="rule-number">10</div>
-
-                <div>
-
-                    <h3>CONSEQUENCES</h3>
-
-                    <p>
-                        Serious or repeated violations may result
-                        in warnings, temporary restrictions or
-                        removal from DUK LEAGUE. Decisions should
-                        be handled fairly.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     08. FINAL BANNER
-===================================================== -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="announcement">
-
+        <div class="rule">
+            <div class="rule-number">03</div>
             <div>
-
-                <h2>THE LEAGUE IS WHAT WE MAKE IT.</h2>
-
-                <p>
-                    Respect the members. Respect the rules.
-                    Keep the community going.
-                </p>
-
+                <h3>No Impersonation</h3>
+                <p>Do not pretend to be another member or administrator.</p>
             </div>
+        </div>
 
-            <a href="#home" class="button button-yellow">
-                BACK TO TOP ↑
-            </a>
+        <div class="rule">
+            <div class="rule-number">04</div>
+            <div>
+                <h3>Respect Titles</h3>
+                <p>Official titles are assigned by authorized administrators.</p>
+            </div>
+        </div>
 
+        <div class="rule">
+            <div class="rule-number">05</div>
+            <div>
+                <h3>Protect Privacy</h3>
+                <p>Do not share another member's private information.</p>
+            </div>
+        </div>
+
+        <div class="rule">
+            <div class="rule-number">06</div>
+            <div>
+                <h3>Fair Play</h3>
+                <p>Use the arcade fairly. Do not exploit bugs or manipulate records.</p>
+            </div>
+        </div>
+
+        <div class="rule">
+            <div class="rule-number">07</div>
+            <div>
+                <h3>Consequences</h3>
+                <p>Serious violations may result in warnings or removal from the League.</p>
+            </div>
         </div>
 
     </div>
-
+</div>
 </section>
 
 </main>
 
-<!-- =====================================================
-     09. FOOTER
-===================================================== -->
-
-<footer class="footer">
-
-    <div class="footer-inner">
-
-        <div>
-
-            <h2>🦆 DUK LEAGUE</h2>
-
-            <p>Official community website.</p>
-
-        </div>
-
-        <div class="footer-links">
-
-            <a href="#home">HOME</a>
-
-            <a href="#arcade-section">ARCADE</a>
-
-            <a href="#rules">RULES</a>
-
-        </div>
-
-        <p>DUK LEAGUE · 2026</p>
-
-    </div>
-
+<footer>
+<div class="footer-inner">
+    <div>🦆 DUK LEAGUE — OFFICIAL COMMUNITY</div>
+    <div>Built for the League. © 2026</div>
+</div>
 </footer>
 
-<!-- =====================================================
-     10. JAVASCRIPT: MEMBERSHIP ACCESS
-===================================================== -->
+<!-- FIREBASE + GAME JAVASCRIPT -->
 
-<script>
+<script type="module">
 
-/* -----------------------------------------------------
-   CHANGE THIS TO YOUR OWN PRIVATE ACCESS CODE
------------------------------------------------------ */
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-const LEAGUE_ACCESS_CODE = "CHANGE-ME-123";
+import {
+    getAuth,
+    signInAnonymously
+} from
+"https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
-const ACCESS_STORAGE_KEY = "duk_league_access";
+import {
+    getFirestore,
+    doc,
+    setDoc,
+    getDoc,
+    updateDoc,
+    collection,
+    getDocs,
+    serverTimestamp
+} from
+"https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-/* -----------------------------------------------------
-   PAGE ELEMENTS
------------------------------------------------------ */
+/* =========================================
+   FIREBASE CONFIGURATION
+   Paste your Firebase project config here.
+========================================= */
 
-const codeInput = document.getElementById("accessCode");
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
 
-const unlockButton = document.getElementById("unlockButton");
+/* =========================================
+   FIREBASE INITIALIZATION
+========================================= */
 
-const accessMessage = document.getElementById("accessMessage");
+const app = initializeApp(firebaseConfig);
 
-const arcade = document.getElementById("arcade");
+const auth = getAuth(app);
 
-const gameStatus = document.getElementById("gameStatus");
+const db = getFirestore(app);
 
-const startButton = document.getElementById("startButton");
+let currentUser = null;
 
-const jumpButton = document.getElementById("jumpButton");
+let myProfile = null;
 
-const restartButton = document.getElementById("restartButton");
+/* =========================================
+   AUTHENTICATION
+========================================= */
 
-/* -----------------------------------------------------
-   ACCESS STATE
------------------------------------------------------ */
+async function initializeUser() {
 
-let unlocked = false;
+    const message = document.getElementById("joinMessage");
 
-/* -----------------------------------------------------
-   UNLOCK ARCADE
------------------------------------------------------ */
+    try {
 
-function unlockArcade() {
+        const result = await signInAnonymously(auth);
 
-    unlocked = true;
+        currentUser = result.user;
 
-    arcade.classList.remove("locked");
+        await loadMyProfile();
 
-    gameStatus.textContent = "UNLOCKED";
+        await loadMembers();
 
-    startButton.disabled = false;
+        message.textContent = "Connected to Firebase.";
 
-    jumpButton.disabled = false;
+    } catch (error) {
 
-    restartButton.disabled = false;
+        console.error(error);
 
-    accessMessage.style.color = "#527e3b";
-
-    accessMessage.textContent =
-        "ACCESS GRANTED. WELCOME TO DUK LEAGUE.";
-
-    document.getElementById("gameMessage").textContent =
-        "You're in! Press START GAME.";
-
-    localStorage.setItem(ACCESS_STORAGE_KEY, "true");
-
-    drawStartScreen();
-
-}
-
-/* -----------------------------------------------------
-   CHECK ACCESS CODE
------------------------------------------------------ */
-
-function checkAccess() {
-
-    const enteredCode = codeInput.value.trim();
-
-    if (enteredCode === LEAGUE_ACCESS_CODE) {
-
-        unlockArcade();
-
-    } else {
-
-        accessMessage.style.color = "#df4545";
-
-        accessMessage.textContent =
-            "ACCESS DENIED. CHECK YOUR CODE.";
+        message.textContent =
+            "Firebase error: " + error.code;
 
     }
 
 }
 
-unlockButton.addEventListener("click", checkAccess);
+/* =========================================
+   LOAD MY PROFILE
+========================================= */
 
-codeInput.addEventListener("keydown", event => {
+async function loadMyProfile() {
 
-    if (event.key === "Enter") {
-        checkAccess();
+    if (!currentUser) return;
+
+    const profileRef = doc(
+        db,
+        "members",
+        currentUser.uid
+    );
+
+    const profileSnapshot = await getDoc(profileRef);
+
+    if (profileSnapshot.exists()) {
+
+        myProfile = profileSnapshot.data();
+
+        updateDashboard();
+
+    }
+
+}
+
+/* =========================================
+   REGISTER MEMBER
+========================================= */
+
+document.getElementById("joinForm")
+.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    if (!currentUser) {
+
+        alert("Firebase is not connected.");
+
+        return;
+
+    }
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const bio =
+        document.getElementById("bio").value.trim();
+
+    if (username.length < 3) {
+
+        alert("Username must contain at least 3 characters.");
+
+        return;
+
+    }
+
+    try {
+
+        const profileRef = doc(
+            db,
+            "members",
+            currentUser.uid
+        );
+
+        const existing = await getDoc(profileRef);
+
+        if (existing.exists()) {
+
+            alert("You already have a League profile.");
+
+            return;
+
+        }
+
+        myProfile = {
+
+            uid: currentUser.uid,
+
+            name: username,
+
+            title: "Duckling",
+
+            rp: 0,
+
+            bio: bio,
+
+            createdAt: serverTimestamp()
+
+        };
+
+        await setDoc(profileRef, myProfile);
+
+        document.getElementById("joinMessage")
+        .textContent = "Welcome to DUK LEAGUE!";
+
+        updateDashboard();
+
+        await loadMembers();
+
+    } catch (error) {
+
+        console.error(error);
+
+        document.getElementById("joinMessage")
+        .textContent = "Registration failed: " + error.code;
+
     }
 
 });
 
-/* -----------------------------------------------------
-   REMEMBER ACCESS ON THIS BROWSER
------------------------------------------------------ */
+/* =========================================
+   UPDATE DASHBOARD
+========================================= */
 
-try {
+function updateDashboard() {
 
-    if (localStorage.getItem(ACCESS_STORAGE_KEY) === "true") {
-        unlockArcade();
-    }
+    if (!myProfile) return;
 
-} catch (error) {
+    document.getElementById("myName")
+    .textContent = myProfile.name;
 
-    console.warn("Local storage unavailable.", error);
+    document.getElementById("myTitle")
+    .textContent = myProfile.title;
+
+    document.getElementById("myRP")
+    .textContent = myProfile.rp;
+
+    document.getElementById("myTitleStat")
+    .textContent = myProfile.title;
 
 }
 
-// =====================================================
-// 11. DUCK DASH GAME ENGINE
-// =====================================================
+/* =========================================
+   EDIT PROFILE
+========================================= */
 
-/* -----------------------------------------------------
-   CANVAS CONFIGURATION
------------------------------------------------------ */
+document.getElementById("editProfile")
+.addEventListener("click", () => {
+
+    if (!myProfile) {
+
+        alert("Create your profile first.");
+
+        return;
+
+    }
+
+    const form = document.getElementById("editForm");
+
+    form.style.display =
+        form.style.display === "none" ? "grid" : "none";
+
+    document.getElementById("editName")
+    .value = myProfile.name;
+
+    document.getElementById("editBio")
+    .value = myProfile.bio || "";
+
+});
+
+document.getElementById("editForm")
+.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    try {
+
+        const newName =
+            document.getElementById("editName")
+            .value.trim();
+
+        const newBio =
+            document.getElementById("editBio")
+            .value.trim();
+
+        if (newName.length < 3) {
+
+            alert("Username must contain at least 3 characters.");
+
+            return;
+
+        }
+
+        const profileRef = doc(
+            db,
+            "members",
+            currentUser.uid
+        );
+
+        await updateDoc(profileRef, {
+
+            name: newName,
+
+            bio: newBio
+
+        });
+
+        myProfile.name = newName;
+
+        myProfile.bio = newBio;
+
+        updateDashboard();
+
+        await loadMembers();
+
+        document.getElementById("dashboardMessage")
+        .textContent = "Profile updated successfully.";
+
+    } catch (error) {
+
+        console.error(error);
+
+        document.getElementById("dashboardMessage")
+        .textContent = "Update failed: " + error.code;
+
+    }
+
+});
+
+/* =========================================
+   MEMBER DIRECTORY
+========================================= */
+
+async function loadMembers() {
+
+    const membersList =
+        document.getElementById("membersList");
+
+    try {
+
+        const snapshot =
+            await getDocs(collection(db, "members"));
+
+        membersList.innerHTML = "";
+
+        document.getElementById("memberCount")
+        .textContent = snapshot.size;
+
+        snapshot.forEach(memberDocument => {
+
+            const member = memberDocument.data();
+
+            const card = document.createElement("div");
+
+            card.className = "member";
+
+            const top = document.createElement("div");
+
+            top.className = "member-top";
+
+            const avatar = document.createElement("div");
+
+            avatar.className = "member-avatar";
+
+            avatar.textContent = "🦆";
+
+            const information = document.createElement("div");
+
+            const name = document.createElement("h3");
+
+            name.textContent = member.name || "Member";
+
+            const title = document.createElement("p");
+
+            title.className = "title";
+
+            title.textContent = member.title || "Duckling";
+
+            information.append(name, title);
+
+            top.append(avatar, information);
+
+            const bio = document.createElement("p");
+
+            bio.className = "bio";
+
+            bio.textContent = member.bio || "A DUK LEAGUE member.";
+
+            card.append(top, bio);
+
+            membersList.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        membersList.textContent =
+            "Could not load members: " + error.code;
+
+    }
+
+}
+
+/* =========================================
+   DUCK DASH GAME
+========================================= */
 
 const canvas = document.getElementById("gameCanvas");
 
 const ctx = canvas.getContext("2d");
 
-const WIDTH = canvas.width;
+const gameScore =
+    document.getElementById("gameScore");
 
-const HEIGHT = canvas.height;
+const gameStars =
+    document.getElementById("gameStars");
 
-const GROUND = 345;
+const gameBest =
+    document.getElementById("gameBest");
 
-/* -----------------------------------------------------
-   GAME STATE
------------------------------------------------------ */
+const gameMessage =
+    document.getElementById("gameMessage");
 
-let gameRunning = false;
-
-let gameOver = false;
+let running = false;
 
 let score = 0;
 
 let stars = 0;
 
-let speed = 340;
+let best = Number(
+    localStorage.getItem("dukDashBest") || 0
+);
 
-let spawnTimer = 1;
+gameBest.textContent = best;
 
-let previousTime = 0;
-
-let animation = null;
+let player = {
+    x: 120,
+    y: 270,
+    vy: 0,
+    jumping: false
+};
 
 let obstacles = [];
 
-let collectibles = [];
+let gameSpeed = 5;
 
-/* -----------------------------------------------------
-   PLAYER DATA
------------------------------------------------------ */
+function drawScene() {
 
-const player = {
+    ctx.fillStyle = "#d5e9b8";
 
-    x: 130,
+    ctx.fillRect(0, 0, 900, 350);
 
-    y: GROUND,
+    ctx.fillStyle = "#8da96a";
 
-    width: 55,
+    ctx.fillRect(0, 300, 900, 50);
 
-    height: 55,
+    ctx.fillStyle = "#536a3b";
 
-    velocityY: 0,
+    ctx.fillRect(0, 300, 900, 8);
 
-    jumping: false
+    ctx.font = "50px Arial";
 
-};
+    ctx.fillText("🦆", player.x, player.y);
 
-/* -----------------------------------------------------
-   SCORE ELEMENTS
------------------------------------------------------ */
+    obstacles.forEach(obstacle => {
 
-const scoreText = document.getElementById("score");
+        ctx.fillStyle = "#7b4b30";
 
-const starsText = document.getElementById("stars");
+        ctx.fillRect(
+            obstacle.x,
+            265,
+            obstacle.width,
+            35
+        );
 
-const bestText = document.getElementById("best");
-
-const gameMessage = document.getElementById("gameMessage");
-
-/* -----------------------------------------------------
-   PERSONAL BEST
------------------------------------------------------ */
-
-const BEST_KEY = "duk_league_duckdash_best";
-
-let best = 0;
-
-try {
-
-    best = Number(localStorage.getItem(BEST_KEY)) || 0;
-
-} catch (error) {
-
-    best = 0;
+    });
 
 }
-
-bestText.textContent = best;
-
-/* -----------------------------------------------------
-   RESET GAME
------------------------------------------------------ */
-
-function resetGame() {
-
-    score = 0;
-
-    stars = 0;
-
-    speed = 340;
-
-    spawnTimer = 1;
-
-    obstacles = [];
-
-    collectibles = [];
-
-    player.y = GROUND;
-
-    player.velocityY = 0;
-
-    player.jumping = false;
-
-    gameOver = false;
-
-    scoreText.textContent = "0";
-
-    starsText.textContent = "0";
-
-}
-
-/* -----------------------------------------------------
-   JUMP
------------------------------------------------------ */
 
 function jump() {
 
-    if (!unlocked || !gameRunning) {
-        return;
-    }
+    if (!running || player.jumping) return;
 
-    if (player.jumping) {
-        return;
-    }
-
-    player.velocityY = -650;
+    player.vy = -13;
 
     player.jumping = true;
 
 }
 
-/* -----------------------------------------------------
-   KEYBOARD CONTROLS
------------------------------------------------------ */
+function updateGame() {
+
+    if (!running) return;
+
+    player.y += player.vy;
+
+    player.vy += 0.6;
+
+    if (player.y >= 270) {
+
+        player.y = 270;
+
+        player.vy = 0;
+
+        player.jumping = false;
+
+    }
+
+    obstacles.forEach(obstacle => {
+
+        obstacle.x -= gameSpeed;
+
+        if (
+            player.x + 35 > obstacle.x &&
+            player.x < obstacle.x + obstacle.width &&
+            player.y > 230
+        ) {
+
+            running = false;
+
+            gameMessage.textContent =
+                "GAME OVER! Score: " + Math.floor(score);
+
+        }
+
+    });
+
+    obstacles = obstacles.filter(
+        obstacle => obstacle.x > -50
+    );
+
+    if (Math.random() < 0.015) {
+
+        obstacles.push({
+
+            x: 900,
+
+            width: 35
+
+        });
+
+    }
+
+    score += 0.1;
+
+    gameScore.textContent = Math.floor(score);
+
+    drawScene();
+
+    if (running) {
+
+        requestAnimationFrame(updateGame);
+
+    }
+
+}
+
+document.getElementById("startGame")
+.addEventListener("click", () => {
+
+    score = 0;
+
+    stars = 0;
+
+    gameSpeed = 5;
+
+    obstacles = [];
+
+    player.y = 270;
+
+    player.vy = 0;
+
+    running = true;
+
+    gameMessage.textContent =
+        "Duck Dash is running!";
+
+    updateGame();
+
+});
+
+document.getElementById("jumpGame")
+.addEventListener("click", jump);
+
+canvas.addEventListener("pointerdown", jump);
 
 window.addEventListener("keydown", event => {
 
     if (
         event.code === "Space" ||
-        event.code === "ArrowUp" ||
-        event.code === "KeyW"
+        event.code === "ArrowUp"
     ) {
 
         event.preventDefault();
@@ -1658,584 +1447,13 @@ window.addEventListener("keydown", event => {
 
 });
 
-/* -----------------------------------------------------
-   MOBILE TOUCH CONTROLS
------------------------------------------------------ */
+drawScene();
 
-jumpButton.addEventListener("pointerdown", event => {
+/* =========================================
+   CONNECT TO FIREBASE
+========================================= */
 
-    event.preventDefault();
-
-    jump();
-
-});
-
-canvas.addEventListener("pointerdown", event => {
-
-    event.preventDefault();
-
-    jump();
-
-});
-
-/* -----------------------------------------------------
-   SPAWN OBSTACLE
------------------------------------------------------ */
-
-function spawnObstacle() {
-
-    const size = 35 + Math.random() * 20;
-
-    obstacles.push({
-
-        x: WIDTH + size,
-
-        y: GROUND,
-
-        width: size,
-
-        height: size
-
-    });
-
-}
-
-/* -----------------------------------------------------
-   SPAWN STAR
------------------------------------------------------ */
-
-function spawnStar() {
-
-    collectibles.push({
-
-        x: WIDTH + 30,
-
-        y: GROUND - 55 - Math.random() * 100,
-
-        collected: false
-
-    });
-
-}
-
-/* -----------------------------------------------------
-   UPDATE PLAYER
------------------------------------------------------ */
-
-function updatePlayer(dt) {
-
-    player.velocityY += 1700 * dt;
-
-    player.y += player.velocityY * dt;
-
-    if (player.y >= GROUND) {
-
-        player.y = GROUND;
-
-        player.velocityY = 0;
-
-        player.jumping = false;
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   UPDATE OBSTACLES
------------------------------------------------------ */
-
-function updateObstacles(dt) {
-
-    for (const obstacle of obstacles) {
-
-        obstacle.x -= speed * dt;
-
-    }
-
-    obstacles = obstacles.filter(obstacle => {
-
-        return obstacle.x + obstacle.width > -20;
-
-    });
-
-}
-
-/* -----------------------------------------------------
-   UPDATE STARS
------------------------------------------------------ */
-
-function updateStars(dt) {
-
-    for (const star of collectibles) {
-
-        star.x -= speed * dt;
-
-    }
-
-    collectibles = collectibles.filter(star => {
-
-        return star.x > -30 && !star.collected;
-
-    });
-
-}
-
-/* -----------------------------------------------------
-   COLLISION CHECK
------------------------------------------------------ */
-
-function collision(a, b) {
-
-    return (
-
-        a.x < b.x + b.width &&
-
-        a.x + a.width > b.x &&
-
-        a.y < b.y + b.height &&
-
-        a.y + a.height > b.y
-
-    );
-
-}
-
-/* -----------------------------------------------------
-   OBSTACLE COLLISION
------------------------------------------------------ */
-
-function checkObstacleCollisions() {
-
-    const playerBox = {
-
-        x: player.x + 8,
-
-        y: player.y - player.height + 8,
-
-        width: player.width - 16,
-
-        height: player.height - 12
-
-    };
-
-    for (const obstacle of obstacles) {
-
-        const obstacleBox = {
-
-            x: obstacle.x,
-
-            y: obstacle.y - obstacle.height,
-
-            width: obstacle.width,
-
-            height: obstacle.height
-
-        };
-
-        if (collision(playerBox, obstacleBox)) {
-
-            endGame();
-
-            return;
-
-        }
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   STAR COLLECTION
------------------------------------------------------ */
-
-function checkStarCollection() {
-
-    for (const star of collectibles) {
-
-        if (star.collected) {
-            continue;
-        }
-
-        const dx = player.x + 25 - star.x;
-
-        const dy = player.y - 25 - star.y;
-
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 42) {
-
-            star.collected = true;
-
-            stars += 1;
-
-            score += 50;
-
-            starsText.textContent = stars;
-
-            scoreText.textContent = Math.floor(score);
-
-        }
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   UPDATE GAME
------------------------------------------------------ */
-
-function update(dt) {
-
-    updatePlayer(dt);
-
-    updateObstacles(dt);
-
-    updateStars(dt);
-
-    speed = Math.min(750, speed + dt * 8);
-
-    score += dt * 15;
-
-    spawnTimer -= dt;
-
-    if (spawnTimer <= 0) {
-
-        spawnObstacle();
-
-        if (Math.random() < 0.35) {
-            spawnStar();
-        }
-
-        spawnTimer = 1.1 + Math.random() * 0.8;
-
-    }
-
-    checkObstacleCollisions();
-
-    checkStarCollection();
-
-    scoreText.textContent = Math.floor(score);
-
-}
-
-/* -----------------------------------------------------
-   BACKGROUND
------------------------------------------------------ */
-
-function drawBackground() {
-
-    ctx.fillStyle = "#c9e1a8";
-
-    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-    ctx.fillStyle = "rgba(255,255,255,0.25)";
-
-    for (let i = 0; i < 12; i++) {
-
-        const x = (i * 101 + score * 3) % WIDTH;
-
-        const y = 40 + (i * 41) % 180;
-
-        ctx.beginPath();
-
-        ctx.arc(x, y, 15 + i % 8, 0, Math.PI * 2);
-
-        ctx.fill();
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   GROUND
------------------------------------------------------ */
-
-function drawGround() {
-
-    ctx.fillStyle = "#768d53";
-
-    ctx.fillRect(0, GROUND + 5, WIDTH, HEIGHT - GROUND);
-
-    ctx.fillStyle = "#455b35";
-
-    ctx.fillRect(0, GROUND + 5, WIDTH, 9);
-
-    ctx.fillStyle = "#95a96e";
-
-    for (let i = 0; i < 40; i++) {
-
-        const x = (i * 61 - score * 5) % WIDTH;
-
-        ctx.fillRect(x, GROUND + 35, 20, 3);
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   PLAYER DRAWING
------------------------------------------------------ */
-
-function drawPlayer() {
-
-    const bounce = gameRunning
-        ? Math.sin(Date.now() / 80) * 2
-        : 0;
-
-    ctx.font = "55px Arial";
-
-    ctx.textAlign = "center";
-
-    ctx.textBaseline = "middle";
-
-    ctx.fillText(
-        "🦆",
-        player.x + 25,
-        player.y - 27 + bounce
-    );
-
-}
-
-/* -----------------------------------------------------
-   OBSTACLE DRAWING
------------------------------------------------------ */
-
-function drawObstacles() {
-
-    for (const obstacle of obstacles) {
-
-        ctx.fillStyle = "#7e4732";
-
-        ctx.fillRect(
-            obstacle.x,
-            obstacle.y - obstacle.height,
-            obstacle.width,
-            obstacle.height
-        );
-
-        ctx.strokeStyle = "#38251e";
-
-        ctx.lineWidth = 4;
-
-        ctx.strokeRect(
-            obstacle.x,
-            obstacle.y - obstacle.height,
-            obstacle.width,
-            obstacle.height
-        );
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   STAR DRAWING
------------------------------------------------------ */
-
-function drawStars() {
-
-    for (const star of collectibles) {
-
-        if (star.collected) {
-            continue;
-        }
-
-        ctx.font = "27px Arial";
-
-        ctx.textAlign = "center";
-
-        ctx.fillText("⭐", star.x, star.y);
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   RENDER GAME
------------------------------------------------------ */
-
-function drawGame() {
-
-    ctx.clearRect(0, 0, WIDTH, HEIGHT);
-
-    drawBackground();
-
-    drawGround();
-
-    drawStars();
-
-    drawObstacles();
-
-    drawPlayer();
-
-}
-
-/* -----------------------------------------------------
-   START SCREEN
------------------------------------------------------ */
-
-function drawStartScreen() {
-
-    drawBackground();
-
-    drawGround();
-
-    ctx.font = "bold 42px Arial";
-
-    ctx.textAlign = "center";
-
-    ctx.fillStyle = "#20251e";
-
-    ctx.fillText("DUCK DASH", WIDTH / 2, 140);
-
-    ctx.font = "65px Arial";
-
-    ctx.fillText("🦆", WIDTH / 2, 250);
-
-    ctx.font = "18px Arial";
-
-    ctx.fillText("PRESS START GAME", WIDTH / 2, 310);
-
-}
-
-/* -----------------------------------------------------
-   END GAME
------------------------------------------------------ */
-
-function endGame() {
-
-    gameRunning = false;
-
-    gameOver = true;
-
-    cancelAnimationFrame(animation);
-
-    const finalScore = Math.floor(score);
-
-    if (finalScore > best) {
-
-        best = finalScore;
-
-        bestText.textContent = best;
-
-        try {
-
-            localStorage.setItem(BEST_KEY, best);
-
-        } catch (error) {
-
-            console.warn("Could not save score.", error);
-
-        }
-
-    }
-
-    gameMessage.textContent =
-        "GAME OVER! Your score: " + finalScore;
-
-    ctx.fillStyle = "rgba(20,25,20,0.75)";
-
-    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-    ctx.fillStyle = "#ffffff";
-
-    ctx.textAlign = "center";
-
-    ctx.font = "bold 48px Arial";
-
-    ctx.fillText("GAME OVER", WIDTH / 2, 190);
-
-    ctx.font = "22px Arial";
-
-    ctx.fillText("Score: " + finalScore, WIDTH / 2, 240);
-
-    ctx.fillText("Press RESTART to try again", WIDTH / 2, 290);
-
-}
-
-/* -----------------------------------------------------
-   MAIN GAME LOOP
------------------------------------------------------ */
-
-function loop(timestamp) {
-
-    if (!gameRunning) {
-        return;
-    }
-
-    const dt = Math.min(
-        (timestamp - previousTime) / 1000,
-        0.04
-    ) || 0;
-
-    previousTime = timestamp;
-
-    update(dt);
-
-    drawGame();
-
-    if (gameRunning) {
-
-        animation = requestAnimationFrame(loop);
-
-    }
-
-}
-
-/* -----------------------------------------------------
-   START GAME
------------------------------------------------------ */
-
-function startGame() {
-
-    if (!unlocked) {
-
-        alert("DUK LEAGUE MEMBERS ONLY.");
-
-        return;
-
-    }
-
-    if (gameRunning) {
-        return;
-    }
-
-    resetGame();
-
-    gameRunning = true;
-
-    previousTime = 0;
-
-    gameMessage.textContent =
-        "Survive as long as possible!";
-
-    animation = requestAnimationFrame(loop);
-
-}
-
-/* -----------------------------------------------------
-   BUTTON EVENTS
------------------------------------------------------ */
-
-startButton.addEventListener("click", startGame);
-
-restartButton.addEventListener("click", () => {
-
-    if (!unlocked) {
-        return;
-    }
-
-    cancelAnimationFrame(animation);
-
-    startGame();
-
-});
-
-/* -----------------------------------------------------
-   INITIALIZE
------------------------------------------------------ */
-
-drawStartScreen();
+initializeUser();
 
 </script>
 
