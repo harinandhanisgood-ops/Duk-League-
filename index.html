@@ -1,1295 +1,3491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#10112b" />
-  <meta name="description" content="DUK LEAGUE — play, level up, and hang out with the crew." />
-  <title>DUK LEAGUE — Crew HQ</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111329">
+<title>DUK LEAGUE | Official Crew HQ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900;1000&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DUK LEAGUE — OFFICIAL WEBSITE
+   ========================================= */
+
 :root {
---bg: #10112b;
---panel: #1b1d42;
---panel2: #242752;
---ink: #f7f6ff;
---muted: #b8b9dc;
---purple: #9b7bff;
---pink: #ff72b6;
---cyan: #65e5f2;
---lime: #bcf36b;
---yellow: #ffd66b;
---line: rgba(255,255,255,.11);
---shadow: 0 18px 50px rgba(0,0,0,.25);
+  --background: #111329;
+  --background2: #171a38;
+  --card: #202448;
+  --card2: #292d55;
+
+  --white: #ffffff;
+  --muted: #aeb3d5;
+
+  --orange: #ffae42;
+  --yellow: #ffe17b;
+  --blue: #69d8ff;
+  --purple: #a58bff;
+  --green: #9cf28b;
+  --pink: #ff84bf;
+
+  --border: rgba(255,255,255,0.09);
+  --shadow: 0 15px 45px rgba(0,0,0,0.25);
 }
+
 * {
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
+
 body {
-margin: 0;
-color: var(--ink);
-background:
-radial-gradient(ellipse at 8% 5%, rgba(155,123,255,.22), transparent 34rem),
-radial-gradient(ellipse at 95% 28%, rgba(101,229,242,.12), transparent 28rem),
-var(--bg);
-font-family: Inter, ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Nunito', sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 15% 5%, #30315a 0%, transparent 30%),
+    radial-gradient(circle at 90% 30%, #242449 0%, transparent 30%),
+    var(--background);
+  overflow-x: hidden;
 }
-button, input, textarea {
-font: inherit;
-}
-button {
-cursor: pointer;
-}
-a {
-color: inherit;
-text-decoration: none;
-}
-.wrap {
-width: min(1120px, calc(100% - 32px));
-margin: 0 auto;
-}
-.topbar {
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:18px;
-padding:20px 0;
-}
-.brand {
-display:flex;
-align-items:center;
-gap:11px;
-font-weight:1000;
-letter-spacing:.04em;
-}
-.brand-mark {
-width:42px;
-height:42px;
-display:grid;
-place-items:center;
-border-radius:15px;
-background:linear-gradient(135deg,var(--purple),var(--pink));
-box-shadow:0 8px 25px rgba(155,123,255,.3);
-font-size:22px;
-transform:rotate(-6deg);
-}
-.brand small {
-display:block;
-color:var(--muted);
-font-size:10px;
-letter-spacing:.2em;
-font-weight:800;
-margin-top:2px;
-}
-nav {
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-justify-content:flex-end;
-}
-nav a {
-color:var(--muted);
-font-size:13px;
-font-weight:800;
-padding:10px 13px;
-border-radius:999px;
-}
-nav a:hover {
-background:rgba(255,255,255,.08);
-color:white;
-}
-.hero {
-display:grid;
-grid-template-columns:1.18fr .82fr;
-gap:24px;
-align-items:center;
-padding:48px 0 34px;
-}
-.eyebrow {
-display:inline-flex;
-align-items:center;
-gap:8px;
-background:rgba(188,243,107,.1);
-border:1px solid rgba(188,243,107,.28);
-color:var(--lime);
-padding:8px 12px;
-border-radius:999px;
-font-size:11px;
-letter-spacing:.1em;
-font-weight:900;
-}
-h1 {
-font-size:clamp(44px,7.7vw,82px);
-line-height:.94;
-letter-spacing:-.07em;
-margin:20px 0 16px;
-max-width:720px;
-}
-.gradient-text {
-background:linear-gradient(90deg,var(--cyan),#b99aff,var(--pink));
-color:transparent;
-background-clip:text;
--webkit-background-clip:text;
-}
-.hero p {
-color:var(--muted);
-line-height:1.7;
-max-width:530px;
-font-size:16px;
-}
-.actions {
-display:flex;
-flex-wrap:wrap;
-gap:11px;
-margin-top:24px;
-}
-.btn {
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:9px;
-border:0;
-border-radius:14px;
-padding:13px 18px;
-color:#15152d;
-background:linear-gradient(135deg,var(--lime),#e4ff9e);
-font-weight:1000;
-box-shadow:0 9px 22px rgba(188,243,107,.16);
-transition:transform .16s,filter .16s;
-}
-.btn:hover {
-transform:translateY(-2px);
-filter:brightness(1.05);
-}
-.btn.secondary {
-color:var(--ink);
-background:rgba(255,255,255,.08);
-border:1px solid var(--line);
-box-shadow:none;
-}
-.hero-card {
-min-height:310px;
-padding:22px;
-border:1px solid var(--line);
-border-radius:28px;
-background:linear-gradient(145deg,rgba(155,123,255,.18),rgba(255,114,182,.08)),var(--panel);
-box-shadow:var(--shadow);
-position:relative;
-overflow:hidden;
-}
-.hero-card:before {
-content:"";
-width:230px;
-height:230px;
-border-radius:50%;
-background:rgba(101,229,242,.12);
-position:absolute;
-right:-70px;
-top:-70px;
-}
-.sticker {
-position:relative;
-display:flex;
-align-items:center;
-justify-content:space-between;
-color:var(--muted);
-font-size:12px;
-font-weight:900;
-letter-spacing:.1em;
-}
-.mascot {
-height:180px;
-display:grid;
-place-items:center;
-font-size:120px;
-filter:drop-shadow(0 15px 15px rgba(0,0,0,.28));
-transform:rotate(-8deg);
-animation:bob 3s ease-in-out infinite;
-}
-@keyframes bob {
-0%,100%{
-transform:translateY(0) rotate(-8deg)
-}
-50%{
-transform:translateY(-10px) rotate(5deg)
-}
-}
-.bubble {
-position:absolute;
-right:20px;
-bottom:23px;
-color:#17162e;
-background:var(--yellow);
-padding:10px 13px;
-border-radius:14px 14px 4px 14px;
-font-weight:1000;
-transform:rotate(4deg);
-}
-.stats {
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin:12px 0 54px;
-}
-.stat {
-padding:18px;
-background:rgba(255,255,255,.055);
-border:1px solid var(--line);
-border-radius:20px;
-}
-.stat strong {
-display:block;
-font-size:27px;
-letter-spacing:-.04em;
-}
-.stat span {
-color:var(--muted);
-font-size:11px;
-font-weight:900;
-letter-spacing:.1em;
-}
-section {
-scroll-margin-top:20px;
-margin:54px 0;
-}
-.section-head {
-display:flex;
-align-items:end;
-justify-content:space-between;
-gap:14px;
-margin-bottom:18px;
-}
-.section-head h2 {
-margin:0;
-font-size:clamp(27px,4vw,38px);
-letter-spacing:-.05em;
-}
-.section-head p {
-color:var(--muted);
-margin:6px 0 0;
-font-size:13px;
-}
-.play-layout {
-display:grid;
-grid-template-columns:minmax(0,1fr) 300px;
-gap:16px;
-align-items:stretch;
-}
-.panel {
-border:1px solid var(--line);
-border-radius:24px;
-background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
-box-shadow:var(--shadow);
-}
-.game-panel {
-padding:16px;
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-.game-top {
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:12px;
-}
-.game-top strong {
-font-size:14px;
-}
-.game-pill {
-color:var(--lime);
-background:rgba(188,243,107,.1);
-border:1px solid rgba(188,243,107,.25);
-border-radius:999px;
-padding:7px 10px;
-font-size:11px;
-font-weight:900;
-}
-#gameCanvas {
-width:min(100%,360px);
-height:auto;
-aspect-ratio:360 / 520;
-display:block;
-border-radius:19px;
-border:2px solid rgba(255,255,255,.15);
-background:#9ce6f0;
-touch-action:manipulation;
-cursor:pointer;
-}
-.game-help {
-text-align:center;
-color:var(--muted);
-font-size:12px;
-margin:12px 0 0;
-}
-.game-side {
-padding:20px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-gap:18px;
-}
-.game-side h3 {
-margin:0 0 8px;
-font-size:21px;
-}
-.game-side p {
-color:var(--muted);
-line-height:1.65;
-font-size:13px;
-margin:0;
-}
-.rule-row {
-display:flex;
-align-items:center;
-gap:10px;
-color:var(--muted);
-font-size:12px;
-margin-top:12px;
-}
-.rule-icon {
-width:29px;
-height:29px;
-display:grid;
-place-items:center;
-border-radius:10px;
-background:rgba(255,255,255,.08);
-}
-.wide {
-width:100%;
-}
-.profile-grid {
-display:grid;
-grid-template-columns:.8fr 1.2fr;
-gap:16px;
-}
-.profile-card {
-padding:21px;
-}
-.profile-top {
-display:flex;
-align-items:center;
-gap:13px;
-}
-.avatar {
-width:52px;
-height:52px;
-display:grid;
-place-items:center;
-border-radius:18px;
-background:linear-gradient(135deg,var(--purple),var(--pink));
-font-size:26px;
-}
-.profile-top h3 {
-margin:0;
-font-size:18px;
-}
-.muted {
-color:var(--muted);
-}
-.role-chip {
-display:inline-flex;
-margin-top:6px;
-border-radius:999px;
-padding:5px 9px;
-background:rgba(255,214,107,.13);
-color:var(--yellow);
-border:1px solid rgba(255,214,107,.25);
-font-size:10px;
-font-weight:1000;
-letter-spacing:.06em;
-}
-.points-box {
-margin:18px 0;
-padding:15px;
-background:rgba(188,243,107,.08);
-border:1px solid rgba(188,243,107,.2);
-border-radius:17px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-.points-box strong {
-color:var(--lime);
-font-size:25px;
-}
-label {
-display:block;
-font-size:12px;
-font-weight:900;
-margin:12px 0 7px;
-}
+
+button,
+input,
 textarea {
-width:100%;
-min-height:90px;
-resize:vertical;
-border:1px solid var(--line);
-border-radius:14px;
-color:var(--ink);
-background:#12142f;
-padding:12px;
-outline:none;
+  font-family: inherit;
 }
-textarea:focus, input:focus {
-border-color:var(--purple);
-box-shadow:0 0 0 3px rgba(155,123,255,.13);
+
+button {
+  cursor: pointer;
 }
-.tiny {
-color:var(--muted);
-font-size:11px;
-margin-top:7px;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.dashboard {
-padding:18px;
+
+.container {
+  width: min(1180px, calc(100% - 36px));
+  margin: auto;
 }
-.dash-controls {
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:14px;
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
 }
-.dash-controls input {
-flex:1;
-min-width:170px;
-padding:12px 14px;
-border-radius:13px;
-border:1px solid var(--line);
-background:#12142f;
-color:var(--ink);
-outline:none;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.member-list {
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:10px;
+
+.logo-icon {
+  width: 47px;
+  height: 47px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffcb61, #ff924a);
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  box-shadow: 0 7px 25px #ffae4233;
+  transform: rotate(-5deg);
 }
-.member {
-padding:14px;
-border-radius:17px;
-background:rgba(255,255,255,.045);
-border:1px solid var(--line);
-min-width:0;
+
+.logo-name {
+  font-size: 19px;
+  font-weight: 1000;
+  letter-spacing: 1px;
 }
-.member-line {
-display:flex;
-justify-content:space-between;
-gap:8px;
-align-items:center;
+
+.logo-sub {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 3px;
 }
-.member-name {
-font-size:13px;
-font-weight:1000;
-overflow-wrap:anywhere;
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
-.member-rank {
-color:var(--cyan);
-font-size:10px;
-font-weight:1000;
-white-space:nowrap;
+
+.nav a {
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 900;
+  transition: .2s;
 }
-.member-bio {
-color:var(--muted);
-font-size:12px;
-line-height:1.5;
-overflow-wrap:anywhere;
-min-height:18px;
-margin:9px 0;
+
+.nav a:hover {
+  color: white;
+  background: #ffffff12;
 }
-.member-meta {
-display:flex;
-justify-content:space-between;
-gap:8px;
-color:#9395bd;
-font-size:10px;
+
+.nav .nav-join {
+  background: var(--orange);
+  color: #28203a;
 }
-.member-points {
-color:var(--lime);
-font-weight:1000;
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+  border: none;
+  padding: 13px 20px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #ffce68, #ff9b45);
+  color: #28203a;
+  font-size: 14px;
+  font-weight: 1000;
+  transition: .2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-.empty {
-grid-column:1/-1;
-text-align:center;
-padding:28px;
-color:var(--muted);
+
+.btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+  box-shadow: 0 9px 25px #ffae4233;
 }
-.roles {
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px;
+
+.btn-secondary {
+  background: #ffffff10;
+  border: 1px solid var(--border);
+  color: white;
 }
-.role {
-padding:15px 12px;
-border:1px solid var(--line);
-border-radius:17px;
-background:rgba(255,255,255,.045);
-text-align:center;
+
+.btn-purple {
+  background: linear-gradient(135deg, #b9a2ff, #8e77ff);
+  color: white;
 }
-.role .emoji {
-font-size:25px;
+
+.btn-blue {
+  background: linear-gradient(135deg, #84e7ff, #53baff);
+  color: #102037;
 }
-.role strong {
-display:block;
-margin-top:7px;
-font-size:12px;
+
+.btn-small {
+  padding: 9px 13px;
+  font-size: 12px;
+  border-radius: 10px;
 }
-.role span {
-display:block;
-margin-top:4px;
-color:var(--muted);
-font-size:10px;
-}
-footer {
-padding:25px 0 35px;
-border-top:1px solid var(--line);
-color:var(--muted);
-font-size:11px;
-display:flex;
-justify-content:space-between;
-gap:12px;
-flex-wrap:wrap;
-}
-#toast {
-position:fixed;
-left:50%;
-bottom:20px;
-transform:translate(-50%,20px);
-opacity:0;
-pointer-events:none;
-z-index:9;
-max-width:calc(100% - 30px);
-padding:12px 16px;
-border-radius:13px;
-color:#17162e;
-background:var(--lime);
-font-size:13px;
-font-weight:900;
-box-shadow:var(--shadow);
-transition:.22s;
-text-align:center;
-}
-#toast.show {
-opacity:1;
-transform:translate(-50%,0);
-}
-.loading {
-color:var(--muted);
-font-size:12px;
-}
-@media (max-width:800px) {
+
+/* =========================================
+   HERO
+   ========================================= */
+
 .hero {
-grid-template-columns:1fr;
-padding-top:30px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 40px;
+  align-items: center;
+  padding: 75px 0 55px;
 }
-.hero-card {
-min-height:250px;
+
+.hero-tag {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 13px;
+  border-radius: 30px;
+  color: var(--orange);
+  background: #ffae4218;
+  border: 1px solid #ffae4240;
+  font-size: 11px;
+  font-weight: 1000;
+  letter-spacing: 1.5px;
 }
-.mascot {
-height:135px;
-font-size:95px;
+
+.hero h1 {
+  margin-top: 23px;
+  font-size: clamp(45px, 7vw, 82px);
+  line-height: .98;
+  font-weight: 1000;
+  letter-spacing: -4px;
 }
-.play-layout {
-grid-template-columns:1fr;
+
+.hero h1 span {
+  background: linear-gradient(90deg, #ffcb65, #ff91a9, #a98cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
-.game-side {
-min-height:unset;
+
+.hero-description {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 510px;
+  margin-top: 20px;
 }
-.profile-grid {
-grid-template-columns:1fr;
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 27px;
 }
-.roles {
-grid-template-columns:repeat(3,1fr);
+
+.hero-visual {
+  min-height: 365px;
+  background:
+    radial-gradient(circle at 50% 45%, #ffb84b35, transparent 55%),
+    linear-gradient(145deg, #303459, #1c2042);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #ffffff13;
 }
-@media (max-width:520px) {
-.wrap {
-width:min(100% - 22px,1120px);
+
+.hero-visual::before {
+  width: 280px;
+  height: 280px;
 }
-.topbar {
-align-items:flex-start;
+
+.hero-visual::after {
+  width: 370px;
+  height: 370px;
 }
-nav {
-max-width:170px;
-gap:2px;
+
+.big-duck {
+  position: relative;
+  z-index: 2;
+  font-size: 160px;
+  filter: drop-shadow(0 22px 20px #0005);
+  animation: duckFloat 3s ease-in-out infinite;
 }
-nav a {
-padding:8px;
-font-size:11px;
+
+@keyframes duckFloat {
+  0%,100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(5deg);
+  }
 }
-.hero {
-padding-top:18px;
+
+.duck-badge {
+  position: absolute;
+  z-index: 3;
+  padding: 11px 15px;
+  border-radius: 13px;
+  color: #27233c;
+  font-weight: 1000;
+  background: var(--yellow);
+  box-shadow: var(--shadow);
 }
+
+.badge-one {
+  top: 35px;
+  left: 24px;
+  transform: rotate(-6deg);
+}
+
+.badge-two {
+  bottom: 38px;
+  right: 25px;
+  background: var(--green);
+  transform: rotate(5deg);
+}
+
+/* =========================================
+   STATISTICS
+   ========================================= */
+
 .stats {
-gap:7px;
-margin-bottom:40px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin: 10px 0 55px;
 }
+
 .stat {
-padding:12px 10px;
+  padding: 22px;
+  border-radius: 18px;
+  background: #ffffff08;
+  border: 1px solid var(--border);
 }
+
 .stat strong {
-font-size:21px;
+  display: block;
+  font-size: 30px;
+  font-weight: 1000;
 }
+
 .stat span {
-font-size:9px;
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 900;
 }
-section {
-margin:42px 0;
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.section {
+  margin: 65px 0;
+  scroll-margin-top: 100px;
 }
-.member-list {
-grid-template-columns:1fr;
+
+.section-heading {
+  margin-bottom: 23px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
 }
-.roles {
-grid-template-columns:repeat(2,1fr);
+
+.section-heading h2 {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 1000;
+  letter-spacing: -1.5px;
 }
+
+.section-heading p {
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 13px;
 }
-  </style>
+
+.panel {
+  background: linear-gradient(145deg, #ffffff09, #ffffff04);
+  border: 1px solid var(--border);
+  border-radius: 23px;
+  box-shadow: var(--shadow);
+}
+
+/* =========================================
+   JOIN LEAGUE
+   ========================================= */
+
+.join-panel {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: center;
+  gap: 30px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 95% 10%, #ffae4221, transparent 35%),
+    #202448;
+}
+
+.join-panel h2 {
+  font-size: 30px;
+  font-weight: 1000;
+}
+
+.join-panel p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.join-form {
+  background: #11152d;
+  border: 1px solid var(--border);
+  border-radius: 19px;
+  padding: 20px;
+}
+
+.input-label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 1000;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 14px;
+  color: white;
+  background: #222747;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.input:focus {
+  border-color: var(--orange);
+}
+
+.join-form .btn {
+  width: 100%;
+  margin-top: 13px;
+}
+
+.join-note {
+  margin-top: 10px;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.join-status {
+  margin-top: 10px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* =========================================
+   MEMBER DASHBOARD
+   ========================================= */
+
+.dashboard {
+  padding: 22px;
+}
+
+.dashboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.dashboard-title {
+  font-weight: 1000;
+  font-size: 18px;
+}
+
+.search {
+  width: 260px;
+  max-width: 100%;
+  padding: 11px 13px;
+  background: #11152d;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: white;
+  outline: none;
+}
+
+.search:focus {
+  border-color: var(--purple);
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 13px;
+}
+
+.member-card {
+  border: 1px solid var(--border);
+  background: #ffffff06;
+  border-radius: 17px;
+  padding: 16px;
+  transition: .2s;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  border-color: #ffae4255;
+  background: #ffffff0b;
+}
+
+.member-top {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.member-avatar {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  display: grid;
+  place-items: center;
+  background: #ffae421b;
+  border-radius: 14px;
+  font-size: 24px;
+}
+
+.member-name {
+  font-size: 14px;
+  font-weight: 1000;
+  overflow-wrap: anywhere;
+}
+
+.member-rank {
+  font-size: 10px;
+  color: var(--orange);
+  font-weight: 1000;
+  margin-top: 3px;
+}
+
+.member-bio {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 12px 0;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+.member-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.member-points {
+  color: var(--green);
+  font-weight: 1000;
+}
+
+.empty-members {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 40px 15px;
+  color: var(--muted);
+}
+
+/* =========================================
+   MY PROFILE
+   ========================================= */
+
+.profile {
+  display: none;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 17px;
+}
+
+.profile-card {
+  padding: 23px;
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.profile-emoji {
+  width: 57px;
+  height: 57px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#ffce68,#ff9553);
+  color: #28203a;
+  border-radius: 18px;
+  font-size: 29px;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+.profile-role {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 1000;
+}
+
+.profile-points {
+  margin: 22px 0;
+  padding: 17px;
+  background: #9cf28b12;
+  border: 1px solid #9cf28b25;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-points strong {
+  font-size: 27px;
+  color: var(--green);
+}
+
+.profile-details {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.profile-card textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 13px;
+  color: white;
+  resize: vertical;
+  border: 1px solid var(--border);
+  background: #11152d;
+  border-radius: 12px;
+  outline: none;
+}
+
+.profile-card textarea:focus {
+  border-color: var(--purple);
+}
+
+.profile-card label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 1000;
+  margin: 15px 0 8px;
+}
+
+.char-count {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 6px;
+}
+
+/* =========================================
+   DUCK DASH GAME
+   ========================================= */
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 290px;
+  gap: 18px;
+}
+
+.game-box {
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13px;
+  gap: 10px;
+}
+
+.game-header strong {
+  font-size: 14px;
+}
+
+.game-label {
+  padding: 7px 11px;
+  border-radius: 50px;
+  color: var(--green);
+  background: #9cf28b13;
+  font-size: 10px;
+  font-weight: 1000;
+}
+
+#gameCanvas {
+  width: min(100%, 380px);
+  height: auto;
+  aspect-ratio: 360 / 520;
+  background: #93def4;
+  border-radius: 19px;
+  border: 2px solid #ffffff22;
+  display: block;
+  touch-action: none;
+}
+
+.game-instructions {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.game-side {
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.game-side h3 {
+  font-size: 21px;
+  font-weight: 1000;
+}
+
+.game-side p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 9px;
+}
+
+.game-rule {
+  padding: 11px;
+  background: #ffffff08;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.game-score {
+  padding: 15px;
+  background: #ffae4212;
+  border: 1px solid #ffae4225;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.game-score strong {
+  color: var(--orange);
+  font-size: 25px;
+}
+
+.game-status {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   RANKS
+   ========================================= */
+
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+}
+
+.rank-card {
+  padding: 18px;
+  text-align: center;
+  border-radius: 17px;
+  border: 1px solid var(--border);
+  background: #ffffff07;
+  transition: .2s;
+}
+
+.rank-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffae4255;
+}
+
+.rank-icon {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.rank-card strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 1000;
+}
+
+.rank-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* =========================================
+   INFO CARDS
+   ========================================= */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+}
+
+.info-card {
+  padding: 20px;
+}
+
+.info-icon {
+  font-size: 29px;
+}
+
+.info-card h3 {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.info-card p {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FAQ
+   ========================================= */
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-item {
+  background: #ffffff07;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  color: white;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 17px;
+  font-weight: 1000;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.faq-answer {
+  display: none;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 0 17px 17px;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 70px;
+  padding: 30px 0;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 11px;
+}
+
+.footer-brand {
+  color: white;
+  font-weight: 1000;
+}
+
+/* =========================================
+   TOAST
+   ========================================= */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%,20px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: var(--green);
+  color: #17202a;
+  border-radius: 12px;
+  padding: 13px 19px;
+  font-size: 12px;
+  font-weight: 1000;
+  box-shadow: var(--shadow);
+  max-width: calc(100% - 25px);
+  text-align: center;
+  transition: .25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%,0);
+}
+
+/* =========================================
+   MODAL
+   ========================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: #080916cc;
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  width: min(430px,100%);
+  padding: 25px;
+  border-radius: 22px;
+  background: #202448;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.modal-box h2 {
+  font-size: 23px;
+}
+
+.modal-box p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.modal-close {
+  float: right;
+  background: #ffffff12;
+  color: white;
+  border: none;
+  width: 31px;
+  height: 31px;
+  border-radius: 10px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media(max-width:850px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hero-visual {
+    min-height: 290px;
+  }
+
+  .join-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-side {
+    gap: 20px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rank-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+}
+
+@media(max-width:600px) {
+
+  .container {
+    width: calc(100% - 22px);
+  }
+
+  .header {
+    height: auto;
+    min-height: 75px;
+    gap: 10px;
+  }
+
+  .logo-name {
+    font-size: 15px;
+  }
+
+  .logo-icon {
+    width: 39px;
+    height: 39px;
+    font-size: 23px;
+  }
+
+  .nav {
+    gap: 2px;
+  }
+
+  .nav a {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 48px 0 30px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .big-duck {
+    font-size: 115px;
+  }
+
+  .stats {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .stat {
+    padding: 13px 10px;
+  }
+
+  .stat strong {
+    font-size: 21px;
+  }
+
+  .stat span {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .section {
+    margin: 48px 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard {
+    padding: 12px;
+  }
+
+  .dashboard-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rank-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-panel {
+    padding: 20px;
+  }
+
+  .game-box {
+    padding: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="brand" href="#home" aria-label="DUK LEAGUE home">
-        <span class="brand-mark">👑</span>
-        <span>DUK LEAGUE<small>THE CREW HQ</small></span>
+
+<div class="container">
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<header class="header">
+
+  <a href="#home" class="logo">
+
+    <div class="logo-icon">🦆</div>
+
+    <div class="logo-name">
+      DUK LEAGUE
+      <span class="logo-sub">OFFICIAL CREW HQ</span>
+    </div>
+
+  </a>
+
+  <nav class="nav">
+
+    <a href="#home">Home</a>
+
+    <a href="#roster">Members</a>
+
+    <a href="#game">Play</a>
+
+    <a href="#ranks">Ranks</a>
+
+    <a href="#join" class="nav-join">JOIN US</a>
+
+  </nav>
+
+</header>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<main>
+
+<section class="hero" id="home">
+
+  <div>
+
+    <div class="hero-tag">
+      🟢 THE FLOCK IS ONLINE
+    </div>
+
+    <h1>
+      WELCOME TO<br>
+      <span>DUK LEAGUE.</span>
+    </h1>
+
+    <p class="hero-description">
+      More than just a Roblox crew. DUK LEAGUE is
+      where players meet, compete, earn Royalty Points
+      and build their own legacy.
+
+      Join the flock. Make your name count.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#join" class="btn">
+        🦆 JOIN THE LEAGUE
       </a>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#play">Play</a>
-        <a href="#members">Members</a>
-        <a href="#roles">Ranks</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="hero" id="home">
-        <div>
-          <span class="eyebrow">✨ THE CREW IS ONLINE</span>
-          <h1>PLAY HARD.<br><span class="gradient-text">LEVEL UP.</span></h1>
-          <p>Welcome to DUK LEAGUE — the crew's little corner of the internet. Dodge the pipes, collect Royalty Points, climb the ranks and show the squad your bio.</p>
-          <div class="actions">
-            <a class="btn" href="#play">🎮 Play the game</a>
-            <a class="btn secondary" href="#members">👥 Meet the members</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="sticker"><span>DUK CREW ENERGY</span><span>★ ★ ★</span></div>
-          <div class="mascot">🐸</div>
-          <div class="bubble">ribbit. grind. repeat.</div>
-        </div>
-      </section>
+      <a href="#roster" class="btn btn-secondary">
+        👥 VIEW MEMBERS
+      </a>
 
-      <div class="stats">
-        <div class="stat"><strong id="memberCount">—</strong><span>CREW MEMBERS</span></div>
-        <div class="stat"><strong id="totalPoints">—</strong><span>ROYALTY POINTS EARNED</span></div>
-        <div class="stat"><strong id="myRoleStat">Loading</strong><span>YOUR CURRENT RANK</span></div>
+    </div>
+
+  </div>
+
+
+  <div class="hero-visual">
+
+    <div class="duck-badge badge-one">
+      👑 DUCK ROYALTY
+    </div>
+
+    <div class="big-duck">
+      🦆
+    </div>
+
+    <div class="duck-badge badge-two">
+      THE FLOCK 🟢
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STATISTICS
+===================================== -->
+
+<div class="stats">
+
+  <div class="stat">
+
+    <strong id="memberCount">0</strong>
+
+    <span>LEAGUE MEMBERS</span>
+
+  </div>
+
+  <div class="stat">
+
+    <strong id="totalPoints">0</strong>
+
+    <span>TOTAL ROYALTY POINTS</span>
+
+  </div>
+
+  <div class="stat">
+
+    <strong id="onlineStatus">READY</strong>
+
+    <span>LEAGUE STATUS</span>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================
+     JOIN THE LEAGUE
+===================================== -->
+
+<section class="section" id="join">
+
+  <div class="section-heading">
+
+    <div>
+
+      <h2>🦆 Join the flock</h2>
+
+      <p>Ready to become an official DUK LEAGUE member?</p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel join-panel">
+
+    <div>
+
+      <h2>Your place in the league awaits.</h2>
+
+      <p>
+        Choose your own member name and become part of
+        DUK LEAGUE. Your profile gets a join date,
+        a bio, a rank and Royalty Points.
+
+        Your journey starts here.
+      </p>
+
+      <br>
+
+      <div class="hero-tag">
+        👑 OFFICIAL MEMBERSHIP
       </div>
 
-      <section id="play">
-        <div class="section-head">
-          <div><h2>🐸 Frog Flight</h2><p>Tap to flap. Dodge every pipe. Each pipe you pass = 1 Royalty Point.</p></div>
-        </div>
-        <div class="play-layout">
-          <div class="panel game-panel">
-            <div class="game-top"><strong>FROG FLIGHT • STAGE RUN</strong><span class="game-pill">+1 RP / PIPE</span></div>
-            <canvas id="gameCanvas" width="360" height="520" aria-label="Frog Flight game. Tap or press space to flap."></canvas>
-            <p class="game-help">📱 Tap the game or press SPACE / ↑ to flap</p>
-          </div>
-          <aside class="panel game-side">
-            <div>
-              <h3>How to play 🎯</h3>
-              <p>Keep the frog in the air and guide it through the gaps. Every pipe you safely pass counts as one stage and earns one Royalty Point.</p>
-              <div class="rule-row"><span class="rule-icon">🟢</span><span>Pass a pipe = +1 Royalty Point</span></div>
-              <div class="rule-row"><span class="rule-icon">💥</span><span>Hit a pipe = run over</span></div>
-              <div class="rule-row"><span class="rule-icon">🏆</span><span>Points help unlock higher ranks</span></div>
-            </div>
-            <div>
-              <div class="points-box"><span>YOUR RUN STAGE</span><strong id="runStage">0</strong></div>
-              <button class="btn wide" id="startGame">▶ Start game</button>
-              <p class="tiny" id="gameStatus">Your earned points save to your crew profile.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
+      <p id="joinDescription">
+        Join the league and get your own crew profile.
+      </p>
 
-      <section id="profile">
-        <div class="section-head"><div><h2>✨ Your crew card</h2><p>Your name, join date, rank and points are locked. Your bio is yours to edit.</p></div></div>
-        <div class="profile-grid">
-          <div class="panel profile-card">
-            <div class="profile-top">
-              <div class="avatar">😎</div>
-              <div><h3 id="myName">Loading member…</h3><span class="role-chip" id="myRole">Checking rank…</span></div>
-            </div>
-            <div class="points-box"><span>👑 ROYALTY POINTS</span><strong id="myPoints">0</strong></div>
-            <p class="tiny">Joined: <strong id="myJoined">—</strong></p>
-          </div>
-          <div class="panel profile-card">
-            <h3 style="margin:0 0 5px">Edit your bio 📝</h3>
-            <p class="tiny">This is the only profile detail members can change.</p>
-            <label for="bioInput">YOUR BIO</label>
-            <textarea id="bioInput" maxlength="160" placeholder="Tell the crew a little about yourself…"></textarea>
-            <div class="tiny"><span id="bioCount">0</span>/160 characters</div>
-            <button class="btn" id="saveBio" style="margin-top:12px">💾 Save bio</button>
-          </div>
-        </div>
-      </section>
+    </div>
 
-      <section id="members">
-        <div class="section-head"><div><h2>👥 Crew dashboard</h2><p>Every member in one place. The leaderboard updates live.</p></div></div>
-        <div class="panel dashboard">
-          <div class="dash-controls"><input id="memberSearch" type="search" placeholder="Search the crew…" aria-label="Search members" /></div>
-          <div class="member-list" id="memberList"><div class="empty">Loading the crew…</div></div>
-        </div>
-      </section>
 
-      <section id="roles">
-        <div class="section-head"><div><h2>🏅 The rank ladder</h2><p>Play, earn points and unlock your next title.</p></div></div>
-        <div class="roles">
-          <div class="role"><div class="emoji">🌱</div><strong>Recruit</strong><span>0–4 RP</span></div>
-          <div class="role"><div class="emoji">😅</div><strong>Mr. Noob</strong><span>5–14 RP</span></div>
-          <div class="role"><div class="emoji">⚡</div><strong>Mr. Pro</strong><span>15–29 RP</span></div>
-          <div class="role"><div class="emoji">🦸</div><strong>Mr. Super</strong><span>30–59 RP</span></div>
-          <div class="role"><div class="emoji">👑</div><strong>Mr. Legend</strong><span>60+ RP</span></div>
-        </div>
-      </section>
-    </main>
+    <div class="join-form">
 
-    <footer><span>© <span id="year"></span> DUK LEAGUE • Built for the crew 🐸</span><span>Be cool. Help the crew. Have fun.</span></footer>
+      <label class="input-label" for="joinName">
+        CHOOSE YOUR MEMBER NAME
+      </label>
+
+      <input
+        class="input"
+        id="joinName"
+        maxlength="20"
+        placeholder="Example: Mr.Duck"
+        autocomplete="off"
+      >
+
+      <button
+        class="btn"
+        id="joinButton"
+        type="button"
+      >
+        🦆 JOIN DUK LEAGUE
+      </button>
+
+      <div class="join-note">
+        Your username cannot be changed after joining.
+        Please choose carefully.
+      </div>
+
+      <div class="join-status" id="joinStatus"></div>
+
+    </div>
+
   </div>
-  <div id="toast" role="status" aria-live="polite"></div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-    import {
-      getFirestore, collection, doc, runTransaction, onSnapshot,
-      updateDoc, serverTimestamp, increment
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+</section>
 
-    /*
-     * DUK LEAGUE V2 DEVELOPMENT NOTES
-     * This file contains the page markup, styling, Firebase connection, and Frog Flight game.
-     * Keep a backup of the working version before changing major sections.
-     * Edit the HTML when changing visible words, labels, links, or page sections.
-     * Edit the CSS when changing colours, spacing, typography, borders, or layout.
-     * Edit the JavaScript when changing game behaviour or Firebase interactions.
-     * The page is designed to work on desktop screens and narrow phone screens.
-     * The layout uses a flexible content wrapper to prevent content touching screen edges.
-     * The navigation links point to section IDs on this same page.
-     * The home section is the first place visitors see when opening the site.
-     * The hero panel introduces the crew and links to the playable game.
-     * The mascot is decorative and does not affect game or member data.
-     * The statistics row displays member count, total points, and the signed-in member rank.
-     * The statistics are recalculated from the Firestore member documents.
-     * The Frog Flight area contains the canvas game and its controls.
-     * The canvas has an internal resolution of 360 by 520 pixels.
-     * CSS scales the canvas visually while preserving its game drawing proportions.
-     * The pointerdown event supports tapping on touchscreens and clicking with a mouse.
-     * The keyboard controls use Space and Arrow Up for desktop play.
-     * The start button resets the bird, pipe list, and current run stage.
-     * The game loop uses requestAnimationFrame for smooth browser rendering.
-     * The bird falls due to gravity while the flap action applies upward velocity.
-     * Pipes move from the right side of the game area toward the left side.
-     * The game creates another pipe when the newest pipe reaches the spawn threshold.
-     * A pipe can award a point only once during the current run.
-     * The stage counter increases after the bird safely passes a pipe.
-     * The point award request is sent to Firestore after a pipe is passed.
-     * The game displays a run-over screen after a collision or boundary hit.
-     * The game status message reports whether the point request was saved.
-     * The profile card displays the current member name and calculated rank.
-     * The member name is created once and is not editable from this page.
-     * The join date is created by Firestore when the member profile is created.
-     * Royalty Points are stored as a number in the member document.
-     * The rank is calculated from Royalty Points rather than stored as an editable field.
-     * The bio field is the only profile field exposed in the edit form.
-     * The bio form limits text to 160 characters in the browser.
-     * Firestore rules must also enforce the bio length limit on the server.
-     * The Save Bio button updates only the bio field in the current member document.
-     * The dashboard reads member documents and renders a member card for each one.
-     * Member cards show name, calculated rank, bio, join date, and Royalty Points.
-     * The dashboard search checks the member name, bio, and calculated rank.
-     * The dashboard sorts members by Royalty Points from highest to lowest.
-     * The search field filters the visible cards without changing stored member data.
-     * The rank ladder section explains the rank thresholds to site visitors.
-     * Recruit is the starting rank for a member with zero to four points.
-     * Mr. Noob is assigned from five through fourteen points.
-     * Mr. Pro is assigned from fifteen through twenty-nine points.
-     * Mr. Super is assigned from thirty through fifty-nine points.
-     * Mr. Legend is assigned when a member has sixty or more points.
-     * Change the thresholds in getRole if the crew agrees on different rank levels.
-     * Keep the displayed rank ladder thresholds in sync with getRole.
-     * The page uses a dark navy background with bright accent colours.
-     * The purple accent is used for primary decorative highlights.
-     * The pink accent adds contrast to the brand and mascot card.
-     * The cyan accent highlights secondary details and rank labels.
-     * The lime accent highlights positive actions and Royalty Points.
-     * The yellow accent is used for playful stickers and small highlights.
-     * CSS custom properties are declared near the top of the style section.
-     * Update a custom property to change a colour throughout the page.
-     * The wrap class controls the maximum width of the main page content.
-     * The panel class provides shared borders, backgrounds, and shadows.
-     * The button class provides shared styles for clickable primary actions.
-     * The secondary button style is intended for less important actions.
-     * The hero layout uses two columns on wide screens.
-     * The hero layout collapses to one column on smaller screens.
-     * The play layout places the game beside instructions on wide screens.
-     * The play layout stacks the game and instructions on narrow screens.
-     * The profile cards also stack into one column on narrow screens.
-     * The member cards use two columns on medium screens and one on small phones.
-     * The rank cards use a responsive grid that changes column count by screen width.
-     * The media queries are near the end of the style section.
-     * Add any new responsive changes inside the existing media queries when possible.
-     * Use semantic headings to keep the document structure easy to follow.
-     * Use labels for form controls so their purpose is clear.
-     * The live toast region announces status messages to screen readers.
-     * The game canvas includes an accessible label describing its controls.
-     * Do not remove the viewport meta tag because it is needed for mobile layouts.
-     * Do not remove the Firebase module imports while the cloud features are enabled.
-     * The app uses the Firebase modular JavaScript SDK.
-     * The Firebase configuration identifies the DUK LEAGUE Firebase project.
-     * The Firebase web configuration is intended to appear in client-side code.
-     * Firestore Security Rules protect database writes and should not be treated as optional.
-     * Anonymous Authentication must be enabled in the Firebase console.
-     * The code signs visitors in anonymously before creating a member profile.
-     * The anonymous account UID is used as the Firestore document ID.
-     * Using the UID as a document ID prevents two profiles sharing one document ID.
-     * The members_v2 collection is separate from the older members collection.
-     * Existing documents in the old collection are not automatically migrated.
-     * A migration should be planned separately if earlier members must be retained.
-     * The createOrLoadProfile function creates a document only when one does not exist.
-     * The transaction protects profile creation from duplicate simultaneous requests.
-     * The real-time listener keeps the member dashboard up to date.
-     * The listener is stopped before another listener is attached to avoid duplicates.
-     * The current profile is found by matching its UID to the signed-in user.
-     * The safeText function escapes text before placing it into dashboard HTML.
-     * Continue escaping member-controlled values whenever creating HTML strings.
-     * Use textContent instead of innerHTML when rendering simple text values.
-     * The dateText helper formats Firestore timestamps for dashboard display.
-     * The page displays a friendly fallback when a timestamp is not available.
-     * The toast helper shows short messages and then hides them automatically.
-     * The toast timer is reset when a new message replaces an old message.
-     * Keep user-facing error messages brief and helpful.
-     * Keep detailed debugging information in the browser developer console.
-     * Test the website after every significant code change.
-     * Test the game with a mouse and with a touchscreen if possible.
-     * Test the page at both phone width and desktop width.
-     * Test that a member can save their bio after signing in.
-     * Test that another member can see the updated bio in the dashboard.
-     * Test that a member cannot edit another member profile through the interface.
-     * Test Firestore rules in the Firebase Rules Playground before relying on changes.
-     * Never use open Firestore write rules on a public website.
-     * Do not give ordinary members permission to edit name, UID, join date, or rank.
-     * Do not give ordinary members permission to directly choose their Royalty Points.
-     * The current browser game reward system is a basic client-side reward mechanism.
-     * Client-side games can be modified by technically skilled visitors.
-     * A stronger reward system requires server-side validation of completed stages.
-     * Cloud Functions or another trusted backend can validate rewards more reliably.
-     * Check Firebase billing and quota settings with a parent or guardian before enabling paid services.
-     * Keep a copy of the published Firestore rules alongside the website source.
-     * Keep the website repository private only if the project requires private source code.
-     * GitHub Pages can publish static HTML, CSS, and browser JavaScript files.
-     * Commit a changed index.html file to publish the new website version.
-     * Allow a short time for GitHub Pages to build and refresh after a commit.
-     * Use a hard refresh if the browser continues showing a cached previous version.
-     * The year in the footer is filled automatically by JavaScript.
-     * The member name is created once and is not editable from this page.
-     * The join date is created by Firestore when the member profile is created.
-     * Royalty Points are stored as a number in the member document.
-     * The rank is calculated from Royalty Points rather than stored as an editable field.
-     * The bio field is the only profile field exposed in the edit form.
-     * The bio form limits text to 160 characters in the browser.
-     * Firestore rules must also enforce the bio length limit on the server.
-     * The Save Bio button updates only the bio field in the current member document.
-     * The dashboard reads member documents and renders a member card for each one.
-     * Member cards show name, calculated rank, bio, join date, and Royalty Points.
-     * The dashboard search checks the member name, bio, and calculated rank.
-     * The dashboard sorts members by Royalty Points from highest to lowest.
-     * The search field filters the visible cards without changing stored member data.
-     * The rank ladder section explains the rank thresholds to site visitors.
-     * Recruit is the starting rank for a member with zero to four points.
-     * Mr. Noob is assigned from five through fourteen points.
-     * Mr. Pro is assigned from fifteen through twenty-nine points.
-     * Mr. Super is assigned from thirty through fifty-nine points.
-     * Mr. Legend is assigned when a member has sixty or more points.
-     * Change the thresholds in getRole if the crew agrees on different rank levels.
-     * Keep the displayed rank ladder thresholds in sync with getRole.
-     * The page uses a dark navy background with bright accent colours.
-     * The purple accent is used for primary decorative highlights.
-     * The pink accent adds contrast to the brand and mascot card.
-     * The cyan accent highlights secondary details and rank labels.
-     * The lime accent highlights positive actions and Royalty Points.
-     * The yellow accent is used for playful stickers and small highlights.
-     * CSS custom properties are declared near the top of the style section.
-     * Update a custom property to change a colour throughout the page.
-     * The wrap class controls the maximum width of the main page content.
-     * The panel class provides shared borders, backgrounds, and shadows.
-     * The button class provides shared styles for clickable primary actions.
-     * The secondary button style is intended for less important actions.
-     * The hero layout uses two columns on wide screens.
-     * The hero layout collapses to one column on smaller screens.
-     * The play layout places the game beside instructions on wide screens.
-     * The play layout stacks the game and instructions on narrow screens.
-     * The profile cards also stack into one column on narrow screens.
-     * The member cards use two columns on medium screens and one on small phones.
-     * The rank cards use a responsive grid that changes column count by screen width.
-     * The media queries are near the end of the style section.
-     * Add any new responsive changes inside the existing media queries when possible.
-     * Use semantic headings to keep the document structure easy to follow.
-     * Use labels for form controls so their purpose is clear.
-     * The live toast region announces status messages to screen readers.
-     * The game canvas includes an accessible label describing its controls.
-     * Do not remove the viewport meta tag because it is needed for mobile layouts.
-     * Do not remove the Firebase module imports while the cloud features are enabled.
-     * The app uses the Firebase modular JavaScript SDK.
-     * The Firebase configuration identifies the DUK LEAGUE Firebase project.
-     * The Firebase web configuration is intended to appear in client-side code.
-     * Firestore Security Rules protect database writes and should not be treated as optional.
-     * Anonymous Authentication must be enabled in the Firebase console.
-     * The code signs visitors in anonymously before creating a member profile.
-     * The anonymous account UID is used as the Firestore document ID.
-     * Using the UID as a document ID prevents two profiles sharing one document ID.
-     * The members_v2 collection is separate from the older members collection.
-     * Existing documents in the old collection are not automatically migrated.
-     * A migration should be planned separately if earlier members must be retained.
-     * The createOrLoadProfile function creates a document only when one does not exist.
-     * The transaction protects profile creation from duplicate simultaneous requests.
-     * The real-time listener keeps the member dashboard up to date.
-     * The listener is stopped before another listener is attached to avoid duplicates.
-     * The current profile is found by matching its UID to the signed-in user.
-     * The safeText function escapes text before placing it into dashboard HTML.
-     * Continue escaping member-controlled values whenever creating HTML strings.
-     * Use textContent instead of innerHTML when rendering simple text values.
-     * The dateText helper formats Firestore timestamps for dashboard display.
-     * The page displays a friendly fallback when a timestamp is not available.
-     * The toast helper shows short messages and then hides them automatically.
-     * The toast timer is reset when a new message replaces an old message.
-     * Keep user-facing error messages brief and helpful.
-     * Keep detailed debugging information in the browser developer console.
-     * Test the website after every significant code change.
-     * Test the game with a mouse and with a touchscreen if possible.
-     * Test the page at both phone width and desktop width.
-     * Test that a member can save their bio after signing in.
-     * Test that another member can see the updated bio in the dashboard.
-     * Test that a member cannot edit another member profile through the interface.
-     * Test Firestore rules in the Firebase Rules Playground before relying on changes.
-     * Never use open Firestore write rules on a public website.
-     * Do not give ordinary members permission to edit name, UID, join date, or rank.
-     * Do not give ordinary members permission to directly choose their Royalty Points.
-     * The current browser game reward system is a basic client-side reward mechanism.
-     * Client-side games can be modified by technically skilled visitors.
-     * A stronger reward system requires server-side validation of completed stages.
-     * Cloud Functions or another trusted backend can validate rewards more reliably.
-     * Check Firebase billing and quota settings with a parent or guardian before enabling paid services.
-     * Keep a copy of the published Firestore rules alongside the website source.
-     * Keep the website repository private only if the project requires private source code.
-     * GitHub Pages can publish static HTML, CSS, and browser JavaScript files.
-     * Commit a changed index.html file to publish the new website version.
-     * Allow a short time for GitHub Pages to build and refresh after a commit.
-     * Use a hard refresh if the browser continues showing a cached previous version.
-     * The year in the footer is filled automatically by JavaScript.
-     */
-    // Your existing DUK LEAGUE Firebase project.
-    const firebaseConfig = {
-      apiKey: "AIzaSyB7MX-o2la2shzfcbWFjB3m1JvPgPvH4Q",
-      authDomain: "duk-league.firebaseapp.com",
-      projectId: "duk-league",
-      storageBucket: "duk-league.firebasestorage.app",
-      messagingSenderId: "379601710014",
-      appId: "1:379601710014:web:d7c8c33d6b3708b6e1a7ef",
-      measurementId: "G-4J2BJ68HR6"
-    };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-    const membersRef = collection(db, "members_v2");
-    const $ = (id) => document.getElementById(id);
-    let currentUser = null;
-    let myProfile = null;
-    let allMembers = [];
-    let stopMemberListener = null;
-    let toastTimer = null;
+<!-- =====================================
+     MEMBER DASHBOARD
+===================================== -->
 
-    function toast(message) {
-      const box = $("toast");
-      box.textContent = message;
-      box.classList.add("show");
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => box.classList.remove("show"), 2600);
-    }
-    function safeText(value) {
-      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
-        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
-      })[char]);
-    }
-    function getRole(points) {
-      if (points >= 60) return "Mr. Legend";
-      if (points >= 30) return "Mr. Super";
-      if (points >= 15) return "Mr. Pro";
-      if (points >= 5) return "Mr. Noob";
-      return "Recruit";
-    }
-    function dateText(timestamp) {
-      if (!timestamp || typeof timestamp.toDate !== "function") return "Just joined";
-      return timestamp.toDate().toLocaleDateString(undefined, { day:"numeric", month:"short", year:"numeric" });
-    }
+<section class="section" id="roster">
 
-    async function createOrLoadProfile(user) {
-      const profileRef = doc(db, "members_v2", user.uid);
-      const aliases = ["Mr.Weak", "Mr.Strong", "Mr.Sussy", "Mr.Pro", "Mr.Noob", "Mr.Danger", "Mr.Shadow", "Mr.Legend", "Mr.Frost", "Mr.Beast", "Mr.Ghost", "Mr.King", "Mr.Super"];
-      const aliasIndex = (user.uid.charCodeAt(0) + user.uid.charCodeAt(1)) % aliases.length;
-      await runTransaction(db, async (transaction) => {
-        const snapshot = await transaction.get(profileRef);
-        if (!snapshot.exists()) {
-          transaction.set(profileRef, {
-            uid: user.uid,
-            name: `${aliases[aliasIndex]}_${user.uid.slice(0, 4).toUpperCase()}`,
-            bio: "New to the crew. 🐸",
-            joinedAt: serverTimestamp(),
-            royaltyPoints: 0,
-            lastRewardAt: null
-          });
-        }
+  <div class="section-heading">
+
+    <div>
+
+      <h2>👑 The flock</h2>
+
+      <p>
+        Meet the official members of DUK LEAGUE.
+        Who will become the top duck?
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel dashboard">
+
+    <div class="dashboard-top">
+
+      <div class="dashboard-title">
+        MEMBER DIRECTORY
+      </div>
+
+      <input
+        type="search"
+        class="search"
+        id="memberSearch"
+        placeholder="Search members..."
+      >
+
+    </div>
+
+
+    <div class="member-grid" id="memberGrid">
+
+      <div class="empty-members">
+        🦆 Loading the flock...
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     MY PROFILE
+===================================== -->
+
+<section class="section profile" id="myProfile">
+
+  <div class="section-heading">
+
+    <div>
+
+      <h2>✨ Your member profile</h2>
+
+      <p>
+        Your profile belongs to you.
+        Only your bio can be edited.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="profile-grid">
+
+    <div class="panel profile-card">
+
+      <div class="profile-identity">
+
+        <div class="profile-emoji">🦆</div>
+
+        <div>
+
+          <div class="profile-name" id="profileName">
+            Loading...
+          </div>
+
+          <div class="profile-role" id="profileRole">
+            Recruit
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-points">
+
+        <span>👑 ROYALTY POINTS</span>
+
+        <strong id="profilePoints">0</strong>
+
+      </div>
+
+
+      <div class="profile-details">
+
+        <p>
+          MEMBER SINCE:
+          <strong id="profileJoined">—</strong>
+        </p>
+
+        <br>
+
+        <p>
+          YOUR ID:
+          <strong id="profileId">—</strong>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="panel profile-card">
+
+      <h3>📝 Edit your bio</h3>
+
+      <p style="font-size:12px;color:var(--muted);margin-top:7px">
+
+        Tell other league members something about yourself.
+
+        You can only edit this part of your profile.
+
+      </p>
+
+      <label for="bioInput">YOUR BIO</label>
+
+      <textarea
+        id="bioInput"
+        maxlength="160"
+        placeholder="Tell the flock about yourself..."
+      ></textarea>
+
+      <div class="char-count">
+
+        <span id="bioCount">0</span>/160 characters
+
+      </div>
+
+      <br>
+
+      <button class="btn btn-purple" id="saveBio">
+
+        💾 SAVE BIO
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     DUCK DASH GAME
+===================================== -->
+
+<section class="section" id="game">
+
+  <div class="section-heading">
+
+    <div>
+
+      <h2>🎮 Duck Dash</h2>
+
+      <p>
+        Your duck. Your skills. Your Royalty Points.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="game-layout">
+
+
+    <div class="panel game-box">
+
+      <div class="game-header">
+
+        <strong>DUCK DASH — STAGE RUN</strong>
+
+        <span class="game-label">
+          +1 RP PER PIPE
+        </span>
+
+      </div>
+
+
+      <canvas
+        id="gameCanvas"
+        width="360"
+        height="520"
+      ></canvas>
+
+
+      <p class="game-instructions">
+
+        TAP TO FLY • SPACE TO FLY • AVOID THE PIPES
+
+      </p>
+
+    </div>
+
+
+    <div class="panel game-side">
+
+      <div>
+
+        <h3>How to play</h3>
+
+        <p>
+
+          Fly your duck through the pipes.
+
+          Every pipe you successfully pass earns
+          one Royalty Point.
+
+          Don't crash!
+
+        </p>
+
+        <div class="game-rule">
+          🦆 Tap the screen to fly.
+        </div>
+
+        <div class="game-rule">
+          🟢 Pass a pipe to earn 1 RP.
+        </div>
+
+        <div class="game-rule">
+          💥 Hit a pipe and the run ends.
+        </div>
+
+        <div class="game-rule">
+          👑 Earn points and climb the ranks.
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="game-score">
+
+          <span>YOUR STAGE</span>
+
+          <strong id="gameScore">0</strong>
+
+        </div>
+
+        <button class="btn wide" id="startGame">
+
+          ▶ START GAME
+
+        </button>
+
+        <div class="game-status" id="gameStatus">
+
+          Join DUK LEAGUE to save your game rewards.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     RANKS
+===================================== -->
+
+<section class="section" id="ranks">
+
+  <div class="section-heading">
+
+    <div>
+
+      <h2>🏆 Rank ladder</h2>
+
+      <p>
+        Every point takes you one step closer
+        to the top.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="rank-grid">
+
+    <div class="rank-card">
+
+      <div class="rank-icon">🌱</div>
+
+      <strong>Recruit</strong>
+
+      <span>0–4 RP</span>
+
+    </div>
+
+
+    <div class="rank-card">
+
+      <div class="rank-icon">😎</div>
+
+      <strong>Mr. Noob</strong>
+
+      <span>5–14 RP</span>
+
+    </div>
+
+
+    <div class="rank-card">
+
+      <div class="rank-icon">⚡</div>
+
+      <strong>Mr. Pro</strong>
+
+      <span>15–29 RP</span>
+
+    </div>
+
+
+    <div class="rank-card">
+
+      <div class="rank-icon">🦸</div>
+
+      <strong>Mr. Super</strong>
+
+      <span>30–59 RP</span>
+
+    </div>
+
+
+    <div class="rank-card">
+
+      <div class="rank-icon">👑</div>
+
+      <strong>Mr. Legend</strong>
+
+      <span>60–99 RP</span>
+
+    </div>
+
+
+    <div class="rank-card">
+
+      <div class="rank-icon">🔥</div>
+
+      <strong>Mr. Elite</strong>
+
+      <span>100–149 RP</span>
+
+    </div>
+
+
+    <div class="rank-card">
+
+      <div class="rank-icon">💎</div>
+
+      <strong>Mr. Supreme</strong>
+
+      <span>150+ RP</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     FEATURES
+===================================== -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div>
+
+      <h2>✨ What is DUK LEAGUE?</h2>
+
+      <p>More than just a member list.</p>
+
+    </div>
+
+  </div>
+
+
+  <div class="info-grid">
+
+    <div class="panel info-card">
+
+      <div class="info-icon">👑</div>
+
+      <h3>Royalty Points</h3>
+
+      <p>
+
+        Earn Royalty Points by playing Duck Dash
+        and climbing through the rank ladder.
+
+      </p>
+
+    </div>
+
+
+    <div class="panel info-card">
+
+      <div class="info-icon">🦆</div>
+
+      <h3>The Crew</h3>
+
+      <p>
+
+        See the member directory, check out
+        bios and find the top members.
+
+      </p>
+
+    </div>
+
+
+    <div class="panel info-card">
+
+      <div class="info-icon">🎮</div>
+
+      <h3>Play & Compete</h3>
+
+      <p>
+
+        Play Duck Dash and try to get the
+        highest stage possible.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     FAQ
+===================================== -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div>
+
+      <h2>❓ Frequently asked questions</h2>
+
+      <p>Some things you might want to know.</p>
+
+    </div>
+
+  </div>
+
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        How do I join DUK LEAGUE?
+
+        <span>+</span>
+
+      </button>
+
+      <div class="faq-answer">
+
+        Go to the Join the Flock section,
+        choose a username and click Join DUK LEAGUE.
+
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        How do I earn Royalty Points?
+
+        <span>+</span>
+
+      </button>
+
+      <div class="faq-answer">
+
+        Play Duck Dash and successfully pass pipes.
+        Each pipe passed earns one Royalty Point.
+
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        Can I change my username?
+
+        <span>+</span>
+
+      </button>
+
+      <div class="faq-answer">
+
+        Member usernames cannot be changed
+        through the public website.
+
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        Can I edit someone else's profile?
+
+        <span>+</span>
+
+      </button>
+
+      <div class="faq-answer">
+
+        No. You can only edit the bio
+        belonging to your own member account.
+
+      </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        What is Mr. Super?
+
+        <span>+</span>
+
+      </button>
+
+      <div class="faq-answer">
+
+        Mr. Super is one of the higher ranks.
+        You unlock it after reaching 30 Royalty Points.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer class="footer">
+
+  <div>
+
+    <div class="footer-brand">
+      🦆 DUK LEAGUE
+    </div>
+
+    <p style="margin-top:5px">
+      The official crew HQ.
+    </p>
+
+  </div>
+
+
+  <div>
+
+    © <span id="year"></span> DUK LEAGUE.
+
+    Built for the flock.
+
+  </div>
+
+</footer>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<!-- =====================================
+     FIREBASE AND WEBSITE LOGIC
+===================================== -->
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInAnonymously
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+import {
+  getFirestore,
+  collection,
+  doc,
+  runTransaction,
+  onSnapshot,
+  updateDoc,
+  serverTimestamp,
+  increment
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+// =======================================
+// FIREBASE CONFIGURATION
+// =======================================
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyB7MX-o2la2shzfcbWFjB3m1JvPgPvH4Q",
+
+  authDomain: "duk-league.firebaseapp.com",
+
+  projectId: "duk-league",
+
+  storageBucket: "duk-league.firebasestorage.app",
+
+  messagingSenderId: "379601710014",
+
+  appId: "1:379601710014:web:d7c8c33d6b3708b6e1a7ef",
+
+  measurementId: "G-4J2BJ68HR6"
+
+};
+
+
+// =======================================
+// INITIALIZE FIREBASE
+// =======================================
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+const membersRef = collection(db, "members");
+
+
+let currentUser = null;
+
+let myProfile = null;
+
+let allMembers = [];
+
+let profileListener = null;
+
+let toastTimer = null;
+
+
+// =======================================
+// SMALL HELPERS
+// =======================================
+
+const $ = id => document.getElementById(id);
+
+
+function showToast(message) {
+
+  const box = $("toast");
+
+  box.textContent = message;
+
+  box.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+
+    box.classList.remove("show");
+
+  }, 2800);
+
+}
+
+
+function escapeHTML(value) {
+
+  return String(value ?? "").replace(/[&<>"']/g, character => ({
+
+    "&": "&amp;",
+
+    "<": "&lt;",
+
+    ">": "&gt;",
+
+    '"': "&quot;",
+
+    "'": "&#39;"
+
+  })[character]);
+
+}
+
+
+function formatDate(timestamp) {
+
+  if (!timestamp || typeof timestamp.toDate !== "function") {
+
+    return "Date unavailable";
+
+  }
+
+  return timestamp.toDate().toLocaleDateString(undefined, {
+
+    day: "numeric",
+
+    month: "short",
+
+    year: "numeric"
+
+  });
+
+}
+
+
+// =======================================
+// RANK SYSTEM
+// =======================================
+
+function getRank(points) {
+
+  points = Number(points || 0);
+
+  if (points >= 150) return "Mr. Supreme";
+
+  if (points >= 100) return "Mr. Elite";
+
+  if (points >= 60) return "Mr. Legend";
+
+  if (points >= 30) return "Mr. Super";
+
+  if (points >= 15) return "Mr. Pro";
+
+  if (points >= 5) return "Mr. Noob";
+
+  return "Recruit";
+
+}
+
+
+// =======================================
+// JOIN DUK LEAGUE
+// =======================================
+
+async function joinLeague() {
+
+  if (!currentUser) {
+
+    return showToast("Please wait for sign-in.");
+
+  }
+
+  const input = $("joinName");
+
+  const name = input.value.trim();
+
+  if (name.length < 3 || name.length > 20) {
+
+    return showToast("Username must be 3–20 characters.");
+
+  }
+
+  if (!/^[A-Za-z0-9 ._-]+$/.test(name)) {
+
+    return showToast("Use letters, numbers, dots or underscores.");
+
+  }
+
+
+  // Check whether the current user is already a member.
+
+  if (myProfile) {
+
+    return showToast("You're already in DUK LEAGUE!");
+
+  }
+
+
+  // Check for existing names, ignoring capitalization.
+
+  const duplicate = allMembers.some(member =>
+
+    String(member.name || "").toLowerCase() === name.toLowerCase()
+
+  );
+
+  if (duplicate) {
+
+    return showToast("That member name is already taken!");
+
+  }
+
+
+  const button = $("joinButton");
+
+  button.disabled = true;
+
+  button.textContent = "JOINING...";
+
+
+  try {
+
+    const memberRef = doc(db, "members", name);
+
+
+    await runTransaction(db, async transaction => {
+
+      const snapshot = await transaction.get(memberRef);
+
+
+      if (snapshot.exists()) {
+
+        throw new Error("USERNAME_TAKEN");
+
+      }
+
+
+      transaction.set(memberRef, {
+
+        name: name,
+
+        uid: currentUser.uid,
+
+        rank: "Recruit",
+
+        bio: "New to DUK LEAGUE! 🦆",
+
+        createdAt: serverTimestamp(),
+
+        royaltyPoints: 0,
+
+        lastRewardAt: null
+
       });
-    }
 
-    function renderMyProfile() {
-      if (!myProfile) return;
-      const points = Number(myProfile.royaltyPoints || 0);
-      const role = getRole(points);
-      $("myName").textContent = myProfile.name || "Crew member";
-      $("myRole").textContent = role;
-      $("myRoleStat").textContent = role;
-      $("myPoints").textContent = points.toLocaleString();
-      $("myJoined").textContent = dateText(myProfile.joinedAt);
-      $("bioInput").value = myProfile.bio || "";
-      $("bioCount").textContent = String((myProfile.bio || "").length);
-    }
-
-    function renderMembers() {
-      const needle = $("memberSearch").value.trim().toLowerCase();
-      const sorted = [...allMembers].sort((a, b) => (Number(b.royaltyPoints || 0) - Number(a.royaltyPoints || 0)) || String(a.name).localeCompare(String(b.name)));
-      const filtered = sorted.filter(member => `${member.name || ""} ${member.bio || ""} ${getRole(Number(member.royaltyPoints || 0))}`.toLowerCase().includes(needle));
-      $("memberCount").textContent = allMembers.length.toLocaleString();
-      $("totalPoints").textContent = allMembers.reduce((sum, member) => sum + Number(member.royaltyPoints || 0), 0).toLocaleString();
-      if (!filtered.length) {
-        $("memberList").innerHTML = '<div class="empty">No members found. The frog found nobody. 🐸</div>';
-        return;
-      }
-      $("memberList").innerHTML = filtered.map((member, index) => {
-        const points = Number(member.royaltyPoints || 0);
-        return `<article class="member">
-          <div class="member-line"><span class="member-name">${index + 1}. ${safeText(member.name || "Crew member")}</span><span class="member-rank">${safeText(getRole(points))}</span></div>
-          <p class="member-bio">${safeText(member.bio || "No bio yet.")}</p>
-          <div class="member-meta"><span>Joined ${safeText(dateText(member.joinedAt))}</span><span class="member-points">👑 ${points} RP</span></div>
-        </article>`;
-      }).join("");
-    }
-
-    async function saveBio() {
-      if (!currentUser || !myProfile) return toast("Your profile is still loading.");
-      const bio = $("bioInput").value.trim();
-      if (bio.length > 160) return toast("Bio must be 160 characters or less.");
-      try {
-        await updateDoc(doc(db, "members_v2", currentUser.uid), { bio });
-        toast("Bio saved. Looking fresh! ✨");
-      } catch (error) {
-        console.error(error);
-        toast("Couldn't save bio. Check your Firestore rules.");
-      }
-    }
-
-    async function awardRoyaltyPoint() {
-      if (!currentUser) return;
-      try {
-        await updateDoc(doc(db, "members_v2", currentUser.uid), {
-          royaltyPoints: increment(1),
-          lastRewardAt: serverTimestamp()
-        });
-        $("gameStatus").textContent = "Royalty Point saved to your profile! 👑";
-      } catch (error) {
-        console.error("Royalty point wasn't saved:", error);
-        $("gameStatus").textContent = "Point didn't sync. Try the next stage in a moment.";
-      }
-    }
-
-    $("bioInput").addEventListener("input", () => $("bioCount").textContent = String($("bioInput").value.length));
-    $("saveBio").addEventListener("click", saveBio);
-    $("memberSearch").addEventListener("input", renderMembers);
-    $("year").textContent = new Date().getFullYear();
-
-    onAuthStateChanged(auth, async (user) => {
-      if (!user) {
-        try { await signInAnonymously(auth); }
-        catch (error) { console.error(error); toast("Sign-in failed. Enable Anonymous sign-in in Firebase."); }
-        return;
-      }
-      currentUser = user;
-      try {
-        await createOrLoadProfile(user);
-        if (stopMemberListener) stopMemberListener();
-        stopMemberListener = onSnapshot(membersRef, (snapshot) => {
-          allMembers = snapshot.docs.map(item => item.data());
-          myProfile = allMembers.find(member => member.uid === currentUser.uid) || null;
-          renderMyProfile();
-          renderMembers();
-        }, (error) => {
-          console.error(error);
-          toast("Can't load members. Check Firestore rules.");
-        });
-      } catch (error) {
-        console.error(error);
-        toast("Couldn't create your crew profile. Check Firebase setup.");
-      }
     });
 
-    // ---------------- FROG FLIGHT GAME ----------------
-    const canvas = $("gameCanvas");
-    const ctx = canvas.getContext("2d");
-    const GAME_W = canvas.width;
-    const GAME_H = canvas.height;
-    const bird = { x: 88, y: 250, vy: 0, radius: 14 };
-    let pipes = [];
-    let gameRunning = false;
-    let gameStarted = false;
-    let stage = 0;
-    let animationId = 0;
-    const pipeWidth = 66;
-    const gapHeight = 158;
-    const pipeSpeed = 2.25;
-    const gravity = 0.38;
-    const flapPower = -7.1;
 
-    function makePipe(x) {
-      const gapY = 145 + Math.random() * 220;
-      return { x, gapY, passed: false };
+    input.value = "";
+
+    $("joinStatus").textContent =
+      "Welcome to the flock! 🦆";
+
+    showToast("WELCOME TO DUK LEAGUE! 👑");
+
+  } catch (error) {
+
+    console.error(error);
+
+    if (error.message === "USERNAME_TAKEN") {
+
+      showToast("That username is already taken!");
+
+    } else {
+
+      showToast("Couldn't join. Check Firebase rules.");
+
     }
-    function roundedRect(x, y, width, height, radius) {
-      ctx.beginPath();
-      ctx.roundRect(x, y, width, height, radius);
-      ctx.fill();
-    }
-    function drawPipe(pipe) {
-      const topHeight = pipe.gapY - gapHeight / 2;
-      const bottomY = pipe.gapY + gapHeight / 2;
-      const gradient = ctx.createLinearGradient(pipe.x, 0, pipe.x + pipeWidth, 0);
-      gradient.addColorStop(0, "#259c68");
-      gradient.addColorStop(.45, "#62df8b");
-      gradient.addColorStop(1, "#188052");
-      ctx.fillStyle = gradient;
-      roundedRect(pipe.x, -5, pipeWidth, topHeight, 9);
-      roundedRect(pipe.x - 5, topHeight - 21, pipeWidth + 10, 21, 7);
-      roundedRect(pipe.x, bottomY, pipeWidth, GAME_H - bottomY - 45, 9);
-      roundedRect(pipe.x - 5, bottomY, pipeWidth + 10, 21, 7);
-      ctx.fillStyle = "rgba(255,255,255,.20)";
-      ctx.fillRect(pipe.x + 9, 0, 5, Math.max(0, topHeight - 22));
-      ctx.fillRect(pipe.x + 9, bottomY + 24, 5, Math.max(0, GAME_H - bottomY - 70));
-    }
-    function drawBird() {
-      ctx.save();
-      ctx.translate(bird.x, bird.y);
-      ctx.rotate(Math.max(-.35, Math.min(.55, bird.vy * .055)));
-      ctx.fillStyle = "#ffd44f";
-      ctx.beginPath(); ctx.arc(0, 0, bird.radius, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "#fff3b8";
-      ctx.beginPath(); ctx.ellipse(-4, 5, 9, 6, -.3, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "#fff";
-      ctx.beginPath(); ctx.arc(6, -5, 5, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "#202044";
-      ctx.beginPath(); ctx.arc(8, -5, 2, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "#ff8c72";
-      ctx.beginPath(); ctx.moveTo(12, 1); ctx.lineTo(23, 5); ctx.lineTo(12, 8); ctx.closePath(); ctx.fill();
-      ctx.restore();
-    }
-    function drawScene() {
-      const sky = ctx.createLinearGradient(0, 0, 0, GAME_H);
-      sky.addColorStop(0, "#8be2ed"); sky.addColorStop(1, "#d4f6cc");
-      ctx.fillStyle = sky; ctx.fillRect(0, 0, GAME_W, GAME_H);
-      ctx.fillStyle = "rgba(255,255,255,.55)";
-      [[55,90,24],[235,125,30],[305,55,19]].forEach(([x,y,r]) => {
-        ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.arc(x+r,y+3,r*.75,0,Math.PI*2); ctx.fill();
-      });
-      ctx.fillStyle = "#9bdc91";
-      ctx.beginPath(); ctx.moveTo(0,395); ctx.quadraticCurveTo(90,360,180,400); ctx.quadraticCurveTo(270,350,360,390); ctx.lineTo(360,475); ctx.lineTo(0,475); ctx.fill();
-      pipes.forEach(drawPipe);
-      ctx.fillStyle = "#6acb78"; ctx.fillRect(0, GAME_H-45, GAME_W, 12);
-      ctx.fillStyle = "#e9d69a"; ctx.fillRect(0, GAME_H-33, GAME_W, 33);
-      ctx.fillStyle = "rgba(100,91,56,.18)";
-      for (let x=0; x<GAME_W; x+=24) ctx.fillRect(x, GAME_H-18, 12, 3);
-      drawBird();
-      ctx.fillStyle = "#202044"; ctx.font = "1000 21px system-ui"; ctx.textAlign = "center";
-      ctx.fillText(`STAGE ${stage}`, GAME_W/2, 39);
-      if (!gameRunning) {
-        ctx.fillStyle = "rgba(17,19,48,.56)"; ctx.fillRect(0,0,GAME_W,GAME_H);
-        ctx.fillStyle = "#fff"; ctx.font = "1000 30px system-ui";
-        ctx.fillText(gameStarted ? "RUN OVER!" : "FROG FLIGHT", GAME_W/2, 220);
-        ctx.font = "700 14px system-ui";
-        ctx.fillText(gameStarted ? `You cleared ${stage} stages` : "Tap START, then flap through the gaps!", GAME_W/2, 252);
-        ctx.fillStyle = "#d7ff8c"; ctx.font = "900 13px system-ui";
-        ctx.fillText(gameStarted ? "Press START to try again" : "Each pipe passed = +1 RP", GAME_W/2, 282);
+
+  } finally {
+
+    button.disabled = false;
+
+    button.textContent = "🦆 JOIN DUK LEAGUE";
+
+  }
+
+}
+
+
+$("joinButton").addEventListener("click", joinLeague);
+
+
+// =======================================
+// MEMBER DIRECTORY
+// =======================================
+
+function renderMembers() {
+
+  const search = $("memberSearch").value.trim().toLowerCase();
+
+
+  const sorted = [...allMembers].sort((a, b) => {
+
+    return Number(b.royaltyPoints || 0) -
+           Number(a.royaltyPoints || 0);
+
+  });
+
+
+  const filtered = sorted.filter(member => {
+
+    const text = (
+
+      member.name + " " +
+
+      (member.bio || "") + " " +
+
+      getRank(member.royaltyPoints)
+
+    ).toLowerCase();
+
+    return text.includes(search);
+
+  });
+
+
+  $("memberCount").textContent = allMembers.length.toLocaleString();
+
+
+  const totalPoints = allMembers.reduce((sum, member) => {
+
+    return sum + Number(member.royaltyPoints || 0);
+
+  }, 0);
+
+
+  $("totalPoints").textContent =
+    totalPoints.toLocaleString();
+
+
+  if (!filtered.length) {
+
+    $("memberGrid").innerHTML = `
+
+      <div class="empty-members">
+
+        🦆 No members found.
+
+        The duck squad is hiding!
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  $("memberGrid").innerHTML = filtered.map((member, index) => {
+
+    const points = Number(member.royaltyPoints || 0);
+
+    const rank = getRank(points);
+
+    const isMe = currentUser &&
+      member.uid === currentUser.uid;
+
+
+    return `
+
+      <article class="member-card">
+
+        <div class="member-top">
+
+          <div class="member-avatar">
+
+            🦆
+
+          </div>
+
+
+          <div>
+
+            <div class="member-name">
+
+              ${escapeHTML(member.name)}
+
+              ${isMe ? "⭐" : ""}
+
+            </div>
+
+
+            <div class="member-rank">
+
+              ${escapeHTML(rank)}
+
+              ${index === 0 && points > 0 ? " • TOP DUCK" : ""}
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="member-bio">
+
+          ${escapeHTML(member.bio || "No bio added yet.")}
+
+        </div>
+
+
+        <div class="member-footer">
+
+          <span>
+
+            Joined ${escapeHTML(formatDate(member.createdAt))}
+
+          </span>
+
+
+          <span class="member-points">
+
+            👑 ${points} RP
+
+          </span>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+
+}
+
+
+$("memberSearch").addEventListener("input", renderMembers);
+
+
+// =======================================
+// MY PROFILE
+// =======================================
+
+function renderProfile() {
+
+  if (!myProfile) {
+
+    $("myProfile").style.display = "none";
+
+    return;
+
+  }
+
+
+  $("myProfile").style.display = "block";
+
+
+  const points = Number(myProfile.royaltyPoints || 0);
+
+  $("profileName").textContent = myProfile.name;
+
+  $("profileRole").textContent = getRank(points);
+
+  $("profilePoints").textContent = points;
+
+  $("profileJoined").textContent =
+    formatDate(myProfile.createdAt);
+
+  $("profileId").textContent =
+    myProfile.id || "Member";
+
+  $("bioInput").value = myProfile.bio || "";
+
+  $("bioCount").textContent =
+    String((myProfile.bio || "").length);
+
+
+  $("joinDescription").textContent =
+    "You're already an official DUK LEAGUE member! Welcome back.";
+
+  $("joinButton").textContent = "ALREADY A MEMBER";
+
+  $("joinButton").disabled = true;
+
+}
+
+
+// =======================================
+// SAVE BIO
+// =======================================
+
+async function saveBio() {
+
+  if (!currentUser || !myProfile) {
+
+    return showToast("Join DUK LEAGUE first.");
+
+  }
+
+
+  const bio = $("bioInput").value.trim();
+
+
+  if (bio.length > 160) {
+
+    return showToast("Bio is too long.");
+
+  }
+
+
+  try {
+
+    await updateDoc(
+
+      doc(db, "members", myProfile.id),
+
+      {
+
+        bio: bio
+
       }
+
+    );
+
+
+    showToast("BIO UPDATED! ✨");
+
+  } catch (error) {
+
+    console.error(error);
+
+    showToast("Couldn't update bio. Check your rules.");
+
+  }
+
+}
+
+
+$("saveBio").addEventListener("click", saveBio);
+
+
+$("bioInput").addEventListener("input", () => {
+
+  $("bioCount").textContent =
+    String($("bioInput").value.length);
+
+});
+
+
+// =======================================
+// FIREBASE AUTHENTICATION
+// =======================================
+
+onAuthStateChanged(auth, async user => {
+
+  if (!user) {
+
+    try {
+
+      await signInAnonymously(auth);
+
+    } catch (error) {
+
+      console.error(error);
+
+      showToast("Authentication failed.");
+
     }
-    function startGame() {
-      cancelAnimationFrame(animationId);
-      bird.y = 250; bird.vy = 0;
-      pipes = [makePipe(420)];
-      stage = 0;
-      gameRunning = true;
-      gameStarted = true;
-      $("runStage").textContent = "0";
-      $("gameStatus").textContent = "Game on! Pass pipes to earn points.";
-      $("startGame").textContent = "↻ Restart run";
-      animationId = requestAnimationFrame(gameLoop);
-    }
-    function flap() {
-      if (!gameRunning) return;
-      bird.vy = flapPower;
-    }
-    function endGame() {
-      gameRunning = false;
-      drawScene();
-      $("gameStatus").textContent = `Run finished at stage ${stage}. Give it another go!`;
-      $("startGame").textContent = "↻ Play again";
-    }
-    function gameLoop() {
-      if (!gameRunning) return;
-      bird.vy += gravity;
-      bird.y += bird.vy;
-      pipes.forEach(pipe => {
-        pipe.x -= pipeSpeed;
-        if (!pipe.passed && pipe.x + pipeWidth < bird.x) {
-          pipe.passed = true;
-          stage += 1;
-          $("runStage").textContent = String(stage);
-          awardRoyaltyPoint();
-        }
-      });
-      if (pipes.length && pipes[pipes.length - 1].x < 170) pipes.push(makePipe(420));
-      pipes = pipes.filter(pipe => pipe.x + pipeWidth > -12);
-      let hit = bird.y - bird.radius < 0 || bird.y + bird.radius > GAME_H - 45;
-      for (const pipe of pipes) {
-        const overlapsX = bird.x + bird.radius > pipe.x - 4 && bird.x - bird.radius < pipe.x + pipeWidth + 4;
-        const gapTop = pipe.gapY - gapHeight/2;
-        const gapBottom = pipe.gapY + gapHeight/2;
-        if (overlapsX && (bird.y - bird.radius < gapTop || bird.y + bird.radius > gapBottom)) hit = true;
+
+    return;
+
+  }
+
+
+  currentUser = user;
+
+
+  if (profileListener) {
+
+    profileListener();
+
+  }
+
+
+  profileListener = onSnapshot(membersRef, snapshot => {
+
+    allMembers = snapshot.docs.map(item => ({
+
+      id: item.id,
+
+      ...item.data()
+
+    }));
+
+
+    myProfile = allMembers.find(member =>
+
+      member.uid === currentUser.uid
+
+    ) || null;
+
+
+    renderMembers();
+
+    renderProfile();
+
+
+  }, error => {
+
+    console.error(error);
+
+    showToast("Couldn't load members.");
+
+  });
+
+});
+
+
+// =======================================
+// DUCK DASH GAME
+// =======================================
+
+const canvas = $("gameCanvas");
+
+const ctx = canvas.getContext("2d");
+
+
+const GAME_WIDTH = 360;
+
+const GAME_HEIGHT = 520;
+
+
+const duck = {
+
+  x: 85,
+
+  y: 245,
+
+  velocity: 0,
+
+  radius: 15
+
+};
+
+
+let pipes = [];
+
+let score = 0;
+
+let running = false;
+
+let started = false;
+
+let animation = 0;
+
+
+const gravity = 0.38;
+
+const flapPower = -7.1;
+
+const pipeWidth = 65;
+
+const gapHeight = 165;
+
+const pipeSpeed = 2.4;
+
+
+// =======================================
+// PIPE CREATION
+// =======================================
+
+function createPipe(x) {
+
+  return {
+
+    x: x,
+
+    gapY: 145 + Math.random() * 210,
+
+    passed: false
+
+  };
+
+}
+
+
+// =======================================
+// DUCK DRAWING
+// =======================================
+
+function drawDuck() {
+
+  ctx.save();
+
+  ctx.translate(duck.x, duck.y);
+
+
+  // Body
+
+  ctx.fillStyle = "#ffe34e";
+
+  ctx.beginPath();
+
+  ctx.ellipse(0, 0, 19, 14, 0, 0, Math.PI * 2);
+
+  ctx.fill();
+
+
+  // Head
+
+  ctx.beginPath();
+
+  ctx.arc(12, -9, 10, 0, Math.PI * 2);
+
+  ctx.fill();
+
+
+  // Wing
+
+  ctx.fillStyle = "#f6c832";
+
+  ctx.beginPath();
+
+  ctx.ellipse(-5, 2, 11, 7, -.2, 0, Math.PI * 2);
+
+  ctx.fill();
+
+
+  // Eye
+
+  ctx.fillStyle = "#22223a";
+
+  ctx.beginPath();
+
+  ctx.arc(16, -11, 2, 0, Math.PI * 2);
+
+  ctx.fill();
+
+
+  // Beak
+
+  ctx.fillStyle = "#ff8738";
+
+  ctx.beginPath();
+
+  ctx.moveTo(20, -7);
+
+  ctx.lineTo(30, -4);
+
+  ctx.lineTo(20, -1);
+
+  ctx.closePath();
+
+  ctx.fill();
+
+
+  // Tiny tail
+
+  ctx.fillStyle = "#f6c832";
+
+  ctx.beginPath();
+
+  ctx.moveTo(-16, -3);
+
+  ctx.lineTo(-25, -10);
+
+  ctx.lineTo(-20, 2);
+
+  ctx.closePath();
+
+  ctx.fill();
+
+
+  ctx.restore();
+
+}
+
+
+// =======================================
+// PIPE DRAWING
+// =======================================
+
+function roundedRect(x, y, w, h, r) {
+
+  if (h <= 0) return;
+
+  ctx.beginPath();
+
+  ctx.roundRect(x, y, w, h, r);
+
+  ctx.fill();
+
+}
+
+
+function drawPipe(pipe) {
+
+  const topHeight =
+    pipe.gapY - gapHeight / 2;
+
+  const bottomStart =
+    pipe.gapY + gapHeight / 2;
+
+
+  const gradient = ctx.createLinearGradient(
+
+    pipe.x,
+
+    0,
+
+    pipe.x + pipeWidth,
+
+    0
+
+  );
+
+
+  gradient.addColorStop(0, "#197b59");
+
+  gradient.addColorStop(.5, "#58db91");
+
+  gradient.addColorStop(1, "#176a4c");
+
+
+  ctx.fillStyle = gradient;
+
+
+  // Top pipe
+
+  roundedRect(
+
+    pipe.x,
+
+    0,
+
+    pipeWidth,
+
+    topHeight - 15,
+
+    9
+
+  );
+
+
+  roundedRect(
+
+    pipe.x - 5,
+
+    topHeight - 20,
+
+    pipeWidth + 10,
+
+    20,
+
+    7
+
+  );
+
+
+  // Bottom pipe
+
+  roundedRect(
+
+    pipe.x,
+
+    bottomStart + 20,
+
+    pipeWidth,
+
+    GAME_HEIGHT - bottomStart - 65,
+
+    9
+
+  );
+
+
+  roundedRect(
+
+    pipe.x - 5,
+
+    bottomStart,
+
+    pipeWidth + 10,
+
+    20,
+
+    7
+
+  );
+
+
+  // Highlights
+
+  ctx.fillStyle = "#ffffff29";
+
+  ctx.fillRect(pipe.x + 9, 0, 5, Math.max(0, topHeight - 20));
+
+  ctx.fillRect(
+
+    pipe.x + 9,
+
+    bottomStart + 22,
+
+    5,
+
+    Math.max(0, GAME_HEIGHT - bottomStart - 75)
+
+  );
+
+}
+
+
+// =======================================
+// BACKGROUND
+// =======================================
+
+function drawBackground() {
+
+  const gradient = ctx.createLinearGradient(
+
+    0,
+
+    0,
+
+    0,
+
+    GAME_HEIGHT
+
+  );
+
+
+  gradient.addColorStop(0, "#72ccef");
+
+  gradient.addColorStop(1, "#c4efff");
+
+
+  ctx.fillStyle = gradient;
+
+  ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+
+
+  // Clouds
+
+  ctx.fillStyle = "#ffffffaa";
+
+
+  [
+
+    [55, 90, 24],
+
+    [220, 125, 28],
+
+    [300, 65, 20]
+
+  ].forEach(([x,y,r]) => {
+
+    ctx.beginPath();
+
+    ctx.arc(x,y,r,0,Math.PI*2);
+
+    ctx.arc(x+r,y+4,r*.8,0,Math.PI*2);
+
+    ctx.arc(x-r,y+5,r*.7,0,Math.PI*2);
+
+    ctx.fill();
+
+  });
+
+
+  // Distant hills
+
+  ctx.fillStyle = "#8cdb9d";
+
+  ctx.beginPath();
+
+  ctx.moveTo(0,410);
+
+  ctx.quadraticCurveTo(90,360,180,407);
+
+  ctx.quadraticCurveTo(280,350,360,405);
+
+  ctx.lineTo(360,475);
+
+  ctx.lineTo(0,475);
+
+  ctx.fill();
+
+
+  // Ground
+
+  ctx.fillStyle = "#62b96e";
+
+  ctx.fillRect(0, GAME_HEIGHT - 48, GAME_WIDTH, 13);
+
+
+  ctx.fillStyle = "#dfc78c";
+
+  ctx.fillRect(0, GAME_HEIGHT - 35, GAME_WIDTH, 35);
+
+}
+
+
+// =======================================
+// DRAW EVERYTHING
+// =======================================
+
+function drawGame() {
+
+  drawBackground();
+
+
+  pipes.forEach(drawPipe);
+
+
+  drawDuck();
+
+
+  ctx.textAlign = "center";
+
+  ctx.fillStyle = "#ffffff";
+
+  ctx.font = "1000 23px Nunito";
+
+  ctx.shadowColor = "#0005";
+
+  ctx.shadowBlur = 5;
+
+  ctx.fillText(
+
+    "STAGE " + score,
+
+    GAME_WIDTH / 2,
+
+    38
+
+  );
+
+
+  ctx.shadowBlur = 0;
+
+
+  if (!running) {
+
+    ctx.fillStyle = "#11132999";
+
+    ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+
+
+    ctx.fillStyle = "#ffffff";
+
+    ctx.font = "1000 29px Nunito";
+
+
+    ctx.fillText(
+
+      started ? "GAME OVER!" : "DUCK DASH",
+
+      GAME_WIDTH / 2,
+
+      220
+
+    );
+
+
+    ctx.font = "800 14px Nunito";
+
+
+    ctx.fillText(
+
+      started
+
+        ? "You passed " + score + " pipes!"
+
+        : "Tap START to begin!",
+
+      GAME_WIDTH / 2,
+
+      252
+
+    );
+
+
+    ctx.fillStyle = "#ffe17b";
+
+    ctx.fillText(
+
+      "ONE PIPE = ONE ROYALTY POINT",
+
+      GAME_WIDTH / 2,
+
+      285
+
+    );
+
+  }
+
+}
+
+
+// =======================================
+// START GAME
+// =======================================
+
+function startGame() {
+
+  cancelAnimationFrame(animation);
+
+
+  duck.y = 245;
+
+  duck.velocity = 0;
+
+
+  pipes = [
+
+    createPipe(410)
+
+  ];
+
+
+  score = 0;
+
+  running = true;
+
+  started = true;
+
+
+  $("gameScore").textContent = "0";
+
+  $("gameStatus").textContent =
+    myProfile
+
+      ? "Good luck! Earn Royalty Points."
+
+      : "You can play, but join the league to save points.";
+
+
+  $("startGame").textContent = "↻ RESTART";
+
+
+  animation = requestAnimationFrame(gameLoop);
+
+}
+
+
+// =======================================
+// DUCK FLAP
+// =======================================
+
+function flap() {
+
+  if (!running) return;
+
+  duck.velocity = flapPower;
+
+}
+
+
+// =======================================
+// GAME OVER
+// =======================================
+
+function gameOver() {
+
+  running = false;
+
+  drawGame();
+
+
+  $("gameStatus").textContent =
+
+    "You cleared " + score + " stages. Try again!";
+
+
+  $("startGame").textContent = "↻ PLAY AGAIN";
+
+}
+
+
+// =======================================
+// AWARD ROYALTY POINT
+// =======================================
+
+async function awardPoint() {
+
+  if (!currentUser || !myProfile) {
+
+    $("gameStatus").textContent =
+      "Join DUK LEAGUE to save Royalty Points.";
+
+    return;
+
+  }
+
+
+  try {
+
+    await updateDoc(
+
+      doc(db, "members", myProfile.id),
+
+      {
+
+        royaltyPoints: increment(1),
+
+        lastRewardAt: serverTimestamp()
+
       }
-      if (hit) return endGame();
-      drawScene();
-      animationId = requestAnimationFrame(gameLoop);
+
+    );
+
+
+    $("gameStatus").textContent =
+      "ROYALTY POINT EARNED! 👑";
+
+  } catch (error) {
+
+    console.error(error);
+
+    $("gameStatus").textContent =
+      "Point couldn't sync. Check your connection.";
+
+  }
+
+}
+
+
+// =======================================
+// GAME LOOP
+// =======================================
+
+function gameLoop() {
+
+  if (!running) return;
+
+
+  duck.velocity += gravity;
+
+  duck.y += duck.velocity;
+
+
+  // Move pipes
+
+  pipes.forEach(pipe => {
+
+    pipe.x -= pipeSpeed;
+
+
+    // Award a point after passing a pipe
+
+    if (
+
+      !pipe.passed &&
+
+      pipe.x + pipeWidth < duck.x
+
+    ) {
+
+      pipe.passed = true;
+
+      score++;
+
+
+      $("gameScore").textContent = score;
+
+
+      awardPoint();
+
     }
-    $("startGame").addEventListener("click", startGame);
-    canvas.addEventListener("pointerdown", (event) => {
-      event.preventDefault();
-      if (!gameRunning) startGame(); else flap();
-    });
-    window.addEventListener("keydown", (event) => {
-      if (event.code === "Space" || event.code === "ArrowUp") {
-        event.preventDefault();
-        if (!gameRunning) startGame(); else flap();
-      }
-    });
-    drawScene();
-  </script>
+
+  });
+
+
+  // Spawn pipes
+
+  if (
+
+    pipes.length &&
+
+    pipes[pipes.length - 1].x < 170
+
+  ) {
+
+    pipes.push(createPipe(410));
+
+  }
+
+
+  // Remove old pipes
+
+  pipes = pipes.filter(pipe =>
+
+    pipe.x + pipeWidth > -10
+
+  );
+
+
+  // Ground and ceiling collision
+
+  let hit =
+
+    duck.y - duck.radius < 0 ||
+
+    duck.y + duck.radius > GAME_HEIGHT - 48;
+
+
+  // Pipe collision
+
+  for (const pipe of pipes) {
+
+    const overlapping =
+
+      duck.x + duck.radius > pipe.x - 5 &&
+
+      duck.x - duck.radius < pipe.x + pipeWidth + 5;
+
+
+    const gapTop =
+
+      pipe.gapY - gapHeight / 2;
+
+
+    const gapBottom =
+
+      pipe.gapY + gapHeight / 2;
+
+
+    if (
+
+      overlapping &&
+
+      (
+
+        duck.y - duck.radius < gapTop ||
+
+        duck.y + duck.radius > gapBottom
+
+      )
+
+    ) {
+
+      hit = true;
+
+    }
+
+  }
+
+
+  if (hit) {
+
+    gameOver();
+
+    return;
+
+  }
+
+
+  drawGame();
+
+
+  animation = requestAnimationFrame(gameLoop);
+
+}
+
+
+// =======================================
+// GAME CONTROLS
+// =======================================
+
+$("startGame").addEventListener("click", startGame);
+
+
+canvas.addEventListener("pointerdown", event => {
+
+  event.preventDefault();
+
+  if (!running) {
+
+    startGame();
+
+  } else {
+
+    flap();
+
+  }
+
+});
+
+
+window.addEventListener("keydown", event => {
+
+  const tag = document.activeElement?.tagName;
+
+  if (tag === "INPUT" || tag === "TEXTAREA") {
+
+    return;
+
+  }
+
+
+  if (
+
+    event.code === "Space" ||
+
+    event.code === "ArrowUp"
+
+  ) {
+
+    event.preventDefault();
+
+    if (!running) {
+
+      startGame();
+
+    } else {
+
+      flap();
+
+    }
+
+  }
+
+});
+
+
+// =======================================
+// FAQ INTERACTIONS
+// =======================================
+
+document.querySelectorAll(".faq-question").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const item = button.parentElement;
+
+    item.classList.toggle("active");
+
+
+    const symbol = button.querySelector("span");
+
+    symbol.textContent =
+
+      item.classList.contains("active")
+
+        ? "−"
+
+        : "+";
+
+  });
+
+});
+
+
+// =======================================
+// FOOTER DATE
+// =======================================
+
+$("year").textContent = new Date().getFullYear();
+
+
+// Initial game screen
+
+drawGame();
+
+
+// =======================================
+// END OF DUK LEAGUE WEBSITE
+// =======================================
+
+</script>
+
 </body>
 </html>
