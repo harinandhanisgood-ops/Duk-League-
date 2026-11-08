@@ -3,3488 +3,1091 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111329">
-<title>DUK LEAGUE | Official Crew HQ</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900;1000&display=swap" rel="stylesheet">
+<title>DUK LEAGUE | Official</title>
 
 <style>
-
-/* =========================================
-   DUK LEAGUE — OFFICIAL WEBSITE
-   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --background: #111329;
-  --background2: #171a38;
-  --card: #202448;
-  --card2: #292d55;
-
-  --white: #ffffff;
-  --muted: #aeb3d5;
-
-  --orange: #ffae42;
-  --yellow: #ffe17b;
-  --blue: #69d8ff;
-  --purple: #a58bff;
-  --green: #9cf28b;
-  --pink: #ff84bf;
-
-  --border: rgba(255,255,255,0.09);
-  --shadow: 0 15px 45px rgba(0,0,0,0.25);
+    --yellow: #ffe34d;
+    --orange: #ff9f43;
+    --dark: #11120e;
+    --card: #1c1e17;
+    --text: #f8f8ee;
+    --muted: #aaa99c;
+    --green: #a6e86c;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  color: var(--white);
-  background:
-    radial-gradient(circle at 15% 5%, #30315a 0%, transparent 30%),
-    radial-gradient(circle at 90% 30%, #242449 0%, transparent 30%),
-    var(--background);
-  overflow-x: hidden;
+    font-family: 'Outfit', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
 }
 
-button,
-input,
-textarea {
-  font-family: inherit;
+button, input, textarea {
+    font-family: inherit;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
+    border: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1180px, calc(100% - 36px));
-  margin: auto;
-}
-
-/* =========================================
-   HEADER
-   ========================================= */
-
-.header {
-  height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(17,18,14,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #33352a;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    font-weight: 900;
+    font-size: 23px;
+    color: var(--yellow);
+    letter-spacing: -1px;
 }
 
-.logo-icon {
-  width: 47px;
-  height: 47px;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #ffcb61, #ff924a);
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  box-shadow: 0 7px 25px #ffae4233;
-  transform: rotate(-5deg);
+.logo span {
+    color: white;
 }
 
-.logo-name {
-  font-size: 19px;
-  font-weight: 1000;
-  letter-spacing: 1px;
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
 
-.logo-sub {
-  display: block;
-  font-size: 9px;
-  color: var(--muted);
-  letter-spacing: 3px;
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+.nav-links a:hover {
+    color: var(--yellow);
 }
-
-.nav a {
-  color: var(--muted);
-  padding: 10px 14px;
-  border-radius: 11px;
-  font-size: 13px;
-  font-weight: 900;
-  transition: .2s;
-}
-
-.nav a:hover {
-  color: white;
-  background: #ffffff12;
-}
-
-.nav .nav-join {
-  background: var(--orange);
-  color: #28203a;
-}
-
-/* =========================================
-   BUTTONS
-   ========================================= */
 
 .btn {
-  border: none;
-  padding: 13px 20px;
-  border-radius: 13px;
-  background: linear-gradient(135deg, #ffce68, #ff9b45);
-  color: #28203a;
-  font-size: 14px;
-  font-weight: 1000;
-  transition: .2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: .2s;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.08);
-  box-shadow: 0 9px 25px #ffae4233;
+    transform: translateY(-2px);
 }
 
-.btn-secondary {
-  background: #ffffff10;
-  border: 1px solid var(--border);
-  color: white;
+.btn-yellow {
+    background: var(--yellow);
+    color: #17170f;
 }
 
-.btn-purple {
-  background: linear-gradient(135deg, #b9a2ff, #8e77ff);
-  color: white;
+.btn-dark {
+    background: #292b20;
+    color: white;
+    border: 1px solid #444638;
 }
-
-.btn-blue {
-  background: linear-gradient(135deg, #84e7ff, #53baff);
-  color: #102037;
-}
-
-.btn-small {
-  padding: 9px 13px;
-  font-size: 12px;
-  border-radius: 10px;
-}
-
-/* =========================================
-   HERO
-   ========================================= */
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 40px;
-  align-items: center;
-  padding: 75px 0 55px;
+    min-height: 90vh;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+    radial-gradient(ellipse at 80% 50%, #41401a 0%, transparent 45%),
+    radial-gradient(ellipse at 0% 100%, #252b17 0%, transparent 50%);
 }
 
-.hero-tag {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px 13px;
-  border-radius: 30px;
-  color: var(--orange);
-  background: #ffae4218;
-  border: 1px solid #ffae4240;
-  font-size: 11px;
-  font-weight: 1000;
-  letter-spacing: 1.5px;
+.hero-content {
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+    background: #2a2d1c;
+    border: 1px solid #56572c;
+    color: var(--yellow);
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-  margin-top: 23px;
-  font-size: clamp(45px, 7vw, 82px);
-  line-height: .98;
-  font-weight: 1000;
-  letter-spacing: -4px;
+    font-size: clamp(50px, 8vw, 100px);
+    font-weight: 900;
+    line-height: .95;
+    letter-spacing: -5px;
 }
 
 .hero h1 span {
-  background: linear-gradient(90deg, #ffcb65, #ff91a9, #a98cff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+    color: var(--yellow);
 }
 
-.hero-description {
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 15px;
-  max-width: 510px;
-  margin-top: 20px;
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 25px 0;
+    max-width: 480px;
 }
 
 .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 27px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.hero-visual {
-  min-height: 365px;
-  background:
-    radial-gradient(circle at 50% 45%, #ffb84b35, transparent 55%),
-    linear-gradient(145deg, #303459, #1c2042);
-  border: 1px solid var(--border);
-  border-radius: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.duck-art {
+    font-size: clamp(130px, 25vw, 300px);
+    filter: drop-shadow(0 30px 50px #000);
+    animation: float 3s ease-in-out infinite;
 }
 
-.hero-visual::before,
-.hero-visual::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #ffffff13;
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
 }
 
-.hero-visual::before {
-  width: 280px;
-  height: 280px;
+section {
+    padding: 80px 7%;
 }
 
-.hero-visual::after {
-  width: 370px;
-  height: 370px;
+.section-label {
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
 }
 
-.big-duck {
-  position: relative;
-  z-index: 2;
-  font-size: 160px;
-  filter: drop-shadow(0 22px 20px #0005);
-  animation: duckFloat 3s ease-in-out infinite;
+.section-title {
+    font-size: clamp(30px, 5vw, 55px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
 }
 
-@keyframes duckFloat {
-  0%,100% {
-    transform: translateY(0) rotate(-5deg);
-  }
-
-  50% {
-    transform: translateY(-14px) rotate(5deg);
-  }
+.section-desc {
+    color: var(--muted);
+    max-width: 550px;
+    line-height: 1.7;
+    margin-bottom: 40px;
 }
 
-.duck-badge {
-  position: absolute;
-  z-index: 3;
-  padding: 11px 15px;
-  border-radius: 13px;
-  color: #27233c;
-  font-weight: 1000;
-  background: var(--yellow);
-  box-shadow: var(--shadow);
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
 }
 
-.badge-one {
-  top: 35px;
-  left: 24px;
-  transform: rotate(-6deg);
+.card {
+    background: var(--card);
+    border: 1px solid #303226;
+    padding: 28px;
+    border-radius: 22px;
+    transition: .25s;
 }
 
-.badge-two {
-  bottom: 38px;
-  right: 25px;
-  background: var(--green);
-  transform: rotate(5deg);
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #777735;
 }
 
-/* =========================================
-   STATISTICS
-   ========================================= */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-  margin: 10px 0 55px;
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
-.stat {
-  padding: 22px;
-  border-radius: 18px;
-  background: #ffffff08;
-  border: 1px solid var(--border);
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
-.stat strong {
-  display: block;
-  font-size: 30px;
-  font-weight: 1000;
+.card p {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14px;
 }
 
-.stat span {
-  display: block;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 2px;
-  font-weight: 900;
+#dashboard {
+    background: #171811;
 }
 
-/* =========================================
-   GENERAL SECTIONS
-   ========================================= */
-
-.section {
-  margin: 65px 0;
-  scroll-margin-top: 100px;
+.dashboard-box {
+    background: #222419;
+    border: 1px solid #41432d;
+    padding: 30px;
+    border-radius: 25px;
 }
 
-.section-heading {
-  margin-bottom: 23px;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 15px;
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
-.section-heading h2 {
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 1000;
-  letter-spacing: -1.5px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  margin-top: 5px;
-  font-size: 13px;
-}
-
-.panel {
-  background: linear-gradient(145deg, #ffffff09, #ffffff04);
-  border: 1px solid var(--border);
-  border-radius: 23px;
-  box-shadow: var(--shadow);
-}
-
-/* =========================================
-   JOIN LEAGUE
-   ========================================= */
-
-.join-panel {
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 1fr .9fr;
-  align-items: center;
-  gap: 30px;
-  overflow: hidden;
-  position: relative;
-  background:
-    radial-gradient(circle at 95% 10%, #ffae4221, transparent 35%),
-    #202448;
-}
-
-.join-panel h2 {
-  font-size: 30px;
-  font-weight: 1000;
-}
-
-.join-panel p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-  margin-top: 10px;
-}
-
-.join-form {
-  background: #11152d;
-  border: 1px solid var(--border);
-  border-radius: 19px;
-  padding: 20px;
-}
-
-.input-label {
-  display: block;
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 1000;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-
-.input {
-  width: 100%;
-  padding: 13px 14px;
-  color: white;
-  background: #222747;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  outline: none;
-  font-size: 14px;
-}
-
-.input:focus {
-  border-color: var(--orange);
-}
-
-.join-form .btn {
-  width: 100%;
-  margin-top: 13px;
-}
-
-.join-note {
-  margin-top: 10px;
-  font-size: 10px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.join-status {
-  margin-top: 10px;
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 900;
-}
-
-/* =========================================
-   MEMBER DASHBOARD
-   ========================================= */
-
-.dashboard {
-  padding: 22px;
-}
-
-.dashboard-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 18px;
-}
-
-.dashboard-title {
-  font-weight: 1000;
-  font-size: 18px;
-}
-
-.search {
-  width: 260px;
-  max-width: 100%;
-  padding: 11px 13px;
-  background: #11152d;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: white;
-  outline: none;
-}
-
-.search:focus {
-  border-color: var(--purple);
-}
-
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 13px;
-}
-
-.member-card {
-  border: 1px solid var(--border);
-  background: #ffffff06;
-  border-radius: 17px;
-  padding: 16px;
-  transition: .2s;
-}
-
-.member-card:hover {
-  transform: translateY(-3px);
-  border-color: #ffae4255;
-  background: #ffffff0b;
-}
-
-.member-top {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-
-.member-avatar {
-  width: 43px;
-  height: 43px;
-  min-width: 43px;
-  display: grid;
-  place-items: center;
-  background: #ffae421b;
-  border-radius: 14px;
-  font-size: 24px;
-}
-
-.member-name {
-  font-size: 14px;
-  font-weight: 1000;
-  overflow-wrap: anywhere;
-}
-
-.member-rank {
-  font-size: 10px;
-  color: var(--orange);
-  font-weight: 1000;
-  margin-top: 3px;
-}
-
-.member-bio {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.6;
-  padding: 12px 0;
-  min-height: 44px;
-  overflow-wrap: anywhere;
-}
-
-.member-footer {
-  border-top: 1px solid var(--border);
-  padding-top: 11px;
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 10px;
-  color: var(--muted);
-}
-
-.member-points {
-  color: var(--green);
-  font-weight: 1000;
-}
-
-.empty-members {
-  grid-column: 1/-1;
-  text-align: center;
-  padding: 40px 15px;
-  color: var(--muted);
-}
-
-/* =========================================
-   MY PROFILE
-   ========================================= */
-
-.profile {
-  display: none;
-}
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 17px;
-}
-
-.profile-card {
-  padding: 23px;
-}
-
-.profile-identity {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-
-.profile-emoji {
-  width: 57px;
-  height: 57px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg,#ffce68,#ff9553);
-  color: #28203a;
-  border-radius: 18px;
-  font-size: 29px;
+.avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    background: var(--yellow);
+    display: grid;
+    place-items: center;
+    font-size: 40px;
 }
 
 .profile-name {
-  font-size: 18px;
-  font-weight: 1000;
+    font-size: 28px;
+    font-weight: 900;
 }
 
-.profile-role {
-  color: var(--orange);
-  font-size: 11px;
-  font-weight: 1000;
+.rank {
+    display: inline-block;
+    color: var(--yellow);
+    background: #34351e;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 5px;
 }
 
-.profile-points {
-  margin: 22px 0;
-  padding: 17px;
-  background: #9cf28b12;
-  border: 1px solid #9cf28b25;
-  border-radius: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
-.profile-points strong {
-  font-size: 27px;
-  color: var(--green);
+.stat {
+    background: #171811;
+    padding: 20px;
+    border-radius: 15px;
 }
 
-.profile-details {
-  font-size: 12px;
-  color: var(--muted);
+.stat-label {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 8px;
 }
 
-.profile-card textarea {
-  width: 100%;
-  min-height: 100px;
-  padding: 13px;
-  color: white;
-  resize: vertical;
-  border: 1px solid var(--border);
-  background: #11152d;
-  border-radius: 12px;
-  outline: none;
+.stat-value {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--yellow);
 }
 
-.profile-card textarea:focus {
-  border-color: var(--purple);
+.bio-box {
+    background: #171811;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
-.profile-card label {
-  display: block;
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 1000;
-  margin: 15px 0 8px;
+.bio-box p {
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
-.char-count {
-  color: var(--muted);
-  font-size: 10px;
-  margin-top: 6px;
+input, textarea {
+    width: 100%;
+    background: #171811;
+    color: white;
+    border: 1px solid #454633;
+    padding: 13px;
+    border-radius: 10px;
+    outline: none;
+    margin: 10px 0;
 }
 
-/* =========================================
-   DUCK DASH GAME
-   ========================================= */
-
-.game-layout {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 290px;
-  gap: 18px;
+input:focus, textarea:focus {
+    border-color: var(--yellow);
 }
 
-.game-box {
-  padding: 17px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+textarea {
+    resize: vertical;
+    min-height: 80px;
 }
 
-.game-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 13px;
-  gap: 10px;
-}
-
-.game-header strong {
-  font-size: 14px;
-}
-
-.game-label {
-  padding: 7px 11px;
-  border-radius: 50px;
-  color: var(--green);
-  background: #9cf28b13;
-  font-size: 10px;
-  font-weight: 1000;
+.game-container {
+    background: #222419;
+    border: 1px solid #41432d;
+    border-radius: 25px;
+    padding: 20px;
 }
 
 #gameCanvas {
-  width: min(100%, 380px);
-  height: auto;
-  aspect-ratio: 360 / 520;
-  background: #93def4;
-  border-radius: 19px;
-  border: 2px solid #ffffff22;
-  display: block;
-  touch-action: none;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: 350px;
+    margin: auto;
+    background: #a9d8ee;
+    border-radius: 15px;
 }
 
-.game-instructions {
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 12px;
-  text-align: center;
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.game-side {
-  padding: 23px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
+.game-info p {
+    color: var(--muted);
+    font-size: 13px;
 }
 
-.game-side h3 {
-  font-size: 21px;
-  font-weight: 1000;
+.join-section {
+    text-align: center;
+    background: radial-gradient(ellipse at center, #3b3a19, #11120e 70%);
 }
 
-.game-side p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.8;
-  margin-top: 9px;
+.join-section .section-desc {
+    margin: 0 auto 30px;
 }
 
-.game-rule {
-  padding: 11px;
-  background: #ffffff08;
-  border-radius: 12px;
-  margin-top: 10px;
-  font-size: 12px;
+footer {
+    border-top: 1px solid #303226;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 13px;
 }
-
-.game-score {
-  padding: 15px;
-  background: #ffae4212;
-  border: 1px solid #ffae4225;
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.game-score strong {
-  color: var(--orange);
-  font-size: 25px;
-}
-
-.game-status {
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-/* =========================================
-   RANKS
-   ========================================= */
-
-.rank-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 12px;
-}
-
-.rank-card {
-  padding: 18px;
-  text-align: center;
-  border-radius: 17px;
-  border: 1px solid var(--border);
-  background: #ffffff07;
-  transition: .2s;
-}
-
-.rank-card:hover {
-  transform: translateY(-4px);
-  border-color: #ffae4255;
-}
-
-.rank-icon {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-.rank-card strong {
-  display: block;
-  font-size: 13px;
-  font-weight: 1000;
-}
-
-.rank-card span {
-  display: block;
-  color: var(--muted);
-  font-size: 10px;
-  margin-top: 5px;
-}
-
-/* =========================================
-   INFO CARDS
-   ========================================= */
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 14px;
-}
-
-.info-card {
-  padding: 20px;
-}
-
-.info-icon {
-  font-size: 29px;
-}
-
-.info-card h3 {
-  margin-top: 12px;
-  font-size: 15px;
-}
-
-.info-card p {
-  color: var(--muted);
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* =========================================
-   FAQ
-   ========================================= */
-
-.faq-list {
-  display: grid;
-  gap: 10px;
-}
-
-.faq-item {
-  background: #ffffff07;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.faq-question {
-  width: 100%;
-  color: white;
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 17px;
-  font-weight: 1000;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.faq-answer {
-  display: none;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.7;
-  padding: 0 17px 17px;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-.footer {
-  border-top: 1px solid var(--border);
-  margin-top: 70px;
-  padding: 30px 0;
-  color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  font-size: 11px;
-}
-
-.footer-brand {
-  color: white;
-  font-weight: 1000;
-}
-
-/* =========================================
-   TOAST
-   ========================================= */
-
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 25px;
-  transform: translate(-50%,20px);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 100;
-  background: var(--green);
-  color: #17202a;
-  border-radius: 12px;
-  padding: 13px 19px;
-  font-size: 12px;
-  font-weight: 1000;
-  box-shadow: var(--shadow);
-  max-width: calc(100% - 25px);
-  text-align: center;
-  transition: .25s;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translate(-50%,0);
-}
-
-/* =========================================
-   MODAL
-   ========================================= */
 
 .modal {
-  position: fixed;
-  inset: 0;
-  z-index: 80;
-  background: #080916cc;
-  backdrop-filter: blur(8px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal.active {
-  display: flex;
-}
-
-.modal-box {
-  width: min(430px,100%);
-  padding: 25px;
-  border-radius: 22px;
-  background: #202448;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.modal-box h2 {
-  font-size: 23px;
-}
-
-.modal-box p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-top: 8px;
-}
-
-.modal-close {
-  float: right;
-  background: #ffffff12;
-  color: white;
-  border: none;
-  width: 31px;
-  height: 31px;
-  border-radius: 10px;
-}
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-
-@media(max-width:850px) {
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .hero-visual {
-    min-height: 290px;
-  }
-
-  .join-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .game-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .game-side {
-    gap: 20px;
-  }
-
-  .profile-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rank-grid {
-    grid-template-columns: repeat(3,1fr);
-  }
-
-}
-
-@media(max-width:600px) {
-
-  .container {
-    width: calc(100% - 22px);
-  }
-
-  .header {
-    height: auto;
-    min-height: 75px;
-    gap: 10px;
-  }
-
-  .logo-name {
-    font-size: 15px;
-  }
-
-  .logo-icon {
-    width: 39px;
-    height: 39px;
-    font-size: 23px;
-  }
-
-  .nav {
-    gap: 2px;
-  }
-
-  .nav a {
-    padding: 8px;
-    font-size: 10px;
-  }
-
-  .hero {
-    padding: 48px 0 30px;
-  }
-
-  .hero h1 {
-    letter-spacing: -2px;
-  }
-
-  .hero-visual {
-    min-height: 250px;
-  }
-
-  .big-duck {
-    font-size: 115px;
-  }
-
-  .stats {
-    gap: 8px;
-    margin-bottom: 40px;
-  }
-
-  .stat {
-    padding: 13px 10px;
-  }
-
-  .stat strong {
-    font-size: 21px;
-  }
-
-  .stat span {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  .section {
-    margin: 48px 0;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .dashboard {
-    padding: 12px;
-  }
-
-  .dashboard-top {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search {
-    width: 100%;
-  }
-
-  .member-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rank-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .join-panel {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-  }
-
-  .game-box {
-    padding: 10px;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
 }
 
+.modal-content {
+    background: #202117;
+    border: 1px solid #555638;
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.modal-content p {
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--green);
+}
+
+@media(max-width: 750px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    .duck-art {
+        font-size: 160px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    #gameCanvas {
+        height: 280px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<nav>
+    <div class="logo">DUK <span>LEAGUE</span> 🦆</div>
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#game">Duck Dash</a>
+        <button class="btn btn-yellow" onclick="openJoin()">JOIN US</button>
+    </div>
+</nav>
 
-<header class="header">
+<!-- HERO -->
 
-  <a href="#home" class="logo">
+<div class="hero" id="home">
+    <div class="hero-content">
+        <div class="badge">🦆 THE OFFICIAL DUK LEAGUE WEBSITE</div>
 
-    <div class="logo-icon">🦆</div>
+        <h1>WELCOME TO<br><span>THE FLOCK.</span></h1>
 
-    <div class="logo-name">
-      DUK LEAGUE
-      <span class="logo-sub">OFFICIAL CREW HQ</span>
+        <p>
+            More than a clan. A community.
+            Enter the world of DUK LEAGUE, earn Royalty Points,
+            unlock your rank and become part of something legendary.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="btn btn-yellow" onclick="openJoin()">BECOME A MEMBER ↗</button>
+            <a href="#features">
+                <button class="btn btn-dark">EXPLORE</button>
+            </a>
+        </div>
     </div>
 
-  </a>
-
-  <nav class="nav">
-
-    <a href="#home">Home</a>
-
-    <a href="#roster">Members</a>
-
-    <a href="#game">Play</a>
-
-    <a href="#ranks">Ranks</a>
-
-    <a href="#join" class="nav-join">JOIN US</a>
-
-  </nav>
-
-</header>
-
-
-<!-- =====================================
-     HERO
-===================================== -->
-
-<main>
-
-<section class="hero" id="home">
-
-  <div>
-
-    <div class="hero-tag">
-      🟢 THE FLOCK IS ONLINE
-    </div>
-
-    <h1>
-      WELCOME TO<br>
-      <span>DUK LEAGUE.</span>
-    </h1>
-
-    <p class="hero-description">
-      More than just a Roblox crew. DUK LEAGUE is
-      where players meet, compete, earn Royalty Points
-      and build their own legacy.
-
-      Join the flock. Make your name count.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="#join" class="btn">
-        🦆 JOIN THE LEAGUE
-      </a>
-
-      <a href="#roster" class="btn btn-secondary">
-        👥 VIEW MEMBERS
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="hero-visual">
-
-    <div class="duck-badge badge-one">
-      👑 DUCK ROYALTY
-    </div>
-
-    <div class="big-duck">
-      🦆
-    </div>
-
-    <div class="duck-badge badge-two">
-      THE FLOCK 🟢
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================
-     STATISTICS
-===================================== -->
-
-<div class="stats">
-
-  <div class="stat">
-
-    <strong id="memberCount">0</strong>
-
-    <span>LEAGUE MEMBERS</span>
-
-  </div>
-
-  <div class="stat">
-
-    <strong id="totalPoints">0</strong>
-
-    <span>TOTAL ROYALTY POINTS</span>
-
-  </div>
-
-  <div class="stat">
-
-    <strong id="onlineStatus">READY</strong>
-
-    <span>LEAGUE STATUS</span>
-
-  </div>
-
+    <div class="duck-art">🐤</div>
 </div>
 
+<!-- FEATURES -->
 
-<!-- =====================================
-     JOIN THE LEAGUE
-===================================== -->
+<section id="features">
+    <div class="section-label">WHAT WE OFFER</div>
 
-<section class="section" id="join">
+    <h2 class="section-title">YOUR NEW HOME.</h2>
 
-  <div class="section-heading">
+    <p class="section-desc">
+        Everything you need to become a legendary member
+        of the DUK LEAGUE community.
+    </p>
 
-    <div>
+    <div class="cards">
 
-      <h2>🦆 Join the flock</h2>
+        <div class="card">
+            <div class="card-icon">👑</div>
+            <h3>Royalty System</h3>
+            <p>
+                Earn RP, climb the ranks and show everyone
+                your progress.
+            </p>
+        </div>
 
-      <p>Ready to become an official DUK LEAGUE member?</p>
+        <div class="card">
+            <div class="card-icon">🎮</div>
+            <h3>Duck Dash</h3>
+            <p>
+                Play our exclusive duck game and earn
+                Royalty Points.
+            </p>
+        </div>
 
-    </div>
+        <div class="card">
+            <div class="card-icon">🪪</div>
+            <h3>Member Cards</h3>
+            <p>
+                Get your own member profile with your
+                personal stats and bio.
+            </p>
+        </div>
 
-  </div>
-
-
-  <div class="panel join-panel">
-
-    <div>
-
-      <h2>Your place in the league awaits.</h2>
-
-      <p>
-        Choose your own member name and become part of
-        DUK LEAGUE. Your profile gets a join date,
-        a bio, a rank and Royalty Points.
-
-        Your journey starts here.
-      </p>
-
-      <br>
-
-      <div class="hero-tag">
-        👑 OFFICIAL MEMBERSHIP
-      </div>
-
-      <p id="joinDescription">
-        Join the league and get your own crew profile.
-      </p>
-
-    </div>
-
-
-    <div class="join-form">
-
-      <label class="input-label" for="joinName">
-        CHOOSE YOUR MEMBER NAME
-      </label>
-
-      <input
-        class="input"
-        id="joinName"
-        maxlength="20"
-        placeholder="Example: Mr.Duck"
-        autocomplete="off"
-      >
-
-      <button
-        class="btn"
-        id="joinButton"
-        type="button"
-      >
-        🦆 JOIN DUK LEAGUE
-      </button>
-
-      <div class="join-note">
-        Your username cannot be changed after joining.
-        Please choose carefully.
-      </div>
-
-      <div class="join-status" id="joinStatus"></div>
+        <div class="card">
+            <div class="card-icon">🔥</div>
+            <h3>Community</h3>
+            <p>
+                Join the flock, participate in activities
+                and become a legend.
+            </p>
+        </div>
 
     </div>
-
-  </div>
-
 </section>
 
+<!-- DASHBOARD -->
 
-<!-- =====================================
-     MEMBER DASHBOARD
-===================================== -->
+<section id="dashboard">
+    <div class="section-label">MEMBER CENTER</div>
 
-<section class="section" id="roster">
+    <h2 class="section-title">YOUR DASHBOARD.</h2>
 
-  <div class="section-heading">
+    <p class="section-desc">
+        Your personal DUK LEAGUE member space.
+    </p>
 
-    <div>
+    <div class="dashboard-box">
 
-      <h2>👑 The flock</h2>
+        <div class="profile-top">
+            <div class="avatar">🦆</div>
 
-      <p>
-        Meet the official members of DUK LEAGUE.
-        Who will become the top duck?
-      </p>
+            <div>
+                <div class="profile-name" id="memberName">Guest Duck</div>
+                <div class="rank" id="memberRank">UNREGISTERED</div>
+            </div>
 
-    </div>
+            <button class="btn btn-yellow" onclick="openJoin()">
+                JOIN THE LEAGUE
+            </button>
+        </div>
 
-  </div>
+        <div class="stats">
 
+            <div class="stat">
+                <div class="stat-label">ROYALTY POINTS</div>
+                <div class="stat-value" id="memberRP">0 RP</div>
+            </div>
 
-  <div class="panel dashboard">
+            <div class="stat">
+                <div class="stat-label">MEMBER SINCE</div>
+                <div class="stat-value" id="memberDate">---</div>
+            </div>
 
-    <div class="dashboard-top">
-
-      <div class="dashboard-title">
-        MEMBER DIRECTORY
-      </div>
-
-      <input
-        type="search"
-        class="search"
-        id="memberSearch"
-        placeholder="Search members..."
-      >
-
-    </div>
-
-
-    <div class="member-grid" id="memberGrid">
-
-      <div class="empty-members">
-        🦆 Loading the flock...
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================
-     MY PROFILE
-===================================== -->
-
-<section class="section profile" id="myProfile">
-
-  <div class="section-heading">
-
-    <div>
-
-      <h2>✨ Your member profile</h2>
-
-      <p>
-        Your profile belongs to you.
-        Only your bio can be edited.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="profile-grid">
-
-    <div class="panel profile-card">
-
-      <div class="profile-identity">
-
-        <div class="profile-emoji">🦆</div>
-
-        <div>
-
-          <div class="profile-name" id="profileName">
-            Loading...
-          </div>
-
-          <div class="profile-role" id="profileRole">
-            Recruit
-          </div>
+            <div class="stat">
+                <div class="stat-label">STATUS</div>
+                <div class="stat-value" id="memberStatus">GUEST</div>
+            </div>
 
         </div>
 
-      </div>
-
-
-      <div class="profile-points">
-
-        <span>👑 ROYALTY POINTS</span>
-
-        <strong id="profilePoints">0</strong>
-
-      </div>
-
-
-      <div class="profile-details">
-
-        <p>
-          MEMBER SINCE:
-          <strong id="profileJoined">—</strong>
-        </p>
-
-        <br>
-
-        <p>
-          YOUR ID:
-          <strong id="profileId">—</strong>
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="panel profile-card">
-
-      <h3>📝 Edit your bio</h3>
-
-      <p style="font-size:12px;color:var(--muted);margin-top:7px">
-
-        Tell other league members something about yourself.
-
-        You can only edit this part of your profile.
-
-      </p>
-
-      <label for="bioInput">YOUR BIO</label>
-
-      <textarea
-        id="bioInput"
-        maxlength="160"
-        placeholder="Tell the flock about yourself..."
-      ></textarea>
-
-      <div class="char-count">
-
-        <span id="bioCount">0</span>/160 characters
-
-      </div>
-
-      <br>
-
-      <button class="btn btn-purple" id="saveBio">
-
-        💾 SAVE BIO
-
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================
-     DUCK DASH GAME
-===================================== -->
-
-<section class="section" id="game">
-
-  <div class="section-heading">
-
-    <div>
-
-      <h2>🎮 Duck Dash</h2>
-
-      <p>
-        Your duck. Your skills. Your Royalty Points.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="game-layout">
-
-
-    <div class="panel game-box">
-
-      <div class="game-header">
-
-        <strong>DUCK DASH — STAGE RUN</strong>
-
-        <span class="game-label">
-          +1 RP PER PIPE
-        </span>
-
-      </div>
-
-
-      <canvas
-        id="gameCanvas"
-        width="360"
-        height="520"
-      ></canvas>
-
-
-      <p class="game-instructions">
-
-        TAP TO FLY • SPACE TO FLY • AVOID THE PIPES
-
-      </p>
-
-    </div>
-
-
-    <div class="panel game-side">
-
-      <div>
-
-        <h3>How to play</h3>
-
-        <p>
-
-          Fly your duck through the pipes.
-
-          Every pipe you successfully pass earns
-          one Royalty Point.
-
-          Don't crash!
-
-        </p>
-
-        <div class="game-rule">
-          🦆 Tap the screen to fly.
+        <div class="bio-box">
+            <h3>📝 YOUR BIO</h3>
+            <p id="memberBio">Join the league to create your profile!</p>
         </div>
 
-        <div class="game-rule">
-          🟢 Pass a pipe to earn 1 RP.
-        </div>
+        <textarea id="bioInput" placeholder="Write your new bio..."></textarea>
 
-        <div class="game-rule">
-          💥 Hit a pipe and the run ends.
-        </div>
-
-        <div class="game-rule">
-          👑 Earn points and climb the ranks.
-        </div>
-
-      </div>
-
-
-      <div>
-
-        <div class="game-score">
-
-          <span>YOUR STAGE</span>
-
-          <strong id="gameScore">0</strong>
-
-        </div>
-
-        <button class="btn wide" id="startGame">
-
-          ▶ START GAME
-
+        <button class="btn btn-yellow" onclick="saveBio()">
+            SAVE BIO
         </button>
 
-        <div class="game-status" id="gameStatus">
-
-          Join DUK LEAGUE to save your game rewards.
-
-        </div>
-
-      </div>
+        <p id="status"></p>
 
     </div>
-
-  </div>
-
 </section>
 
+<!-- GAME -->
 
-<!-- =====================================
-     RANKS
-===================================== -->
+<section id="game">
+    <div class="section-label">EXCLUSIVE GAME</div>
 
-<section class="section" id="ranks">
+    <h2 class="section-title">DUCK DASH.</h2>
 
-  <div class="section-heading">
-
-    <div>
-
-      <h2>🏆 Rank ladder</h2>
-
-      <p>
-        Every point takes you one step closer
-        to the top.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="rank-grid">
-
-    <div class="rank-card">
-
-      <div class="rank-icon">🌱</div>
-
-      <strong>Recruit</strong>
-
-      <span>0–4 RP</span>
-
-    </div>
-
-
-    <div class="rank-card">
-
-      <div class="rank-icon">😎</div>
-
-      <strong>Mr. Noob</strong>
-
-      <span>5–14 RP</span>
-
-    </div>
-
-
-    <div class="rank-card">
-
-      <div class="rank-icon">⚡</div>
-
-      <strong>Mr. Pro</strong>
-
-      <span>15–29 RP</span>
-
-    </div>
-
-
-    <div class="rank-card">
-
-      <div class="rank-icon">🦸</div>
-
-      <strong>Mr. Super</strong>
-
-      <span>30–59 RP</span>
-
-    </div>
-
-
-    <div class="rank-card">
-
-      <div class="rank-icon">👑</div>
-
-      <strong>Mr. Legend</strong>
-
-      <span>60–99 RP</span>
-
-    </div>
-
-
-    <div class="rank-card">
-
-      <div class="rank-icon">🔥</div>
-
-      <strong>Mr. Elite</strong>
-
-      <span>100–149 RP</span>
-
-    </div>
-
-
-    <div class="rank-card">
-
-      <div class="rank-icon">💎</div>
-
-      <strong>Mr. Supreme</strong>
-
-      <span>150+ RP</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================
-     FEATURES
-===================================== -->
-
-<section class="section">
-
-  <div class="section-heading">
-
-    <div>
-
-      <h2>✨ What is DUK LEAGUE?</h2>
-
-      <p>More than just a member list.</p>
-
-    </div>
-
-  </div>
-
-
-  <div class="info-grid">
-
-    <div class="panel info-card">
-
-      <div class="info-icon">👑</div>
-
-      <h3>Royalty Points</h3>
-
-      <p>
-
-        Earn Royalty Points by playing Duck Dash
-        and climbing through the rank ladder.
-
-      </p>
-
-    </div>
-
-
-    <div class="panel info-card">
-
-      <div class="info-icon">🦆</div>
-
-      <h3>The Crew</h3>
-
-      <p>
-
-        See the member directory, check out
-        bios and find the top members.
-
-      </p>
-
-    </div>
-
-
-    <div class="panel info-card">
-
-      <div class="info-icon">🎮</div>
-
-      <h3>Play & Compete</h3>
-
-      <p>
-
-        Play Duck Dash and try to get the
-        highest stage possible.
-
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================
-     FAQ
-===================================== -->
-
-<section class="section">
-
-  <div class="section-heading">
-
-    <div>
-
-      <h2>❓ Frequently asked questions</h2>
-
-      <p>Some things you might want to know.</p>
-
-    </div>
-
-  </div>
-
-
-  <div class="faq-list">
-
-    <div class="faq-item">
-
-      <button class="faq-question">
-
-        How do I join DUK LEAGUE?
-
-        <span>+</span>
-
-      </button>
-
-      <div class="faq-answer">
-
-        Go to the Join the Flock section,
-        choose a username and click Join DUK LEAGUE.
-
-      </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-      <button class="faq-question">
-
-        How do I earn Royalty Points?
-
-        <span>+</span>
-
-      </button>
-
-      <div class="faq-answer">
-
-        Play Duck Dash and successfully pass pipes.
-        Each pipe passed earns one Royalty Point.
-
-      </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-      <button class="faq-question">
-
-        Can I change my username?
-
-        <span>+</span>
-
-      </button>
-
-      <div class="faq-answer">
-
-        Member usernames cannot be changed
-        through the public website.
-
-      </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-      <button class="faq-question">
-
-        Can I edit someone else's profile?
-
-        <span>+</span>
-
-      </button>
-
-      <div class="faq-answer">
-
-        No. You can only edit the bio
-        belonging to your own member account.
-
-      </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-      <button class="faq-question">
-
-        What is Mr. Super?
-
-        <span>+</span>
-
-      </button>
-
-      <div class="faq-answer">
-
-        Mr. Super is one of the higher ranks.
-        You unlock it after reaching 30 Royalty Points.
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer class="footer">
-
-  <div>
-
-    <div class="footer-brand">
-      🦆 DUK LEAGUE
-    </div>
-
-    <p style="margin-top:5px">
-      The official crew HQ.
+    <p class="section-desc">
+        Flap your way through the pipes.
+        Every pipe cleared earns you RP!
     </p>
 
-  </div>
+    <div class="game-container">
 
+        <canvas id="gameCanvas" width="700" height="350"></canvas>
 
-  <div>
+        <div class="game-info">
+            <div>
+                <h3>🦆 DUCK DASH</h3>
+                <p>Click, tap or press SPACE to flap.</p>
+                <p>Don't hit the pipes or the ground!</p>
+            </div>
 
-    © <span id="year"></span> DUK LEAGUE.
+            <button class="btn btn-yellow" onclick="startGame()">
+                PLAY GAME
+            </button>
+        </div>
 
-    Built for the flock.
+    </div>
+</section>
 
-  </div>
+<!-- JOIN -->
 
+<section class="join-section">
+    <div class="section-label">YOUR ADVENTURE STARTS HERE</div>
+
+    <h2 class="section-title">JOIN THE FLOCK.</h2>
+
+    <p class="section-desc">
+        Ready to become a member of DUK LEAGUE?
+        Your journey begins now.
+    </p>
+
+    <button class="btn btn-yellow" onclick="openJoin()">
+        JOIN DUK LEAGUE 🦆
+    </button>
+</section>
+
+<footer>
+    <div class="logo">DUK LEAGUE 🦆</div>
+
+    <p>© 2026 DUK LEAGUE. Made for the flock.</p>
 </footer>
 
+<!-- JOIN MODAL -->
+
+<div class="modal" id="joinModal">
+    <div class="modal-content">
+
+        <h2>JOIN THE FLOCK 🦆</h2>
+
+        <p>
+            Create your DUK LEAGUE membership.
+            Your username will be your personal identity.
+        </p>
+
+        <input id="joinName" placeholder="Your Roblox username">
+
+        <div class="modal-actions">
+            <button class="btn btn-yellow" onclick="joinLeague()">
+                CREATE ACCOUNT
+            </button>
+
+            <button class="btn btn-dark" onclick="closeJoin()">
+                CANCEL
+            </button>
+        </div>
+
+        <p id="joinStatus"></p>
+
+    </div>
 </div>
 
-
-<!-- TOAST -->
-
-<div class="toast" id="toast"></div>
-
-
-<!-- =====================================
-     FIREBASE AND WEBSITE LOGIC
-===================================== -->
+<!-- FIREBASE -->
 
 <script type="module">
 
-import {
-  initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
-  getAuth,
-  onAuthStateChanged,
-  signInAnonymously
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
+    getFirestore,
+    doc,
+    getDoc,
+    setDoc,
+    updateDoc,
+    increment
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 import {
-  getFirestore,
-  collection,
-  doc,
-  runTransaction,
-  onSnapshot,
-  updateDoc,
-  serverTimestamp,
-  increment
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-
-// =======================================
-// FIREBASE CONFIGURATION
-// =======================================
+    getAuth,
+    signInAnonymously
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-
-  apiKey: "AIzaSyB7MX-o2la2shzfcbWFjB3m1JvPgPvH4Q",
-
-  authDomain: "duk-league.firebaseapp.com",
-
-  projectId: "duk-league",
-
-  storageBucket: "duk-league.firebasestorage.app",
-
-  messagingSenderId: "379601710014",
-
-  appId: "1:379601710014:web:d7c8c33d6b3708b6e1a7ef",
-
-  measurementId: "G-4J2BJ68HR6"
-
+    apiKey: "AIzaSyB7MX-o2la2shzfcbWFjB3m1JvPgPvH4Q",
+    authDomain: "duk-league.firebaseapp.com",
+    projectId: "duk-league",
+    storageBucket: "duk-league.firebasestorage.app",
+    messagingSenderId: "379601710014",
+    appId: "1:379601710014:web:d7c8c33d6b3708b6e1a7ef",
+    measurementId: "G-4J2BJ68HR6"
 };
-
-
-// =======================================
-// INITIALIZE FIREBASE
-// =======================================
 
 const app = initializeApp(firebaseConfig);
-
+const db = getFirestore(app);
 const auth = getAuth(app);
 
-const db = getFirestore(app);
-
-const membersRef = collection(db, "members");
-
-
 let currentUser = null;
-
-let myProfile = null;
-
-let allMembers = [];
-
-let profileListener = null;
-
-let toastTimer = null;
-
-
-// =======================================
-// SMALL HELPERS
-// =======================================
-
-const $ = id => document.getElementById(id);
-
-
-function showToast(message) {
-
-  const box = $("toast");
-
-  box.textContent = message;
-
-  box.classList.add("show");
-
-  clearTimeout(toastTimer);
-
-  toastTimer = setTimeout(() => {
-
-    box.classList.remove("show");
-
-  }, 2800);
-
-}
-
-
-function escapeHTML(value) {
-
-  return String(value ?? "").replace(/[&<>"']/g, character => ({
-
-    "&": "&amp;",
-
-    "<": "&lt;",
-
-    ">": "&gt;",
-
-    '"': "&quot;",
-
-    "'": "&#39;"
-
-  })[character]);
-
-}
-
-
-function formatDate(timestamp) {
-
-  if (!timestamp || typeof timestamp.toDate !== "function") {
-
-    return "Date unavailable";
-
-  }
-
-  return timestamp.toDate().toLocaleDateString(undefined, {
-
-    day: "numeric",
-
-    month: "short",
-
-    year: "numeric"
-
-  });
-
-}
-
-
-// =======================================
-// RANK SYSTEM
-// =======================================
-
-function getRank(points) {
-
-  points = Number(points || 0);
-
-  if (points >= 150) return "Mr. Supreme";
-
-  if (points >= 100) return "Mr. Elite";
-
-  if (points >= 60) return "Mr. Legend";
-
-  if (points >= 30) return "Mr. Super";
-
-  if (points >= 15) return "Mr. Pro";
-
-  if (points >= 5) return "Mr. Noob";
-
-  return "Recruit";
-
-}
-
-
-// =======================================
-// JOIN DUK LEAGUE
-// =======================================
-
-async function joinLeague() {
-
-  if (!currentUser) {
-
-    return showToast("Please wait for sign-in.");
-
-  }
-
-  const input = $("joinName");
-
-  const name = input.value.trim();
-
-  if (name.length < 3 || name.length > 20) {
-
-    return showToast("Username must be 3–20 characters.");
-
-  }
-
-  if (!/^[A-Za-z0-9 ._-]+$/.test(name)) {
-
-    return showToast("Use letters, numbers, dots or underscores.");
-
-  }
-
-
-  // Check whether the current user is already a member.
-
-  if (myProfile) {
-
-    return showToast("You're already in DUK LEAGUE!");
-
-  }
-
-
-  // Check for existing names, ignoring capitalization.
-
-  const duplicate = allMembers.some(member =>
-
-    String(member.name || "").toLowerCase() === name.toLowerCase()
-
-  );
-
-  if (duplicate) {
-
-    return showToast("That member name is already taken!");
-
-  }
-
-
-  const button = $("joinButton");
-
-  button.disabled = true;
-
-  button.textContent = "JOINING...";
-
-
-  try {
-
-    const memberRef = doc(db, "members", name);
-
-
-    await runTransaction(db, async transaction => {
-
-      const snapshot = await transaction.get(memberRef);
-
-
-      if (snapshot.exists()) {
-
-        throw new Error("USERNAME_TAKEN");
-
-      }
-
-
-      transaction.set(memberRef, {
-
-        name: name,
-
-        uid: currentUser.uid,
-
-        rank: "Recruit",
-
-        bio: "New to DUK LEAGUE! 🦆",
-
-        createdAt: serverTimestamp(),
-
-        royaltyPoints: 0,
-
-        lastRewardAt: null
-
-      });
-
-    });
-
-
-    input.value = "";
-
-    $("joinStatus").textContent =
-      "Welcome to the flock! 🦆";
-
-    showToast("WELCOME TO DUK LEAGUE! 👑");
-
-  } catch (error) {
-
+let memberData = null;
+
+try {
+    const result = await signInAnonymously(auth);
+    currentUser = result.user;
+    await loadMember();
+} catch (error) {
+    document.getElementById("status").textContent =
+        "Firebase connection failed. Check your Firebase settings.";
     console.error(error);
+}
 
-    if (error.message === "USERNAME_TAKEN") {
+function getRank(rp) {
+    if (rp >= 10000) return "👑 MR. SUPER";
+    if (rp >= 5000) return "💎 ROYAL";
+    if (rp >= 2000) return "🔥 ELITE";
+    if (rp >= 1000) return "⚡ LEGEND";
+    if (rp >= 500) return "🦆 VETERAN";
+    if (rp >= 100) return "⭐ MEMBER";
+    return "🐣 RECRUIT";
+}
 
-      showToast("That username is already taken!");
+async function loadMember() {
+    if (!currentUser) return;
 
-    } else {
+    const ref = doc(db, "members", currentUser.uid);
+    const snap = await getDoc(ref);
 
-      showToast("Couldn't join. Check Firebase rules.");
-
+    if (snap.exists()) {
+        memberData = snap.data();
+        displayMember();
     }
-
-  } finally {
-
-    button.disabled = false;
-
-    button.textContent = "🦆 JOIN DUK LEAGUE";
-
-  }
-
 }
 
+function displayMember() {
+    if (!memberData) return;
 
-$("joinButton").addEventListener("click", joinLeague);
+    document.getElementById("memberName").textContent =
+        memberData.name || "Duck Member";
 
+    document.getElementById("memberRP").textContent =
+        (memberData.rp || 0) + " RP";
 
-// =======================================
-// MEMBER DIRECTORY
-// =======================================
+    document.getElementById("memberRank").textContent =
+        getRank(memberData.rp || 0);
 
-function renderMembers() {
+    document.getElementById("memberDate").textContent =
+        memberData.createdAt || "---";
 
-  const search = $("memberSearch").value.trim().toLowerCase();
+    document.getElementById("memberStatus").textContent =
+        "ACTIVE";
 
+    document.getElementById("memberBio").textContent =
+        memberData.bio || "This duck hasn't written a bio yet.";
 
-  const sorted = [...allMembers].sort((a, b) => {
-
-    return Number(b.royaltyPoints || 0) -
-           Number(a.royaltyPoints || 0);
-
-  });
-
-
-  const filtered = sorted.filter(member => {
-
-    const text = (
-
-      member.name + " " +
-
-      (member.bio || "") + " " +
-
-      getRank(member.royaltyPoints)
-
-    ).toLowerCase();
-
-    return text.includes(search);
-
-  });
-
-
-  $("memberCount").textContent = allMembers.length.toLocaleString();
-
-
-  const totalPoints = allMembers.reduce((sum, member) => {
-
-    return sum + Number(member.royaltyPoints || 0);
-
-  }, 0);
-
-
-  $("totalPoints").textContent =
-    totalPoints.toLocaleString();
-
-
-  if (!filtered.length) {
-
-    $("memberGrid").innerHTML = `
-
-      <div class="empty-members">
-
-        🦆 No members found.
-
-        The duck squad is hiding!
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  $("memberGrid").innerHTML = filtered.map((member, index) => {
-
-    const points = Number(member.royaltyPoints || 0);
-
-    const rank = getRank(points);
-
-    const isMe = currentUser &&
-      member.uid === currentUser.uid;
-
-
-    return `
-
-      <article class="member-card">
-
-        <div class="member-top">
-
-          <div class="member-avatar">
-
-            🦆
-
-          </div>
-
-
-          <div>
-
-            <div class="member-name">
-
-              ${escapeHTML(member.name)}
-
-              ${isMe ? "⭐" : ""}
-
-            </div>
-
-
-            <div class="member-rank">
-
-              ${escapeHTML(rank)}
-
-              ${index === 0 && points > 0 ? " • TOP DUCK" : ""}
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="member-bio">
-
-          ${escapeHTML(member.bio || "No bio added yet.")}
-
-        </div>
-
-
-        <div class="member-footer">
-
-          <span>
-
-            Joined ${escapeHTML(formatDate(member.createdAt))}
-
-          </span>
-
-
-          <span class="member-points">
-
-            👑 ${points} RP
-
-          </span>
-
-        </div>
-
-      </article>
-
-    `;
-
-  }).join("");
-
+    document.getElementById("status").textContent =
+        "Your profile is loaded!";
 }
 
-
-$("memberSearch").addEventListener("input", renderMembers);
-
-
-// =======================================
-// MY PROFILE
-// =======================================
-
-function renderProfile() {
-
-  if (!myProfile) {
-
-    $("myProfile").style.display = "none";
-
-    return;
-
-  }
-
-
-  $("myProfile").style.display = "block";
-
-
-  const points = Number(myProfile.royaltyPoints || 0);
-
-  $("profileName").textContent = myProfile.name;
-
-  $("profileRole").textContent = getRank(points);
-
-  $("profilePoints").textContent = points;
-
-  $("profileJoined").textContent =
-    formatDate(myProfile.createdAt);
-
-  $("profileId").textContent =
-    myProfile.id || "Member";
-
-  $("bioInput").value = myProfile.bio || "";
-
-  $("bioCount").textContent =
-    String((myProfile.bio || "").length);
-
-
-  $("joinDescription").textContent =
-    "You're already an official DUK LEAGUE member! Welcome back.";
-
-  $("joinButton").textContent = "ALREADY A MEMBER";
-
-  $("joinButton").disabled = true;
-
-}
-
-
-// =======================================
-// SAVE BIO
-// =======================================
-
-async function saveBio() {
-
-  if (!currentUser || !myProfile) {
-
-    return showToast("Join DUK LEAGUE first.");
-
-  }
-
-
-  const bio = $("bioInput").value.trim();
-
-
-  if (bio.length > 160) {
-
-    return showToast("Bio is too long.");
-
-  }
-
-
-  try {
-
-    await updateDoc(
-
-      doc(db, "members", myProfile.id),
-
-      {
-
-        bio: bio
-
-      }
-
-    );
-
-
-    showToast("BIO UPDATED! ✨");
-
-  } catch (error) {
-
-    console.error(error);
-
-    showToast("Couldn't update bio. Check your rules.");
-
-  }
-
-}
-
-
-$("saveBio").addEventListener("click", saveBio);
-
-
-$("bioInput").addEventListener("input", () => {
-
-  $("bioCount").textContent =
-    String($("bioInput").value.length);
-
-});
-
-
-// =======================================
-// FIREBASE AUTHENTICATION
-// =======================================
-
-onAuthStateChanged(auth, async user => {
-
-  if (!user) {
-
-    try {
-
-      await signInAnonymously(auth);
-
-    } catch (error) {
-
-      console.error(error);
-
-      showToast("Authentication failed.");
-
-    }
-
-    return;
-
-  }
-
-
-  currentUser = user;
-
-
-  if (profileListener) {
-
-    profileListener();
-
-  }
-
-
-  profileListener = onSnapshot(membersRef, snapshot => {
-
-    allMembers = snapshot.docs.map(item => ({
-
-      id: item.id,
-
-      ...item.data()
-
-    }));
-
-
-    myProfile = allMembers.find(member =>
-
-      member.uid === currentUser.uid
-
-    ) || null;
-
-
-    renderMembers();
-
-    renderProfile();
-
-
-  }, error => {
-
-    console.error(error);
-
-    showToast("Couldn't load members.");
-
-  });
-
-});
-
-
-// =======================================
-// DUCK DASH GAME
-// =======================================
-
-const canvas = $("gameCanvas");
-
-const ctx = canvas.getContext("2d");
-
-
-const GAME_WIDTH = 360;
-
-const GAME_HEIGHT = 520;
-
-
-const duck = {
-
-  x: 85,
-
-  y: 245,
-
-  velocity: 0,
-
-  radius: 15
-
+window.openJoin = function() {
+    document.getElementById("joinModal").style.display = "flex";
 };
 
+window.closeJoin = function() {
+    document.getElementById("joinModal").style.display = "none";
+};
+
+window.joinLeague = async function() {
+    const name = document.getElementById("joinName").value.trim();
+    const joinStatus = document.getElementById("joinStatus");
+
+    if (!name) {
+        joinStatus.textContent = "Enter your Roblox username!";
+        return;
+    }
+
+    if (!currentUser) {
+        joinStatus.textContent = "Firebase isn't connected!";
+        return;
+    }
+
+    joinStatus.textContent = "Creating your membership...";
+
+    try {
+        const ref = doc(db, "members", currentUser.uid);
+        const snap = await getDoc(ref);
+
+        if (snap.exists()) {
+            joinStatus.textContent =
+                "This account already has a membership!";
+            return;
+        }
+
+        const today = new Date().toLocaleDateString("en-IN");
+
+        memberData = {
+            name: name,
+            uid: currentUser.uid,
+            rp: 0,
+            bio: "A proud member of DUK LEAGUE 🦆",
+            rank: "Recruit",
+            createdAt: today
+        };
+
+        await setDoc(ref, memberData);
+
+        displayMember();
+        closeJoin();
+
+        document.getElementById("joinName").value = "";
+
+    } catch (error) {
+        joinStatus.textContent = "Error creating account!";
+        console.error(error);
+    }
+};
+
+window.saveBio = async function() {
+    if (!memberData || !currentUser) {
+        document.getElementById("status").textContent =
+            "Join the league first!";
+        return;
+    }
+
+    const bio = document.getElementById("bioInput").value.trim();
+
+    if (bio.length > 200) {
+        document.getElementById("status").textContent =
+            "Your bio must be under 200 characters!";
+        return;
+    }
+
+    try {
+        const ref = doc(db, "members", currentUser.uid);
+
+        await updateDoc(ref, {
+            bio: bio
+        });
+
+        memberData.bio = bio;
+
+        displayMember();
+
+        document.getElementById("bioInput").value = "";
+
+        document.getElementById("status").textContent =
+            "Bio updated successfully!";
+
+    } catch (error) {
+        document.getElementById("status").textContent =
+            "Could not update bio!";
+        console.error(error);
+    }
+};
+
+window.awardRP = async function(amount) {
+    if (!memberData || !currentUser) return;
+
+    try {
+        const ref = doc(db, "members", currentUser.uid);
+
+        await updateDoc(ref, {
+            rp: increment(amount)
+        });
+
+        memberData.rp = (memberData.rp || 0) + amount;
+
+        displayMember();
+
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+</script>
+
+<!-- DUCK DASH GAME -->
+
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+let duckY = 150;
+let velocity = 0;
+let gravity = 0.35;
+let flapPower = -6;
 
 let pipes = [];
-
 let score = 0;
-
-let running = false;
-
-let started = false;
-
-let animation = 0;
-
-
-const gravity = 0.38;
-
-const flapPower = -7.1;
-
-const pipeWidth = 65;
-
-const gapHeight = 165;
-
-const pipeSpeed = 2.4;
-
-
-// =======================================
-// PIPE CREATION
-// =======================================
-
-function createPipe(x) {
-
-  return {
-
-    x: x,
-
-    gapY: 145 + Math.random() * 210,
-
-    passed: false
-
-  };
-
-}
-
-
-// =======================================
-// DUCK DRAWING
-// =======================================
+let gameRunning = false;
+let gameStarted = false;
+let frame = 0;
 
 function drawDuck() {
-
-  ctx.save();
-
-  ctx.translate(duck.x, duck.y);
-
-
-  // Body
-
-  ctx.fillStyle = "#ffe34e";
-
-  ctx.beginPath();
-
-  ctx.ellipse(0, 0, 19, 14, 0, 0, Math.PI * 2);
-
-  ctx.fill();
-
-
-  // Head
-
-  ctx.beginPath();
-
-  ctx.arc(12, -9, 10, 0, Math.PI * 2);
-
-  ctx.fill();
-
-
-  // Wing
-
-  ctx.fillStyle = "#f6c832";
-
-  ctx.beginPath();
-
-  ctx.ellipse(-5, 2, 11, 7, -.2, 0, Math.PI * 2);
-
-  ctx.fill();
-
-
-  // Eye
-
-  ctx.fillStyle = "#22223a";
-
-  ctx.beginPath();
-
-  ctx.arc(16, -11, 2, 0, Math.PI * 2);
-
-  ctx.fill();
-
-
-  // Beak
-
-  ctx.fillStyle = "#ff8738";
-
-  ctx.beginPath();
-
-  ctx.moveTo(20, -7);
-
-  ctx.lineTo(30, -4);
-
-  ctx.lineTo(20, -1);
-
-  ctx.closePath();
-
-  ctx.fill();
-
-
-  // Tiny tail
-
-  ctx.fillStyle = "#f6c832";
-
-  ctx.beginPath();
-
-  ctx.moveTo(-16, -3);
-
-  ctx.lineTo(-25, -10);
-
-  ctx.lineTo(-20, 2);
-
-  ctx.closePath();
-
-  ctx.fill();
-
-
-  ctx.restore();
-
+    ctx.font = "35px Arial";
+    ctx.fillText("🐤", 100, duckY);
 }
-
-
-// =======================================
-// PIPE DRAWING
-// =======================================
-
-function roundedRect(x, y, w, h, r) {
-
-  if (h <= 0) return;
-
-  ctx.beginPath();
-
-  ctx.roundRect(x, y, w, h, r);
-
-  ctx.fill();
-
-}
-
-
-function drawPipe(pipe) {
-
-  const topHeight =
-    pipe.gapY - gapHeight / 2;
-
-  const bottomStart =
-    pipe.gapY + gapHeight / 2;
-
-
-  const gradient = ctx.createLinearGradient(
-
-    pipe.x,
-
-    0,
-
-    pipe.x + pipeWidth,
-
-    0
-
-  );
-
-
-  gradient.addColorStop(0, "#197b59");
-
-  gradient.addColorStop(.5, "#58db91");
-
-  gradient.addColorStop(1, "#176a4c");
-
-
-  ctx.fillStyle = gradient;
-
-
-  // Top pipe
-
-  roundedRect(
-
-    pipe.x,
-
-    0,
-
-    pipeWidth,
-
-    topHeight - 15,
-
-    9
-
-  );
-
-
-  roundedRect(
-
-    pipe.x - 5,
-
-    topHeight - 20,
-
-    pipeWidth + 10,
-
-    20,
-
-    7
-
-  );
-
-
-  // Bottom pipe
-
-  roundedRect(
-
-    pipe.x,
-
-    bottomStart + 20,
-
-    pipeWidth,
-
-    GAME_HEIGHT - bottomStart - 65,
-
-    9
-
-  );
-
-
-  roundedRect(
-
-    pipe.x - 5,
-
-    bottomStart,
-
-    pipeWidth + 10,
-
-    20,
-
-    7
-
-  );
-
-
-  // Highlights
-
-  ctx.fillStyle = "#ffffff29";
-
-  ctx.fillRect(pipe.x + 9, 0, 5, Math.max(0, topHeight - 20));
-
-  ctx.fillRect(
-
-    pipe.x + 9,
-
-    bottomStart + 22,
-
-    5,
-
-    Math.max(0, GAME_HEIGHT - bottomStart - 75)
-
-  );
-
-}
-
-
-// =======================================
-// BACKGROUND
-// =======================================
 
 function drawBackground() {
+    ctx.fillStyle = "#a9d8ee";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const gradient = ctx.createLinearGradient(
-
-    0,
-
-    0,
-
-    0,
-
-    GAME_HEIGHT
-
-  );
-
-
-  gradient.addColorStop(0, "#72ccef");
-
-  gradient.addColorStop(1, "#c4efff");
-
-
-  ctx.fillStyle = gradient;
-
-  ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-
-
-  // Clouds
-
-  ctx.fillStyle = "#ffffffaa";
-
-
-  [
-
-    [55, 90, 24],
-
-    [220, 125, 28],
-
-    [300, 65, 20]
-
-  ].forEach(([x,y,r]) => {
+    ctx.fillStyle = "#d9f2ff";
 
     ctx.beginPath();
-
-    ctx.arc(x,y,r,0,Math.PI*2);
-
-    ctx.arc(x+r,y+4,r*.8,0,Math.PI*2);
-
-    ctx.arc(x-r,y+5,r*.7,0,Math.PI*2);
-
+    ctx.arc(100, 70, 30, 0, Math.PI * 2);
+    ctx.arc(130, 70, 25, 0, Math.PI * 2);
+    ctx.arc(160, 70, 30, 0, Math.PI * 2);
     ctx.fill();
 
-  });
-
-
-  // Distant hills
-
-  ctx.fillStyle = "#8cdb9d";
-
-  ctx.beginPath();
-
-  ctx.moveTo(0,410);
-
-  ctx.quadraticCurveTo(90,360,180,407);
-
-  ctx.quadraticCurveTo(280,350,360,405);
-
-  ctx.lineTo(360,475);
-
-  ctx.lineTo(0,475);
-
-  ctx.fill();
-
-
-  // Ground
-
-  ctx.fillStyle = "#62b96e";
-
-  ctx.fillRect(0, GAME_HEIGHT - 48, GAME_WIDTH, 13);
-
-
-  ctx.fillStyle = "#dfc78c";
-
-  ctx.fillRect(0, GAME_HEIGHT - 35, GAME_WIDTH, 35);
-
+    ctx.fillStyle = "#88c85b";
+    ctx.fillRect(0, 320, canvas.width, 30);
 }
 
+function drawPipes() {
+    pipes.forEach(pipe => {
+        ctx.fillStyle = "#4c9b36";
 
-// =======================================
-// DRAW EVERYTHING
-// =======================================
+        ctx.fillRect(pipe.x, 0, 60, pipe.top);
+        ctx.fillRect(pipe.x, pipe.bottom, 60, 320 - pipe.bottom);
 
-function drawGame() {
+        ctx.fillStyle = "#78c650";
 
-  drawBackground();
-
-
-  pipes.forEach(drawPipe);
-
-
-  drawDuck();
-
-
-  ctx.textAlign = "center";
-
-  ctx.fillStyle = "#ffffff";
-
-  ctx.font = "1000 23px Nunito";
-
-  ctx.shadowColor = "#0005";
-
-  ctx.shadowBlur = 5;
-
-  ctx.fillText(
-
-    "STAGE " + score,
-
-    GAME_WIDTH / 2,
-
-    38
-
-  );
-
-
-  ctx.shadowBlur = 0;
-
-
-  if (!running) {
-
-    ctx.fillStyle = "#11132999";
-
-    ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-
-
-    ctx.fillStyle = "#ffffff";
-
-    ctx.font = "1000 29px Nunito";
-
-
-    ctx.fillText(
-
-      started ? "GAME OVER!" : "DUCK DASH",
-
-      GAME_WIDTH / 2,
-
-      220
-
-    );
-
-
-    ctx.font = "800 14px Nunito";
-
-
-    ctx.fillText(
-
-      started
-
-        ? "You passed " + score + " pipes!"
-
-        : "Tap START to begin!",
-
-      GAME_WIDTH / 2,
-
-      252
-
-    );
-
-
-    ctx.fillStyle = "#ffe17b";
-
-    ctx.fillText(
-
-      "ONE PIPE = ONE ROYALTY POINT",
-
-      GAME_WIDTH / 2,
-
-      285
-
-    );
-
-  }
-
+        ctx.fillRect(pipe.x - 5, pipe.top - 15, 70, 15);
+        ctx.fillRect(pipe.x - 5, pipe.bottom, 70, 15);
+    });
 }
 
+function createPipe() {
+    let gap = 125;
+    let top = Math.random() * 140 + 30;
 
-// =======================================
-// START GAME
-// =======================================
-
-function startGame() {
-
-  cancelAnimationFrame(animation);
-
-
-  duck.y = 245;
-
-  duck.velocity = 0;
-
-
-  pipes = [
-
-    createPipe(410)
-
-  ];
-
-
-  score = 0;
-
-  running = true;
-
-  started = true;
-
-
-  $("gameScore").textContent = "0";
-
-  $("gameStatus").textContent =
-    myProfile
-
-      ? "Good luck! Earn Royalty Points."
-
-      : "You can play, but join the league to save points.";
-
-
-  $("startGame").textContent = "↻ RESTART";
-
-
-  animation = requestAnimationFrame(gameLoop);
-
+    pipes.push({
+        x: canvas.width,
+        top: top,
+        bottom: top + gap,
+        passed: false
+    });
 }
-
-
-// =======================================
-// DUCK FLAP
-// =======================================
 
 function flap() {
+    if (!gameRunning) return;
 
-  if (!running) return;
-
-  duck.velocity = flapPower;
-
+    velocity = flapPower;
 }
 
+function startGame() {
+    duckY = 150;
+    velocity = 0;
+    pipes = [];
+    score = 0;
+    frame = 0;
 
-// =======================================
-// GAME OVER
-// =======================================
+    gameRunning = true;
+    gameStarted = true;
 
-function gameOver() {
-
-  running = false;
-
-  drawGame();
-
-
-  $("gameStatus").textContent =
-
-    "You cleared " + score + " stages. Try again!";
-
-
-  $("startGame").textContent = "↻ PLAY AGAIN";
-
+    gameLoop();
 }
-
-
-// =======================================
-// AWARD ROYALTY POINT
-// =======================================
-
-async function awardPoint() {
-
-  if (!currentUser || !myProfile) {
-
-    $("gameStatus").textContent =
-      "Join DUK LEAGUE to save Royalty Points.";
-
-    return;
-
-  }
-
-
-  try {
-
-    await updateDoc(
-
-      doc(db, "members", myProfile.id),
-
-      {
-
-        royaltyPoints: increment(1),
-
-        lastRewardAt: serverTimestamp()
-
-      }
-
-    );
-
-
-    $("gameStatus").textContent =
-      "ROYALTY POINT EARNED! 👑";
-
-  } catch (error) {
-
-    console.error(error);
-
-    $("gameStatus").textContent =
-      "Point couldn't sync. Check your connection.";
-
-  }
-
-}
-
-
-// =======================================
-// GAME LOOP
-// =======================================
 
 function gameLoop() {
+    if (!gameRunning) return;
 
-  if (!running) return;
+    frame++;
 
+    drawBackground();
 
-  duck.velocity += gravity;
+    velocity += gravity;
+    duckY += velocity;
 
-  duck.y += duck.velocity;
-
-
-  // Move pipes
-
-  pipes.forEach(pipe => {
-
-    pipe.x -= pipeSpeed;
-
-
-    // Award a point after passing a pipe
-
-    if (
-
-      !pipe.passed &&
-
-      pipe.x + pipeWidth < duck.x
-
-    ) {
-
-      pipe.passed = true;
-
-      score++;
-
-
-      $("gameScore").textContent = score;
-
-
-      awardPoint();
-
+    if (frame % 100 === 0) {
+        createPipe();
     }
 
-  });
+    pipes.forEach(pipe => {
+        pipe.x -= 2.5;
 
+        if (!pipe.passed && pipe.x + 60 < 100) {
+            pipe.passed = true;
+            score++;
 
-  // Spawn pipes
+            if (window.awardRP) {
+                window.awardRP(10);
+            }
+        }
+    });
 
-  if (
+    pipes = pipes.filter(pipe => pipe.x > -70);
 
-    pipes.length &&
+    drawPipes();
+    drawDuck();
 
-    pipes[pipes.length - 1].x < 170
+    ctx.fillStyle = "#17170f";
+    ctx.font = "bold 25px Arial";
+    ctx.fillText("Score: " + score, 20, 35);
 
-  ) {
+    let collision = false;
 
-    pipes.push(createPipe(410));
+    pipes.forEach(pipe => {
+        if (
+            100 + 25 > pipe.x &&
+            100 - 25 < pipe.x + 60 &&
+            (duckY - 20 < pipe.top ||
+            duckY + 20 > pipe.bottom)
+        ) {
+            collision = true;
+        }
+    });
 
-  }
+    if (duckY > 320 || duckY < 0 || collision) {
+        gameRunning = false;
 
+        ctx.fillStyle = "rgba(0,0,0,.65)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Remove old pipes
+        ctx.fillStyle = "#ffe34d";
+        ctx.font = "bold 35px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("GAME OVER!", canvas.width / 2, 145);
 
-  pipes = pipes.filter(pipe =>
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.fillText("Score: " + score, canvas.width / 2, 190);
+        ctx.fillText("Press PLAY GAME to retry", canvas.width / 2, 230);
 
-    pipe.x + pipeWidth > -10
+        ctx.textAlign = "left";
 
-  );
-
-
-  // Ground and ceiling collision
-
-  let hit =
-
-    duck.y - duck.radius < 0 ||
-
-    duck.y + duck.radius > GAME_HEIGHT - 48;
-
-
-  // Pipe collision
-
-  for (const pipe of pipes) {
-
-    const overlapping =
-
-      duck.x + duck.radius > pipe.x - 5 &&
-
-      duck.x - duck.radius < pipe.x + pipeWidth + 5;
-
-
-    const gapTop =
-
-      pipe.gapY - gapHeight / 2;
-
-
-    const gapBottom =
-
-      pipe.gapY + gapHeight / 2;
-
-
-    if (
-
-      overlapping &&
-
-      (
-
-        duck.y - duck.radius < gapTop ||
-
-        duck.y + duck.radius > gapBottom
-
-      )
-
-    ) {
-
-      hit = true;
-
+        return;
     }
 
-  }
-
-
-  if (hit) {
-
-    gameOver();
-
-    return;
-
-  }
-
-
-  drawGame();
-
-
-  animation = requestAnimationFrame(gameLoop);
-
+    requestAnimationFrame(gameLoop);
 }
 
+canvas.addEventListener("click", flap);
 
-// =======================================
-// GAME CONTROLS
-// =======================================
-
-$("startGame").addEventListener("click", startGame);
-
-
-canvas.addEventListener("pointerdown", event => {
-
-  event.preventDefault();
-
-  if (!running) {
-
-    startGame();
-
-  } else {
-
+canvas.addEventListener("touchstart", function(e) {
+    e.preventDefault();
     flap();
+}, {passive: false});
 
-  }
-
-});
-
-
-window.addEventListener("keydown", event => {
-
-  const tag = document.activeElement?.tagName;
-
-  if (tag === "INPUT" || tag === "TEXTAREA") {
-
-    return;
-
-  }
-
-
-  if (
-
-    event.code === "Space" ||
-
-    event.code === "ArrowUp"
-
-  ) {
-
-    event.preventDefault();
-
-    if (!running) {
-
-      startGame();
-
-    } else {
-
-      flap();
-
+document.addEventListener("keydown", function(e) {
+    if (e.code === "Space") {
+        e.preventDefault();
+        flap();
     }
-
-  }
-
 });
-
-
-// =======================================
-// FAQ INTERACTIONS
-// =======================================
-
-document.querySelectorAll(".faq-question").forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    const item = button.parentElement;
-
-    item.classList.toggle("active");
-
-
-    const symbol = button.querySelector("span");
-
-    symbol.textContent =
-
-      item.classList.contains("active")
-
-        ? "−"
-
-        : "+";
-
-  });
-
-});
-
-
-// =======================================
-// FOOTER DATE
-// =======================================
-
-$("year").textContent = new Date().getFullYear();
-
-
-// Initial game screen
-
-drawGame();
-
-
-// =======================================
-// END OF DUK LEAGUE WEBSITE
-// =======================================
-
 </script>
 
 </body>
