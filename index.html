@@ -1,1226 +1,1295 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090a0d">
-<meta name="description" content="DUK LEAGUE — duck-themed gaming community.">
-<title>DUK LEAGUE — Official HQ</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
-
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10112b" />
+  <meta name="description" content="DUK LEAGUE — play, level up, and hang out with the crew." />
+  <title>DUK LEAGUE — Crew HQ</title>
+  <style>
 :root {
---bg:#090a0d;
---panel:#111319;
---panel2:#171920;
---gold:#ffd34e;
---gold2:#f5ad19;
---white:#f5f6f8;
---muted:#9a9eaa;
---line:#292c35;
---green:#72e2a4;
---red:#ff7777;
---radius:20px;
+--bg: #10112b;
+--panel: #1b1d42;
+--panel2: #242752;
+--ink: #f7f6ff;
+--muted: #b8b9dc;
+--purple: #9b7bff;
+--pink: #ff72b6;
+--cyan: #65e5f2;
+--lime: #bcf36b;
+--yellow: #ffd66b;
+--line: rgba(255,255,255,.11);
+--shadow: 0 18px 50px rgba(0,0,0,.25);
 }
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
-button,a{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-
-.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-
-body:before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-z-index:-1;
-background:radial-gradient(ellipse at 70% 0%,#6d4e0d22,transparent 45%),radial-gradient(ellipse at 0% 45%,#2b321822,transparent 35%);
+* {
+box-sizing: border-box;
 }
-
-header{
-position:sticky;
-top:0;
-z-index:20;
-background:#090a0de8;
-backdrop-filter:blur(18px);
-border-bottom:1px solid #ffffff0d;
+html {
+scroll-behavior: smooth;
 }
-
-.nav{
-height:76px;
+body {
+margin: 0;
+color: var(--ink);
+background:
+radial-gradient(ellipse at 8% 5%, rgba(155,123,255,.22), transparent 34rem),
+radial-gradient(ellipse at 95% 28%, rgba(101,229,242,.12), transparent 28rem),
+var(--bg);
+font-family: Inter, ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+button, input, textarea {
+font: inherit;
+}
+button {
+cursor: pointer;
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+.wrap {
+width: min(1120px, calc(100% - 32px));
+margin: 0 auto;
+}
+.topbar {
 display:flex;
 align-items:center;
 justify-content:space-between;
+gap:18px;
+padding:20px 0;
 }
-
-.brand{
+.brand {
 display:flex;
+align-items:center;
 gap:11px;
-align-items:center;
-font:900 19px Orbitron,sans-serif;
-letter-spacing:1.3px;
+font-weight:1000;
+letter-spacing:.04em;
 }
-
-.brandmark{
+.brand-mark {
+width:42px;
+height:42px;
 display:grid;
 place-items:center;
-width:39px;
-height:39px;
-border-radius:12px;
-background:linear-gradient(145deg,var(--gold),var(--gold2));
-color:#17130a;
+border-radius:15px;
+background:linear-gradient(135deg,var(--purple),var(--pink));
+box-shadow:0 8px 25px rgba(155,123,255,.3);
 font-size:22px;
-box-shadow:0 0 28px #ffd34e25;
+transform:rotate(-6deg);
 }
-
-.brand span{color:var(--gold)}
-
-.navlinks{
-display:flex;
-align-items:center;
-gap:27px;
-color:#b8bbc4;
-font-size:13px;
-font-weight:700;
-}
-
-.navlinks a:hover{color:var(--gold)}
-
-.navjoin,.primary{
-border:0;
-border-radius:12px;
-padding:12px 18px;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-color:#191306;
-font-weight:900;
-box-shadow:0 8px 28px #ffcb3520;
-transition:transform .18s,filter .18s;
-}
-
-.navjoin:hover,.primary:hover{
-transform:translateY(-2px);
-filter:brightness(1.07);
-}
-
-.hero{padding:92px 0 82px;position:relative}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1.15fr .85fr;
-gap:55px;
-align-items:center;
-}
-
-.eyebrow{
-display:inline-flex;
-gap:9px;
-align-items:center;
-border:1px solid #ffd34e35;
-background:#ffd34e0b;
-color:var(--gold);
-border-radius:99px;
-padding:9px 13px;
-font-size:10px;
-letter-spacing:1.7px;
-font-weight:900;
-}
-
-.dot{
-width:7px;
-height:7px;
-border-radius:50%;
-background:var(--green);
-box-shadow:0 0 12px var(--green);
-}
-
-h1{
-font:900 clamp(44px,7vw,82px)/.99 Orbitron,sans-serif;
-letter-spacing:-3.5px;
-margin:25px 0 20px;
-}
-
-h1 span{color:var(--gold)}
-
-.hero p{
-max-width:560px;
+.brand small {
+display:block;
 color:var(--muted);
-line-height:1.85;
-font-size:15px;
+font-size:10px;
+letter-spacing:.2em;
+font-weight:800;
+margin-top:2px;
 }
-
-.hero-actions{
+nav {
 display:flex;
-gap:13px;
+gap:8px;
 flex-wrap:wrap;
-margin-top:28px;
+justify-content:flex-end;
 }
-
-.secondary{
-background:#ffffff06;
-border:1px solid var(--line);
-color:var(--white);
-border-radius:12px;
-padding:12px 18px;
-font-weight:800;
-}
-
-.secondary:hover{
-border-color:#ffd34e66;
-color:var(--gold);
-}
-
-.hero-art{
-min-height:330px;
-display:grid;
-place-items:center;
-position:relative;
-}
-
-.halo{
-width:min(330px,78vw);
-aspect-ratio:1;
-border-radius:50%;
-border:1px solid #ffd34e20;
-background:radial-gradient(circle,#ffd34e15 0%,#ffd34e05 46%,transparent 70%);
-display:grid;
-place-items:center;
-position:relative;
-}
-
-.halo:before,.halo:after{
-content:"";
-position:absolute;
-inset:15%;
-border:1px dashed #ffd34e28;
-border-radius:50%;
-animation:spin 28s linear infinite;
-}
-
-.halo:after{
-inset:4%;
-animation-direction:reverse;
-animation-duration:40s;
-}
-
-.duck{
-font-size:clamp(115px,18vw,190px);
-filter:drop-shadow(0 18px 32px #ffd34e20);
-animation:float 4s ease-in-out infinite;
-}
-
-.artbadge{
-position:absolute;
-bottom:8%;
-right:0;
-border:1px solid var(--line);
-background:#15171df2;
-border-radius:14px;
-padding:14px 17px;
-box-shadow:0 15px 40px #0005;
-}
-
-.artbadge strong{
-display:block;
-font:800 12px Orbitron;
-color:var(--gold);
-}
-
-.artbadge small{color:var(--muted);font-size:10px}
-
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes float{50%{transform:translateY(-13px) rotate(3deg)}}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px;
-margin-top:32px;
-}
-
-.stat{
-border:1px solid var(--line);
-background:#ffffff03;
-border-radius:14px;
-padding:16px;
-}
-
-.stat strong{
-display:block;
-font:800 20px Orbitron;
-color:var(--gold);
-}
-
-.stat span{
-font-size:10px;
-color:var(--muted);
-letter-spacing:1px;
-font-weight:800;
-}
-
-section.content{padding:75px 0}
-
-.sectionhead{
-display:flex;
-justify-content:space-between;
-align-items:end;
-gap:20px;
-margin-bottom:28px;
-}
-
-.kicker{
-color:var(--gold);
-font-size:10px;
-letter-spacing:2px;
-font-weight:900;
-}
-
-.sectionhead h2{
-font:800 clamp(26px,4vw,38px) Orbitron;
-margin:9px 0 0;
-letter-spacing:-1px;
-}
-
-.sectionhead h2 span{color:var(--gold)}
-
-.sectionhead p{
-max-width:450px;
+nav a {
 color:var(--muted);
 font-size:13px;
-line-height:1.7;
-margin:0;
+font-weight:800;
+padding:10px 13px;
+border-radius:999px;
 }
-
-.rankgrid{
+nav a:hover {
+background:rgba(255,255,255,.08);
+color:white;
+}
+.hero {
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-}
-
-.rankcard{
-border:1px solid var(--line);
-background:linear-gradient(160deg,#171920,#101116);
-border-radius:17px;
-padding:24px;
-min-height:175px;
-transition:.2s;
-}
-
-.rankcard:hover{
-transform:translateY(-4px);
-border-color:#ffd34e55;
-}
-
-.rankicon{font-size:24px;margin-bottom:20px}
-
-.rankcard h3{
-font:800 14px Orbitron;
-color:var(--gold);
-margin:0 0 9px;
-}
-
-.rankcard p{
-font-size:12px;
-color:var(--muted);
-line-height:1.7;
-margin:0;
-}
-
-.rosterpanel{
-border:1px solid var(--line);
-border-radius:var(--radius);
-background:var(--panel);
-overflow:hidden;
-}
-
-.rosterbar{
-padding:21px 24px;
-display:flex;
-justify-content:space-between;
+grid-template-columns:1.18fr .82fr;
+gap:24px;
 align-items:center;
-gap:15px;
-border-bottom:1px solid var(--line);
+padding:48px 0 34px;
 }
-
-.rosterbar h3{
-font:800 15px Orbitron;
-margin:0;
-}
-
-.rosterbar h3 span{color:var(--gold)}
-
-.live{
-display:flex;
+.eyebrow {
+display:inline-flex;
 align-items:center;
 gap:8px;
-font-size:10px;
+background:rgba(188,243,107,.1);
+border:1px solid rgba(188,243,107,.28);
+color:var(--lime);
+padding:8px 12px;
+border-radius:999px;
+font-size:11px;
+letter-spacing:.1em;
 font-weight:900;
-letter-spacing:1px;
-color:var(--green);
 }
-
-.rosterlist{min-height:125px}
-
-.member{
+h1 {
+font-size:clamp(44px,7.7vw,82px);
+line-height:.94;
+letter-spacing:-.07em;
+margin:20px 0 16px;
+max-width:720px;
+}
+.gradient-text {
+background:linear-gradient(90deg,var(--cyan),#b99aff,var(--pink));
+color:transparent;
+background-clip:text;
+-webkit-background-clip:text;
+}
+.hero p {
+color:var(--muted);
+line-height:1.7;
+max-width:530px;
+font-size:16px;
+}
+.actions {
+display:flex;
+flex-wrap:wrap;
+gap:11px;
+margin-top:24px;
+}
+.btn {
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+border:0;
+border-radius:14px;
+padding:13px 18px;
+color:#15152d;
+background:linear-gradient(135deg,var(--lime),#e4ff9e);
+font-weight:1000;
+box-shadow:0 9px 22px rgba(188,243,107,.16);
+transition:transform .16s,filter .16s;
+}
+.btn:hover {
+transform:translateY(-2px);
+filter:brightness(1.05);
+}
+.btn.secondary {
+color:var(--ink);
+background:rgba(255,255,255,.08);
+border:1px solid var(--line);
+box-shadow:none;
+}
+.hero-card {
+min-height:310px;
+padding:22px;
+border:1px solid var(--line);
+border-radius:28px;
+background:linear-gradient(145deg,rgba(155,123,255,.18),rgba(255,114,182,.08)),var(--panel);
+box-shadow:var(--shadow);
+position:relative;
+overflow:hidden;
+}
+.hero-card:before {
+content:"";
+width:230px;
+height:230px;
+border-radius:50%;
+background:rgba(101,229,242,.12);
+position:absolute;
+right:-70px;
+top:-70px;
+}
+.sticker {
+position:relative;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:15px;
-padding:17px 24px;
-border-bottom:1px solid #ffffff08;
+color:var(--muted);
+font-size:12px;
+font-weight:900;
+letter-spacing:.1em;
 }
-
-.member:last-child{border:0}
-
-.memberleft{
+.mascot {
+height:180px;
+display:grid;
+place-items:center;
+font-size:120px;
+filter:drop-shadow(0 15px 15px rgba(0,0,0,.28));
+transform:rotate(-8deg);
+animation:bob 3s ease-in-out infinite;
+}
+@keyframes bob {
+0%,100%{
+transform:translateY(0) rotate(-8deg)
+}
+50%{
+transform:translateY(-10px) rotate(5deg)
+}
+}
+.bubble {
+position:absolute;
+right:20px;
+bottom:23px;
+color:#17162e;
+background:var(--yellow);
+padding:10px 13px;
+border-radius:14px 14px 4px 14px;
+font-weight:1000;
+transform:rotate(4deg);
+}
+.stats {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin:12px 0 54px;
+}
+.stat {
+padding:18px;
+background:rgba(255,255,255,.055);
+border:1px solid var(--line);
+border-radius:20px;
+}
+.stat strong {
+display:block;
+font-size:27px;
+letter-spacing:-.04em;
+}
+.stat span {
+color:var(--muted);
+font-size:11px;
+font-weight:900;
+letter-spacing:.1em;
+}
+section {
+scroll-margin-top:20px;
+margin:54px 0;
+}
+.section-head {
+display:flex;
+align-items:end;
+justify-content:space-between;
+gap:14px;
+margin-bottom:18px;
+}
+.section-head h2 {
+margin:0;
+font-size:clamp(27px,4vw,38px);
+letter-spacing:-.05em;
+}
+.section-head p {
+color:var(--muted);
+margin:6px 0 0;
+font-size:13px;
+}
+.play-layout {
+display:grid;
+grid-template-columns:minmax(0,1fr) 300px;
+gap:16px;
+align-items:stretch;
+}
+.panel {
+border:1px solid var(--line);
+border-radius:24px;
+background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+box-shadow:var(--shadow);
+}
+.game-panel {
+padding:16px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+.game-top {
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
+}
+.game-top strong {
+font-size:14px;
+}
+.game-pill {
+color:var(--lime);
+background:rgba(188,243,107,.1);
+border:1px solid rgba(188,243,107,.25);
+border-radius:999px;
+padding:7px 10px;
+font-size:11px;
+font-weight:900;
+}
+#gameCanvas {
+width:min(100%,360px);
+height:auto;
+aspect-ratio:360 / 520;
+display:block;
+border-radius:19px;
+border:2px solid rgba(255,255,255,.15);
+background:#9ce6f0;
+touch-action:manipulation;
+cursor:pointer;
+}
+.game-help {
+text-align:center;
+color:var(--muted);
+font-size:12px;
+margin:12px 0 0;
+}
+.game-side {
+padding:20px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+gap:18px;
+}
+.game-side h3 {
+margin:0 0 8px;
+font-size:21px;
+}
+.game-side p {
+color:var(--muted);
+line-height:1.65;
+font-size:13px;
+margin:0;
+}
+.rule-row {
+display:flex;
+align-items:center;
+gap:10px;
+color:var(--muted);
+font-size:12px;
+margin-top:12px;
+}
+.rule-icon {
+width:29px;
+height:29px;
+display:grid;
+place-items:center;
+border-radius:10px;
+background:rgba(255,255,255,.08);
+}
+.wide {
+width:100%;
+}
+.profile-grid {
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:16px;
+}
+.profile-card {
+padding:21px;
+}
+.profile-top {
 display:flex;
 align-items:center;
 gap:13px;
-min-width:0;
 }
-
-.avatar{
+.avatar {
+width:52px;
+height:52px;
 display:grid;
 place-items:center;
-width:39px;
-height:39px;
-flex-shrink:0;
-border-radius:12px;
-background:#ffd34e12;
-border:1px solid #ffd34e22;
+border-radius:18px;
+background:linear-gradient(135deg,var(--purple),var(--pink));
+font-size:26px;
 }
-
-.membername{
-font-weight:800;
+.profile-top h3 {
+margin:0;
+font-size:18px;
+}
+.muted {
+color:var(--muted);
+}
+.role-chip {
+display:inline-flex;
+margin-top:6px;
+border-radius:999px;
+padding:5px 9px;
+background:rgba(255,214,107,.13);
+color:var(--yellow);
+border:1px solid rgba(255,214,107,.25);
+font-size:10px;
+font-weight:1000;
+letter-spacing:.06em;
+}
+.points-box {
+margin:18px 0;
+padding:15px;
+background:rgba(188,243,107,.08);
+border:1px solid rgba(188,243,107,.2);
+border-radius:17px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.points-box strong {
+color:var(--lime);
+font-size:25px;
+}
+label {
+display:block;
+font-size:12px;
+font-weight:900;
+margin:12px 0 7px;
+}
+textarea {
+width:100%;
+min-height:90px;
+resize:vertical;
+border:1px solid var(--line);
+border-radius:14px;
+color:var(--ink);
+background:#12142f;
+padding:12px;
+outline:none;
+}
+textarea:focus, input:focus {
+border-color:var(--purple);
+box-shadow:0 0 0 3px rgba(155,123,255,.13);
+}
+.tiny {
+color:var(--muted);
+font-size:11px;
+margin-top:7px;
+}
+.dashboard {
+padding:18px;
+}
+.dash-controls {
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:14px;
+}
+.dash-controls input {
+flex:1;
+min-width:170px;
+padding:12px 14px;
+border-radius:13px;
+border:1px solid var(--line);
+background:#12142f;
+color:var(--ink);
+outline:none;
+}
+.member-list {
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+}
+.member {
+padding:14px;
+border-radius:17px;
+background:rgba(255,255,255,.045);
+border:1px solid var(--line);
+min-width:0;
+}
+.member-line {
+display:flex;
+justify-content:space-between;
+gap:8px;
+align-items:center;
+}
+.member-name {
 font-size:13px;
+font-weight:1000;
 overflow-wrap:anywhere;
 }
-
-.joined{
+.member-rank {
+color:var(--cyan);
 font-size:10px;
-color:var(--muted);
-margin-top:4px;
-}
-
-.rankpill{
-border:1px solid #ffd34e30;
-background:#ffd34e0c;
-color:var(--gold);
-border-radius:99px;
-padding:7px 10px;
-font-size:9px;
-font-weight:900;
-letter-spacing:1px;
+font-weight:1000;
 white-space:nowrap;
 }
-
-.empty{
-padding:42px 20px;
-text-align:center;
-color:var(--muted);
-font-size:13px;
-line-height:1.8;
-}
-
-.empty .big{font-size:30px;margin-bottom:10px}
-
-.notice{
-border:1px solid #ffd34e20;
-background:#ffd34e07;
-color:#b8bac3;
-border-radius:13px;
-padding:15px 17px;
-font-size:11px;
-line-height:1.7;
-margin-top:15px;
-}
-
-.notice b{color:var(--gold)}
-
-.cta{
-border:1px solid #ffd34e22;
-background:linear-gradient(115deg,#ffd34e0d,#ffffff02);
-border-radius:24px;
-padding:38px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:25px;
-}
-
-.cta h2{
-font:800 clamp(24px,4vw,36px) Orbitron;
-margin:0 0 12px;
-}
-
-.cta h2 span{color:var(--gold)}
-
-.cta p{
-color:var(--muted);
-font-size:13px;
-line-height:1.7;
-margin:0;
-max-width:540px;
-}
-
-footer{
-border-top:1px solid #ffffff0c;
-padding:27px 0;
-color:#747783;
-font-size:11px;
-}
-
-.foot{
-display:flex;
-justify-content:space-between;
-gap:15px;
-align-items:center;
-}
-
-.foot strong{
-font-family:Orbitron;
-color:var(--gold);
-}
-
-/* JOIN MODAL */
-
-.modal{
-position:fixed;
-inset:0;
-z-index:60;
-background:#000b;
-backdrop-filter:blur(10px);
-display:none;
-align-items:center;
-justify-content:center;
-padding:16px;
-}
-
-.modal.open{display:flex}
-
-.dialog{
-width:min(620px,100%);
-max-height:88vh;
-overflow:auto;
-border:1px solid #ffd34e35;
-background:#111319;
-border-radius:22px;
-box-shadow:0 30px 100px #0009;
-}
-
-.dialoghead{
-position:sticky;
-top:0;
-background:#111319f5;
-backdrop-filter:blur(12px);
-padding:22px 23px;
-border-bottom:1px solid var(--line);
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:2;
-}
-
-.dialoghead h2{
-font:800 17px Orbitron;
-margin:0;
-}
-
-.dialoghead h2 span{color:var(--gold)}
-
-.x{
-border:0;
-background:#ffffff08;
-color:#b7bac4;
-border-radius:9px;
-width:35px;
-height:35px;
-font-size:24px;
-}
-
-.dialogbody{padding:22px}
-
-.dialogbody>p{
+.member-bio {
 color:var(--muted);
 font-size:12px;
-line-height:1.7;
-margin:0 0 18px;
-}
-
-.namegrid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
-}
-
-.namebtn{
-padding:13px 10px;
-text-align:left;
-background:#191b22;
-border:1px solid #2c2f38;
-border-radius:11px;
-color:#f0f1f4;
-font-size:12px;
-font-weight:800;
-transition:.15s;
-}
-
-.namebtn:hover:not(:disabled){
-border-color:var(--gold);
-color:var(--gold);
-transform:translateY(-1px);
-}
-
-.namebtn:disabled{
-opacity:.36;
-cursor:not-allowed;
-}
-
-.namebtn.taken:after{
-content:" • TAKEN";
-display:block;
-font-size:8px;
-color:var(--red);
-margin-top:5px;
-letter-spacing:.5px;
-}
-
-.msg{
-font-size:12px;
-line-height:1.7;
-margin-top:15px;
-color:var(--gold);
+line-height:1.5;
+overflow-wrap:anywhere;
 min-height:18px;
+margin:9px 0;
 }
-
-.msg.error{color:var(--red)}
-.msg.success{color:var(--green)}
-
-.smallnote{
-font-size:10px!important;
-margin:14px 0 0!important;
-color:#777b86!important;
+.member-meta {
+display:flex;
+justify-content:space-between;
+gap:8px;
+color:#9395bd;
+font-size:10px;
 }
-
-@media(max-width:800px){
-.hero-grid{grid-template-columns:1fr;gap:20px}
-.hero{padding:70px 0 45px}
-.hero-art{min-height:270px}
-.rankgrid{grid-template-columns:repeat(2,1fr)}
-.sectionhead{display:block}
-.sectionhead p{margin-top:12px}
-.cta{display:block;padding:28px}
-.cta .primary{margin-top:22px}
-.navlinks{gap:13px}
-.navlinks>a:not(.navjoin){display:none}
+.member-points {
+color:var(--lime);
+font-weight:1000;
 }
-
-@media(max-width:480px){
-.wrap{width:calc(100% - 28px)}
-h1{letter-spacing:-2px}
-.stats{gap:8px}
-.stat{padding:12px}
-.stat strong{font-size:16px}
-.stat span{font-size:8px}
-.rankgrid{gap:10px}
-.rankcard{padding:18px}
-.namegrid{grid-template-columns:repeat(2,1fr)}
-.rosterbar,.member{padding-left:16px;padding-right:16px}
-.foot{flex-direction:column;text-align:center}
-.hero-actions>*{flex:1}
+.empty {
+grid-column:1/-1;
+text-align:center;
+padding:28px;
+color:var(--muted);
 }
-</style>
+.roles {
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+}
+.role {
+padding:15px 12px;
+border:1px solid var(--line);
+border-radius:17px;
+background:rgba(255,255,255,.045);
+text-align:center;
+}
+.role .emoji {
+font-size:25px;
+}
+.role strong {
+display:block;
+margin-top:7px;
+font-size:12px;
+}
+.role span {
+display:block;
+margin-top:4px;
+color:var(--muted);
+font-size:10px;
+}
+footer {
+padding:25px 0 35px;
+border-top:1px solid var(--line);
+color:var(--muted);
+font-size:11px;
+display:flex;
+justify-content:space-between;
+gap:12px;
+flex-wrap:wrap;
+}
+#toast {
+position:fixed;
+left:50%;
+bottom:20px;
+transform:translate(-50%,20px);
+opacity:0;
+pointer-events:none;
+z-index:9;
+max-width:calc(100% - 30px);
+padding:12px 16px;
+border-radius:13px;
+color:#17162e;
+background:var(--lime);
+font-size:13px;
+font-weight:900;
+box-shadow:var(--shadow);
+transition:.22s;
+text-align:center;
+}
+#toast.show {
+opacity:1;
+transform:translate(-50%,0);
+}
+.loading {
+color:var(--muted);
+font-size:12px;
+}
+@media (max-width:800px) {
+.hero {
+grid-template-columns:1fr;
+padding-top:30px;
+}
+.hero-card {
+min-height:250px;
+}
+.mascot {
+height:135px;
+font-size:95px;
+}
+.play-layout {
+grid-template-columns:1fr;
+}
+.game-side {
+min-height:unset;
+}
+.profile-grid {
+grid-template-columns:1fr;
+}
+.roles {
+grid-template-columns:repeat(3,1fr);
+}
+}
+@media (max-width:520px) {
+.wrap {
+width:min(100% - 22px,1120px);
+}
+.topbar {
+align-items:flex-start;
+}
+nav {
+max-width:170px;
+gap:2px;
+}
+nav a {
+padding:8px;
+font-size:11px;
+}
+.hero {
+padding-top:18px;
+}
+.stats {
+gap:7px;
+margin-bottom:40px;
+}
+.stat {
+padding:12px 10px;
+}
+.stat strong {
+font-size:21px;
+}
+.stat span {
+font-size:9px;
+}
+section {
+margin:42px 0;
+}
+.member-list {
+grid-template-columns:1fr;
+}
+.roles {
+grid-template-columns:repeat(2,1fr);
+}
+}
+  </style>
 </head>
-
 <body>
-
-<header>
-<div class="wrap nav">
-<a class="brand" href="#home">
-<span class="brandmark">🦆</span>DUK <span>LEAGUE</span>
-</a>
-
-<nav class="navlinks">
-<a href="#home">HOME</a>
-<a href="#ranks">RANKS</a>
-<a href="#roster">ROSTER</a>
-<button class="navjoin" onclick="openJoin()">JOIN LEAGUE ↗</button>
-</nav>
-</div>
-</header>
-
-<main>
-
-<section class="hero" id="home">
-<div class="wrap hero-grid">
-
-<div>
-<div class="eyebrow"><i class="dot"></i> DUCK ESPORTS COMMUNITY</div>
-
-<h1>BUILT DIFFERENT.<br><span>QUACK DIFFERENT.</span></h1>
-
-<p>
-Welcome to DUK LEAGUE — a gaming community for the chaotic,
-the competitive, and the legendary. Pick your duck identity
-and get on the roster.
-</p>
-
-<div class="hero-actions">
-<button class="primary" onclick="openJoin()">JOIN THE LEAGUE ↗</button>
-<a class="secondary" href="#roster">VIEW ROSTER ↓</a>
-</div>
-
-<div class="stats">
-<div class="stat">
-<strong id="statMembers">—</strong>
-<span>ROSTER MEMBERS</span>
-</div>
-<div class="stat">
-<strong>DUCK</strong>
-<span>OFFICIAL SPECIES</span>
-</div>
-<div class="stat">
-<strong>∞</strong>
-<span>CHAOS LEVEL</span>
-</div>
-</div>
-</div>
-
-<div class="hero-art">
-<div class="halo">
-<div class="duck" aria-label="Duck">🦆</div>
-</div>
-<div class="artbadge">
-<strong>DUK LEAGUE HQ</strong>
-<small>THE FLOCK IS GROWING</small>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="content" id="ranks">
-<div class="wrap">
-
-<div class="sectionhead">
-<div>
-<div class="kicker">YOUR PLACE IN THE FLOCK</div>
-<h2>THE <span>RANKS</span></h2>
-</div>
-<p>
-Every member starts somewhere. Ranks are displayed here;
-only trusted league admins should assign elevated roles.
-</p>
-</div>
-
-<div class="rankgrid">
-
-<article class="rankcard">
-<div class="rankicon">👑</div>
-<h3>FOUNDER</h3>
-<p>The creator of the league. One crown, one duck.</p>
-</article>
-
-<article class="rankcard">
-<div class="rankicon">⚡</div>
-<h3>ELITE</h3>
-<p>Trusted veterans who help keep the flock flying.</p>
-</article>
-
-<article class="rankcard">
-<div class="rankicon">🛡️</div>
-<h3>MEMBER</h3>
-<p>Official members of the DUK LEAGUE community.</p>
-</article>
-
-<article class="rankcard">
-<div class="rankicon">🐣</div>
-<h3>RECRUIT</h3>
-<p>Fresh ducks joining the chaos for the first time.</p>
-</article>
-
-</div>
-</div>
-</section>
-
-<section class="content" id="roster">
-<div class="wrap">
-
-<div class="sectionhead">
-<div>
-<div class="kicker">LIVE CLOUD ROSTER</div>
-<h2>THE <span>FLOCK</span></h2>
-</div>
-<p>
-One shared roster for everyone visiting this website.
-When a duck joins, the list updates live.
-</p>
-</div>
-
-<div class="rosterpanel">
-
-<div class="rosterbar">
-<h3>OFFICIAL <span>MEMBERS</span></h3>
-<div class="live">
-<i class="dot"></i>
-<span id="connectionLabel">CONNECTING</span>
-</div>
-</div>
-
-<div class="rosterlist" id="rosterList">
-<div class="empty">
-<div class="big">🛰️</div>
-Connecting to DUK LEAGUE database…
-</div>
-</div>
-
-</div>
-
-<div class="notice">
-<b>DATABASE NOTE:</b>
-Names are reserved in the shared cloud roster.
-This page does not provide public rank-editing controls.
-Configure Firebase security rules before going live.
-</div>
-
-</div>
-</section>
-
-<section class="content">
-<div class="wrap">
-
-<div class="cta">
-<div>
-<h2>READY TO <span>QUACK UP?</span></h2>
-<p>
-Pick your official name from the roster list.
-Choose wisely — once a name is taken, another duck can't claim it.
-</p>
-</div>
-
-<button class="primary" onclick="openJoin()">PICK YOUR NAME ↗</button>
-</div>
-
-</div>
-</section>
-
-</main>
-
-<footer>
-<div class="wrap foot">
-<div>© 2026 <strong>DUK LEAGUE</strong> · ALL DUCKS RESERVED.</div>
-<div>MADE FOR THE FLOCK 🦆</div>
-</div>
-</footer>
-
-<div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
-
-<div class="dialog">
-
-<div class="dialoghead">
-<h2 id="dialogTitle">CHOOSE YOUR <span>DUCK ID</span></h2>
-<button class="x" onclick="closeJoin()" aria-label="Close">×</button>
-</div>
-
-<div class="dialogbody">
-
-<p>
-Tap an available name to join. Taken names are disabled.
-Your choice is stored in the shared database.
-</p>
-
-<div class="namegrid" id="nameGrid"></div>
-
-<div class="msg" id="joinMessage" role="status"></div>
-
-<p class="smallnote">
-Your membership is tied to a temporary anonymous sign-in
-on this browser. Keep your chosen name in mind.
-</p>
-
-</div>
-</div>
-</div>
-
-<script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-getFirestore,
-collection,
-onSnapshot,
-doc,
-runTransaction,
-serverTimestamp
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-import {
-getAuth,
-signInAnonymously
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-/* ==========================================
-   FIREBASE CONFIGURATION
-   REPLACE THESE VALUES WITH YOUR REAL CONFIG
-========================================== */
-
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-/* ==========================================
-   AVAILABLE DUCK NAMES
-========================================== */
-
-const names = [
-"Mr.Weak","Mr.Strong","Mr.Sussy","Mr.Noob",
-"Mr.Duck","Mr.Froggy","Mr.Beast","Mr.Chicken",
-"Mr.Unknown","Mr.Legend","Mr.Cooked","Mr.Pro",
-"Mr.Sigma","Mr.Banana","Mr.Goofy","Mr.Chaos",
-"Mr.Nobody","Mr.Rizz","Mr.Skibidi","Mr.God",
-"Mr.Quack","Mr.Epic","Mr.Bot","Mr.W",
-"Mr.Drippy","Mr.Cracked","Mr.Slow","Mr.Fast",
-"Mr.Cool","Mr.Bruh","Mr.Hari","Mr.Gamer",
-"Mr.Toxic","Mr.Crazy","Mr.Waffle","Mr.Meme",
-"Mr.Dino","Mr.NPC","Mr.Hacker","Mr.Fearless"
-];
-
-/* ==========================================
-   DATABASE VARIABLES
-========================================== */
-
-const listEl = document.getElementById("rosterList");
-const gridEl = document.getElementById("nameGrid");
-const messageEl = document.getElementById("joinMessage");
-const connectionEl = document.getElementById("connectionLabel");
-
-let db;
-let auth;
-let signedUser = null;
-let members = new Map();
-let ready = false;
-
-const setMessage = (text,type="") => {
-messageEl.textContent = text;
-messageEl.className = "msg " + type;
-};
-
-const safeText = value => String(value ?? "");
-
-/* ==========================================
-   RENDER LIVE ROSTER
-========================================== */
-
-function renderRoster(){
-
-const sorted = [...members.values()].sort(
-(a,b) => safeText(a.name).localeCompare(safeText(b.name))
-);
-
-document.getElementById("statMembers").textContent = sorted.length;
-
-if(!sorted.length){
-
-listEl.innerHTML = `
-<div class="empty">
-<div class="big">🦆</div>
-No ducks on the roster yet. Be the first!
-</div>`;
-
-return;
-}
-
-listEl.replaceChildren();
-
-for(const member of sorted){
-
-const row = document.createElement("div");
-row.className = "member";
-
-const left = document.createElement("div");
-left.className = "memberleft";
-
-const avatar = document.createElement("div");
-avatar.className = "avatar";
-avatar.textContent = "🦆";
-
-const info = document.createElement("div");
-
-const name = document.createElement("div");
-name.className = "membername";
-name.textContent = safeText(member.name);
-
-const joined = document.createElement("div");
-joined.className = "joined";
-joined.textContent = "DUK LEAGUE MEMBER";
-
-info.append(name,joined);
-left.append(avatar,info);
-
-const rank = document.createElement("span");
-rank.className = "rankpill";
-rank.textContent = "RECRUIT";
-
-row.append(left,rank);
-listEl.append(row);
-
-}
-}
-
-/* ==========================================
-   RENDER AVAILABLE NAME BUTTONS
-========================================== */
-
-function renderNames(){
-
-gridEl.replaceChildren();
-
-for(const name of names){
-
-const taken = members.has(name);
-
-const button = document.createElement("button");
-
-button.type = "button";
-button.className = "namebtn" + (taken ? " taken" : "");
-button.textContent = name;
-
-button.disabled = taken || !ready;
-
-button.title = taken
-? "This name is already taken"
-: "Join as " + name;
-
-button.addEventListener("click", () => joinWithName(name));
-
-gridEl.append(button);
-
-}
-}
-
-/* ==========================================
-   JOIN MODAL
-========================================== */
-
-window.openJoin = () => {
-
-document.getElementById("joinModal").classList.add("open");
-
-renderNames();
-
-};
-
-window.closeJoin = () => {
-
-document.getElementById("joinModal").classList.remove("open");
-
-};
-
-document.getElementById("joinModal").addEventListener("click",e=>{
-
-if(e.target.id === "joinModal"){
-
-window.closeJoin();
-
-}
-
-});
-
-document.addEventListener("keydown",e=>{
-
-if(e.key === "Escape"){
-
-window.closeJoin();
-
-}
-
-});
-
-/* ==========================================
-   JOIN WITH SELECTED NAME
-========================================== */
-
-async function joinWithName(name){
-
-if(!ready || !signedUser){
-
-setMessage("Still connecting. Try again in a moment.","error");
-
-return;
-
-}
-
-setMessage("Reserving your duck name…");
-
-renderNames();
-
-try{
-
-const memberRef = doc(db,"members",name);
-
-await runTransaction(db,async transaction=>{
-
-const existing = await transaction.get(memberRef);
-
-if(existing.exists()){
-
-throw new Error("NAME_TAKEN");
-
-}
-
-transaction.set(memberRef,{
-
-name:name,
-rank:"Recruit",
-uid:signedUser.uid,
-createdAt:serverTimestamp()
-
-});
-
-});
-
-setMessage("QUACK! You're on the roster as "+name+".","success");
-
-renderNames();
-
-}catch(error){
-
-console.error("Join failed:",error);
-
-setMessage(
-error.message === "NAME_TAKEN"
-? "Oops — that name was just taken. Pick another duck!"
-: "Couldn't join. Check Firebase setup and security rules.",
-"error"
-);
-
-}
-
-}
-
-/* ==========================================
-   CONNECT FIREBASE
-========================================== */
-
-async function start(){
-
-try{
-
-if(
-firebaseConfig.apiKey === "YOUR_API_KEY" ||
-firebaseConfig.projectId === "YOUR_PROJECT_ID"
-){
-
-connectionEl.textContent = "SETUP NEEDED";
-
-listEl.innerHTML = `
-<div class="empty">
-<div class="big">⚙️</div>
-Firebase is not configured yet.<br>
-Paste your Firebase web config into the code.
-</div>`;
-
-renderNames();
-
-return;
-
-}
-
-const app = initializeApp(firebaseConfig);
-
-db = getFirestore(app);
-
-auth = getAuth(app);
-
-await signInAnonymously(auth);
-
-signedUser = auth.currentUser;
-
-ready = true;
-
-connectionEl.textContent = "LIVE ROSTER";
-
-onSnapshot(
-collection(db,"members"),
-
-snapshot=>{
-
-members.clear();
-
-snapshot.forEach(item=>{
-
-const data = item.data();
-
-if(
-data &&
-typeof data.name === "string" &&
-names.includes(data.name)
-){
-
-members.set(data.name,data);
-
-}
-
-});
-
-renderRoster();
-renderNames();
-
-},
-
-error=>{
-
-console.error("Roster listener:",error);
-
-connectionEl.textContent = "DATABASE ERROR";
-
-listEl.innerHTML = `
-<div class="empty">
-Unable to read roster. Check Firestore rules.
-</div>`;
-
-}
-
-);
-
-renderNames();
-
-}catch(error){
-
-console.error("Firebase initialization:",error);
-
-connectionEl.textContent = "CONNECTION FAILED";
-
-listEl.innerHTML = `
-<div class="empty">
-Firebase connection failed.
-Check config, Authentication and Firestore rules.
-</div>`;
-
-setMessage("Firebase setup isn't complete yet.","error");
-
-}
-
-}
-
-start();
-
-</script>
-
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="DUK LEAGUE home">
+        <span class="brand-mark">👑</span>
+        <span>DUK LEAGUE<small>THE CREW HQ</small></span>
+      </a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#play">Play</a>
+        <a href="#members">Members</a>
+        <a href="#roles">Ranks</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div>
+          <span class="eyebrow">✨ THE CREW IS ONLINE</span>
+          <h1>PLAY HARD.<br><span class="gradient-text">LEVEL UP.</span></h1>
+          <p>Welcome to DUK LEAGUE — the crew's little corner of the internet. Dodge the pipes, collect Royalty Points, climb the ranks and show the squad your bio.</p>
+          <div class="actions">
+            <a class="btn" href="#play">🎮 Play the game</a>
+            <a class="btn secondary" href="#members">👥 Meet the members</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="sticker"><span>DUK CREW ENERGY</span><span>★ ★ ★</span></div>
+          <div class="mascot">🐸</div>
+          <div class="bubble">ribbit. grind. repeat.</div>
+        </div>
+      </section>
+
+      <div class="stats">
+        <div class="stat"><strong id="memberCount">—</strong><span>CREW MEMBERS</span></div>
+        <div class="stat"><strong id="totalPoints">—</strong><span>ROYALTY POINTS EARNED</span></div>
+        <div class="stat"><strong id="myRoleStat">Loading</strong><span>YOUR CURRENT RANK</span></div>
+      </div>
+
+      <section id="play">
+        <div class="section-head">
+          <div><h2>🐸 Frog Flight</h2><p>Tap to flap. Dodge every pipe. Each pipe you pass = 1 Royalty Point.</p></div>
+        </div>
+        <div class="play-layout">
+          <div class="panel game-panel">
+            <div class="game-top"><strong>FROG FLIGHT • STAGE RUN</strong><span class="game-pill">+1 RP / PIPE</span></div>
+            <canvas id="gameCanvas" width="360" height="520" aria-label="Frog Flight game. Tap or press space to flap."></canvas>
+            <p class="game-help">📱 Tap the game or press SPACE / ↑ to flap</p>
+          </div>
+          <aside class="panel game-side">
+            <div>
+              <h3>How to play 🎯</h3>
+              <p>Keep the frog in the air and guide it through the gaps. Every pipe you safely pass counts as one stage and earns one Royalty Point.</p>
+              <div class="rule-row"><span class="rule-icon">🟢</span><span>Pass a pipe = +1 Royalty Point</span></div>
+              <div class="rule-row"><span class="rule-icon">💥</span><span>Hit a pipe = run over</span></div>
+              <div class="rule-row"><span class="rule-icon">🏆</span><span>Points help unlock higher ranks</span></div>
+            </div>
+            <div>
+              <div class="points-box"><span>YOUR RUN STAGE</span><strong id="runStage">0</strong></div>
+              <button class="btn wide" id="startGame">▶ Start game</button>
+              <p class="tiny" id="gameStatus">Your earned points save to your crew profile.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="profile">
+        <div class="section-head"><div><h2>✨ Your crew card</h2><p>Your name, join date, rank and points are locked. Your bio is yours to edit.</p></div></div>
+        <div class="profile-grid">
+          <div class="panel profile-card">
+            <div class="profile-top">
+              <div class="avatar">😎</div>
+              <div><h3 id="myName">Loading member…</h3><span class="role-chip" id="myRole">Checking rank…</span></div>
+            </div>
+            <div class="points-box"><span>👑 ROYALTY POINTS</span><strong id="myPoints">0</strong></div>
+            <p class="tiny">Joined: <strong id="myJoined">—</strong></p>
+          </div>
+          <div class="panel profile-card">
+            <h3 style="margin:0 0 5px">Edit your bio 📝</h3>
+            <p class="tiny">This is the only profile detail members can change.</p>
+            <label for="bioInput">YOUR BIO</label>
+            <textarea id="bioInput" maxlength="160" placeholder="Tell the crew a little about yourself…"></textarea>
+            <div class="tiny"><span id="bioCount">0</span>/160 characters</div>
+            <button class="btn" id="saveBio" style="margin-top:12px">💾 Save bio</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="members">
+        <div class="section-head"><div><h2>👥 Crew dashboard</h2><p>Every member in one place. The leaderboard updates live.</p></div></div>
+        <div class="panel dashboard">
+          <div class="dash-controls"><input id="memberSearch" type="search" placeholder="Search the crew…" aria-label="Search members" /></div>
+          <div class="member-list" id="memberList"><div class="empty">Loading the crew…</div></div>
+        </div>
+      </section>
+
+      <section id="roles">
+        <div class="section-head"><div><h2>🏅 The rank ladder</h2><p>Play, earn points and unlock your next title.</p></div></div>
+        <div class="roles">
+          <div class="role"><div class="emoji">🌱</div><strong>Recruit</strong><span>0–4 RP</span></div>
+          <div class="role"><div class="emoji">😅</div><strong>Mr. Noob</strong><span>5–14 RP</span></div>
+          <div class="role"><div class="emoji">⚡</div><strong>Mr. Pro</strong><span>15–29 RP</span></div>
+          <div class="role"><div class="emoji">🦸</div><strong>Mr. Super</strong><span>30–59 RP</span></div>
+          <div class="role"><div class="emoji">👑</div><strong>Mr. Legend</strong><span>60+ RP</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>© <span id="year"></span> DUK LEAGUE • Built for the crew 🐸</span><span>Be cool. Help the crew. Have fun.</span></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import {
+      getFirestore, collection, doc, runTransaction, onSnapshot,
+      updateDoc, serverTimestamp, increment
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    /*
+     * DUK LEAGUE V2 DEVELOPMENT NOTES
+     * This file contains the page markup, styling, Firebase connection, and Frog Flight game.
+     * Keep a backup of the working version before changing major sections.
+     * Edit the HTML when changing visible words, labels, links, or page sections.
+     * Edit the CSS when changing colours, spacing, typography, borders, or layout.
+     * Edit the JavaScript when changing game behaviour or Firebase interactions.
+     * The page is designed to work on desktop screens and narrow phone screens.
+     * The layout uses a flexible content wrapper to prevent content touching screen edges.
+     * The navigation links point to section IDs on this same page.
+     * The home section is the first place visitors see when opening the site.
+     * The hero panel introduces the crew and links to the playable game.
+     * The mascot is decorative and does not affect game or member data.
+     * The statistics row displays member count, total points, and the signed-in member rank.
+     * The statistics are recalculated from the Firestore member documents.
+     * The Frog Flight area contains the canvas game and its controls.
+     * The canvas has an internal resolution of 360 by 520 pixels.
+     * CSS scales the canvas visually while preserving its game drawing proportions.
+     * The pointerdown event supports tapping on touchscreens and clicking with a mouse.
+     * The keyboard controls use Space and Arrow Up for desktop play.
+     * The start button resets the bird, pipe list, and current run stage.
+     * The game loop uses requestAnimationFrame for smooth browser rendering.
+     * The bird falls due to gravity while the flap action applies upward velocity.
+     * Pipes move from the right side of the game area toward the left side.
+     * The game creates another pipe when the newest pipe reaches the spawn threshold.
+     * A pipe can award a point only once during the current run.
+     * The stage counter increases after the bird safely passes a pipe.
+     * The point award request is sent to Firestore after a pipe is passed.
+     * The game displays a run-over screen after a collision or boundary hit.
+     * The game status message reports whether the point request was saved.
+     * The profile card displays the current member name and calculated rank.
+     * The member name is created once and is not editable from this page.
+     * The join date is created by Firestore when the member profile is created.
+     * Royalty Points are stored as a number in the member document.
+     * The rank is calculated from Royalty Points rather than stored as an editable field.
+     * The bio field is the only profile field exposed in the edit form.
+     * The bio form limits text to 160 characters in the browser.
+     * Firestore rules must also enforce the bio length limit on the server.
+     * The Save Bio button updates only the bio field in the current member document.
+     * The dashboard reads member documents and renders a member card for each one.
+     * Member cards show name, calculated rank, bio, join date, and Royalty Points.
+     * The dashboard search checks the member name, bio, and calculated rank.
+     * The dashboard sorts members by Royalty Points from highest to lowest.
+     * The search field filters the visible cards without changing stored member data.
+     * The rank ladder section explains the rank thresholds to site visitors.
+     * Recruit is the starting rank for a member with zero to four points.
+     * Mr. Noob is assigned from five through fourteen points.
+     * Mr. Pro is assigned from fifteen through twenty-nine points.
+     * Mr. Super is assigned from thirty through fifty-nine points.
+     * Mr. Legend is assigned when a member has sixty or more points.
+     * Change the thresholds in getRole if the crew agrees on different rank levels.
+     * Keep the displayed rank ladder thresholds in sync with getRole.
+     * The page uses a dark navy background with bright accent colours.
+     * The purple accent is used for primary decorative highlights.
+     * The pink accent adds contrast to the brand and mascot card.
+     * The cyan accent highlights secondary details and rank labels.
+     * The lime accent highlights positive actions and Royalty Points.
+     * The yellow accent is used for playful stickers and small highlights.
+     * CSS custom properties are declared near the top of the style section.
+     * Update a custom property to change a colour throughout the page.
+     * The wrap class controls the maximum width of the main page content.
+     * The panel class provides shared borders, backgrounds, and shadows.
+     * The button class provides shared styles for clickable primary actions.
+     * The secondary button style is intended for less important actions.
+     * The hero layout uses two columns on wide screens.
+     * The hero layout collapses to one column on smaller screens.
+     * The play layout places the game beside instructions on wide screens.
+     * The play layout stacks the game and instructions on narrow screens.
+     * The profile cards also stack into one column on narrow screens.
+     * The member cards use two columns on medium screens and one on small phones.
+     * The rank cards use a responsive grid that changes column count by screen width.
+     * The media queries are near the end of the style section.
+     * Add any new responsive changes inside the existing media queries when possible.
+     * Use semantic headings to keep the document structure easy to follow.
+     * Use labels for form controls so their purpose is clear.
+     * The live toast region announces status messages to screen readers.
+     * The game canvas includes an accessible label describing its controls.
+     * Do not remove the viewport meta tag because it is needed for mobile layouts.
+     * Do not remove the Firebase module imports while the cloud features are enabled.
+     * The app uses the Firebase modular JavaScript SDK.
+     * The Firebase configuration identifies the DUK LEAGUE Firebase project.
+     * The Firebase web configuration is intended to appear in client-side code.
+     * Firestore Security Rules protect database writes and should not be treated as optional.
+     * Anonymous Authentication must be enabled in the Firebase console.
+     * The code signs visitors in anonymously before creating a member profile.
+     * The anonymous account UID is used as the Firestore document ID.
+     * Using the UID as a document ID prevents two profiles sharing one document ID.
+     * The members_v2 collection is separate from the older members collection.
+     * Existing documents in the old collection are not automatically migrated.
+     * A migration should be planned separately if earlier members must be retained.
+     * The createOrLoadProfile function creates a document only when one does not exist.
+     * The transaction protects profile creation from duplicate simultaneous requests.
+     * The real-time listener keeps the member dashboard up to date.
+     * The listener is stopped before another listener is attached to avoid duplicates.
+     * The current profile is found by matching its UID to the signed-in user.
+     * The safeText function escapes text before placing it into dashboard HTML.
+     * Continue escaping member-controlled values whenever creating HTML strings.
+     * Use textContent instead of innerHTML when rendering simple text values.
+     * The dateText helper formats Firestore timestamps for dashboard display.
+     * The page displays a friendly fallback when a timestamp is not available.
+     * The toast helper shows short messages and then hides them automatically.
+     * The toast timer is reset when a new message replaces an old message.
+     * Keep user-facing error messages brief and helpful.
+     * Keep detailed debugging information in the browser developer console.
+     * Test the website after every significant code change.
+     * Test the game with a mouse and with a touchscreen if possible.
+     * Test the page at both phone width and desktop width.
+     * Test that a member can save their bio after signing in.
+     * Test that another member can see the updated bio in the dashboard.
+     * Test that a member cannot edit another member profile through the interface.
+     * Test Firestore rules in the Firebase Rules Playground before relying on changes.
+     * Never use open Firestore write rules on a public website.
+     * Do not give ordinary members permission to edit name, UID, join date, or rank.
+     * Do not give ordinary members permission to directly choose their Royalty Points.
+     * The current browser game reward system is a basic client-side reward mechanism.
+     * Client-side games can be modified by technically skilled visitors.
+     * A stronger reward system requires server-side validation of completed stages.
+     * Cloud Functions or another trusted backend can validate rewards more reliably.
+     * Check Firebase billing and quota settings with a parent or guardian before enabling paid services.
+     * Keep a copy of the published Firestore rules alongside the website source.
+     * Keep the website repository private only if the project requires private source code.
+     * GitHub Pages can publish static HTML, CSS, and browser JavaScript files.
+     * Commit a changed index.html file to publish the new website version.
+     * Allow a short time for GitHub Pages to build and refresh after a commit.
+     * Use a hard refresh if the browser continues showing a cached previous version.
+     * The year in the footer is filled automatically by JavaScript.
+     * The member name is created once and is not editable from this page.
+     * The join date is created by Firestore when the member profile is created.
+     * Royalty Points are stored as a number in the member document.
+     * The rank is calculated from Royalty Points rather than stored as an editable field.
+     * The bio field is the only profile field exposed in the edit form.
+     * The bio form limits text to 160 characters in the browser.
+     * Firestore rules must also enforce the bio length limit on the server.
+     * The Save Bio button updates only the bio field in the current member document.
+     * The dashboard reads member documents and renders a member card for each one.
+     * Member cards show name, calculated rank, bio, join date, and Royalty Points.
+     * The dashboard search checks the member name, bio, and calculated rank.
+     * The dashboard sorts members by Royalty Points from highest to lowest.
+     * The search field filters the visible cards without changing stored member data.
+     * The rank ladder section explains the rank thresholds to site visitors.
+     * Recruit is the starting rank for a member with zero to four points.
+     * Mr. Noob is assigned from five through fourteen points.
+     * Mr. Pro is assigned from fifteen through twenty-nine points.
+     * Mr. Super is assigned from thirty through fifty-nine points.
+     * Mr. Legend is assigned when a member has sixty or more points.
+     * Change the thresholds in getRole if the crew agrees on different rank levels.
+     * Keep the displayed rank ladder thresholds in sync with getRole.
+     * The page uses a dark navy background with bright accent colours.
+     * The purple accent is used for primary decorative highlights.
+     * The pink accent adds contrast to the brand and mascot card.
+     * The cyan accent highlights secondary details and rank labels.
+     * The lime accent highlights positive actions and Royalty Points.
+     * The yellow accent is used for playful stickers and small highlights.
+     * CSS custom properties are declared near the top of the style section.
+     * Update a custom property to change a colour throughout the page.
+     * The wrap class controls the maximum width of the main page content.
+     * The panel class provides shared borders, backgrounds, and shadows.
+     * The button class provides shared styles for clickable primary actions.
+     * The secondary button style is intended for less important actions.
+     * The hero layout uses two columns on wide screens.
+     * The hero layout collapses to one column on smaller screens.
+     * The play layout places the game beside instructions on wide screens.
+     * The play layout stacks the game and instructions on narrow screens.
+     * The profile cards also stack into one column on narrow screens.
+     * The member cards use two columns on medium screens and one on small phones.
+     * The rank cards use a responsive grid that changes column count by screen width.
+     * The media queries are near the end of the style section.
+     * Add any new responsive changes inside the existing media queries when possible.
+     * Use semantic headings to keep the document structure easy to follow.
+     * Use labels for form controls so their purpose is clear.
+     * The live toast region announces status messages to screen readers.
+     * The game canvas includes an accessible label describing its controls.
+     * Do not remove the viewport meta tag because it is needed for mobile layouts.
+     * Do not remove the Firebase module imports while the cloud features are enabled.
+     * The app uses the Firebase modular JavaScript SDK.
+     * The Firebase configuration identifies the DUK LEAGUE Firebase project.
+     * The Firebase web configuration is intended to appear in client-side code.
+     * Firestore Security Rules protect database writes and should not be treated as optional.
+     * Anonymous Authentication must be enabled in the Firebase console.
+     * The code signs visitors in anonymously before creating a member profile.
+     * The anonymous account UID is used as the Firestore document ID.
+     * Using the UID as a document ID prevents two profiles sharing one document ID.
+     * The members_v2 collection is separate from the older members collection.
+     * Existing documents in the old collection are not automatically migrated.
+     * A migration should be planned separately if earlier members must be retained.
+     * The createOrLoadProfile function creates a document only when one does not exist.
+     * The transaction protects profile creation from duplicate simultaneous requests.
+     * The real-time listener keeps the member dashboard up to date.
+     * The listener is stopped before another listener is attached to avoid duplicates.
+     * The current profile is found by matching its UID to the signed-in user.
+     * The safeText function escapes text before placing it into dashboard HTML.
+     * Continue escaping member-controlled values whenever creating HTML strings.
+     * Use textContent instead of innerHTML when rendering simple text values.
+     * The dateText helper formats Firestore timestamps for dashboard display.
+     * The page displays a friendly fallback when a timestamp is not available.
+     * The toast helper shows short messages and then hides them automatically.
+     * The toast timer is reset when a new message replaces an old message.
+     * Keep user-facing error messages brief and helpful.
+     * Keep detailed debugging information in the browser developer console.
+     * Test the website after every significant code change.
+     * Test the game with a mouse and with a touchscreen if possible.
+     * Test the page at both phone width and desktop width.
+     * Test that a member can save their bio after signing in.
+     * Test that another member can see the updated bio in the dashboard.
+     * Test that a member cannot edit another member profile through the interface.
+     * Test Firestore rules in the Firebase Rules Playground before relying on changes.
+     * Never use open Firestore write rules on a public website.
+     * Do not give ordinary members permission to edit name, UID, join date, or rank.
+     * Do not give ordinary members permission to directly choose their Royalty Points.
+     * The current browser game reward system is a basic client-side reward mechanism.
+     * Client-side games can be modified by technically skilled visitors.
+     * A stronger reward system requires server-side validation of completed stages.
+     * Cloud Functions or another trusted backend can validate rewards more reliably.
+     * Check Firebase billing and quota settings with a parent or guardian before enabling paid services.
+     * Keep a copy of the published Firestore rules alongside the website source.
+     * Keep the website repository private only if the project requires private source code.
+     * GitHub Pages can publish static HTML, CSS, and browser JavaScript files.
+     * Commit a changed index.html file to publish the new website version.
+     * Allow a short time for GitHub Pages to build and refresh after a commit.
+     * Use a hard refresh if the browser continues showing a cached previous version.
+     * The year in the footer is filled automatically by JavaScript.
+     */
+    // Your existing DUK LEAGUE Firebase project.
+    const firebaseConfig = {
+      apiKey: "AIzaSyB7MX-o2la2shzfcbWFjB3m1JvPgPvH4Q",
+      authDomain: "duk-league.firebaseapp.com",
+      projectId: "duk-league",
+      storageBucket: "duk-league.firebasestorage.app",
+      messagingSenderId: "379601710014",
+      appId: "1:379601710014:web:d7c8c33d6b3708b6e1a7ef",
+      measurementId: "G-4J2BJ68HR6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const membersRef = collection(db, "members_v2");
+    const $ = (id) => document.getElementById(id);
+    let currentUser = null;
+    let myProfile = null;
+    let allMembers = [];
+    let stopMemberListener = null;
+    let toastTimer = null;
+
+    function toast(message) {
+      const box = $("toast");
+      box.textContent = message;
+      box.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => box.classList.remove("show"), 2600);
+    }
+    function safeText(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      })[char]);
+    }
+    function getRole(points) {
+      if (points >= 60) return "Mr. Legend";
+      if (points >= 30) return "Mr. Super";
+      if (points >= 15) return "Mr. Pro";
+      if (points >= 5) return "Mr. Noob";
+      return "Recruit";
+    }
+    function dateText(timestamp) {
+      if (!timestamp || typeof timestamp.toDate !== "function") return "Just joined";
+      return timestamp.toDate().toLocaleDateString(undefined, { day:"numeric", month:"short", year:"numeric" });
+    }
+
+    async function createOrLoadProfile(user) {
+      const profileRef = doc(db, "members_v2", user.uid);
+      const aliases = ["Mr.Weak", "Mr.Strong", "Mr.Sussy", "Mr.Pro", "Mr.Noob", "Mr.Danger", "Mr.Shadow", "Mr.Legend", "Mr.Frost", "Mr.Beast", "Mr.Ghost", "Mr.King", "Mr.Super"];
+      const aliasIndex = (user.uid.charCodeAt(0) + user.uid.charCodeAt(1)) % aliases.length;
+      await runTransaction(db, async (transaction) => {
+        const snapshot = await transaction.get(profileRef);
+        if (!snapshot.exists()) {
+          transaction.set(profileRef, {
+            uid: user.uid,
+            name: `${aliases[aliasIndex]}_${user.uid.slice(0, 4).toUpperCase()}`,
+            bio: "New to the crew. 🐸",
+            joinedAt: serverTimestamp(),
+            royaltyPoints: 0,
+            lastRewardAt: null
+          });
+        }
+      });
+    }
+
+    function renderMyProfile() {
+      if (!myProfile) return;
+      const points = Number(myProfile.royaltyPoints || 0);
+      const role = getRole(points);
+      $("myName").textContent = myProfile.name || "Crew member";
+      $("myRole").textContent = role;
+      $("myRoleStat").textContent = role;
+      $("myPoints").textContent = points.toLocaleString();
+      $("myJoined").textContent = dateText(myProfile.joinedAt);
+      $("bioInput").value = myProfile.bio || "";
+      $("bioCount").textContent = String((myProfile.bio || "").length);
+    }
+
+    function renderMembers() {
+      const needle = $("memberSearch").value.trim().toLowerCase();
+      const sorted = [...allMembers].sort((a, b) => (Number(b.royaltyPoints || 0) - Number(a.royaltyPoints || 0)) || String(a.name).localeCompare(String(b.name)));
+      const filtered = sorted.filter(member => `${member.name || ""} ${member.bio || ""} ${getRole(Number(member.royaltyPoints || 0))}`.toLowerCase().includes(needle));
+      $("memberCount").textContent = allMembers.length.toLocaleString();
+      $("totalPoints").textContent = allMembers.reduce((sum, member) => sum + Number(member.royaltyPoints || 0), 0).toLocaleString();
+      if (!filtered.length) {
+        $("memberList").innerHTML = '<div class="empty">No members found. The frog found nobody. 🐸</div>';
+        return;
+      }
+      $("memberList").innerHTML = filtered.map((member, index) => {
+        const points = Number(member.royaltyPoints || 0);
+        return `<article class="member">
+          <div class="member-line"><span class="member-name">${index + 1}. ${safeText(member.name || "Crew member")}</span><span class="member-rank">${safeText(getRole(points))}</span></div>
+          <p class="member-bio">${safeText(member.bio || "No bio yet.")}</p>
+          <div class="member-meta"><span>Joined ${safeText(dateText(member.joinedAt))}</span><span class="member-points">👑 ${points} RP</span></div>
+        </article>`;
+      }).join("");
+    }
+
+    async function saveBio() {
+      if (!currentUser || !myProfile) return toast("Your profile is still loading.");
+      const bio = $("bioInput").value.trim();
+      if (bio.length > 160) return toast("Bio must be 160 characters or less.");
+      try {
+        await updateDoc(doc(db, "members_v2", currentUser.uid), { bio });
+        toast("Bio saved. Looking fresh! ✨");
+      } catch (error) {
+        console.error(error);
+        toast("Couldn't save bio. Check your Firestore rules.");
+      }
+    }
+
+    async function awardRoyaltyPoint() {
+      if (!currentUser) return;
+      try {
+        await updateDoc(doc(db, "members_v2", currentUser.uid), {
+          royaltyPoints: increment(1),
+          lastRewardAt: serverTimestamp()
+        });
+        $("gameStatus").textContent = "Royalty Point saved to your profile! 👑";
+      } catch (error) {
+        console.error("Royalty point wasn't saved:", error);
+        $("gameStatus").textContent = "Point didn't sync. Try the next stage in a moment.";
+      }
+    }
+
+    $("bioInput").addEventListener("input", () => $("bioCount").textContent = String($("bioInput").value.length));
+    $("saveBio").addEventListener("click", saveBio);
+    $("memberSearch").addEventListener("input", renderMembers);
+    $("year").textContent = new Date().getFullYear();
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        try { await signInAnonymously(auth); }
+        catch (error) { console.error(error); toast("Sign-in failed. Enable Anonymous sign-in in Firebase."); }
+        return;
+      }
+      currentUser = user;
+      try {
+        await createOrLoadProfile(user);
+        if (stopMemberListener) stopMemberListener();
+        stopMemberListener = onSnapshot(membersRef, (snapshot) => {
+          allMembers = snapshot.docs.map(item => item.data());
+          myProfile = allMembers.find(member => member.uid === currentUser.uid) || null;
+          renderMyProfile();
+          renderMembers();
+        }, (error) => {
+          console.error(error);
+          toast("Can't load members. Check Firestore rules.");
+        });
+      } catch (error) {
+        console.error(error);
+        toast("Couldn't create your crew profile. Check Firebase setup.");
+      }
+    });
+
+    // ---------------- FROG FLIGHT GAME ----------------
+    const canvas = $("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    const GAME_W = canvas.width;
+    const GAME_H = canvas.height;
+    const bird = { x: 88, y: 250, vy: 0, radius: 14 };
+    let pipes = [];
+    let gameRunning = false;
+    let gameStarted = false;
+    let stage = 0;
+    let animationId = 0;
+    const pipeWidth = 66;
+    const gapHeight = 158;
+    const pipeSpeed = 2.25;
+    const gravity = 0.38;
+    const flapPower = -7.1;
+
+    function makePipe(x) {
+      const gapY = 145 + Math.random() * 220;
+      return { x, gapY, passed: false };
+    }
+    function roundedRect(x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.roundRect(x, y, width, height, radius);
+      ctx.fill();
+    }
+    function drawPipe(pipe) {
+      const topHeight = pipe.gapY - gapHeight / 2;
+      const bottomY = pipe.gapY + gapHeight / 2;
+      const gradient = ctx.createLinearGradient(pipe.x, 0, pipe.x + pipeWidth, 0);
+      gradient.addColorStop(0, "#259c68");
+      gradient.addColorStop(.45, "#62df8b");
+      gradient.addColorStop(1, "#188052");
+      ctx.fillStyle = gradient;
+      roundedRect(pipe.x, -5, pipeWidth, topHeight, 9);
+      roundedRect(pipe.x - 5, topHeight - 21, pipeWidth + 10, 21, 7);
+      roundedRect(pipe.x, bottomY, pipeWidth, GAME_H - bottomY - 45, 9);
+      roundedRect(pipe.x - 5, bottomY, pipeWidth + 10, 21, 7);
+      ctx.fillStyle = "rgba(255,255,255,.20)";
+      ctx.fillRect(pipe.x + 9, 0, 5, Math.max(0, topHeight - 22));
+      ctx.fillRect(pipe.x + 9, bottomY + 24, 5, Math.max(0, GAME_H - bottomY - 70));
+    }
+    function drawBird() {
+      ctx.save();
+      ctx.translate(bird.x, bird.y);
+      ctx.rotate(Math.max(-.35, Math.min(.55, bird.vy * .055)));
+      ctx.fillStyle = "#ffd44f";
+      ctx.beginPath(); ctx.arc(0, 0, bird.radius, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#fff3b8";
+      ctx.beginPath(); ctx.ellipse(-4, 5, 9, 6, -.3, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#fff";
+      ctx.beginPath(); ctx.arc(6, -5, 5, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#202044";
+      ctx.beginPath(); ctx.arc(8, -5, 2, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#ff8c72";
+      ctx.beginPath(); ctx.moveTo(12, 1); ctx.lineTo(23, 5); ctx.lineTo(12, 8); ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+    function drawScene() {
+      const sky = ctx.createLinearGradient(0, 0, 0, GAME_H);
+      sky.addColorStop(0, "#8be2ed"); sky.addColorStop(1, "#d4f6cc");
+      ctx.fillStyle = sky; ctx.fillRect(0, 0, GAME_W, GAME_H);
+      ctx.fillStyle = "rgba(255,255,255,.55)";
+      [[55,90,24],[235,125,30],[305,55,19]].forEach(([x,y,r]) => {
+        ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.arc(x+r,y+3,r*.75,0,Math.PI*2); ctx.fill();
+      });
+      ctx.fillStyle = "#9bdc91";
+      ctx.beginPath(); ctx.moveTo(0,395); ctx.quadraticCurveTo(90,360,180,400); ctx.quadraticCurveTo(270,350,360,390); ctx.lineTo(360,475); ctx.lineTo(0,475); ctx.fill();
+      pipes.forEach(drawPipe);
+      ctx.fillStyle = "#6acb78"; ctx.fillRect(0, GAME_H-45, GAME_W, 12);
+      ctx.fillStyle = "#e9d69a"; ctx.fillRect(0, GAME_H-33, GAME_W, 33);
+      ctx.fillStyle = "rgba(100,91,56,.18)";
+      for (let x=0; x<GAME_W; x+=24) ctx.fillRect(x, GAME_H-18, 12, 3);
+      drawBird();
+      ctx.fillStyle = "#202044"; ctx.font = "1000 21px system-ui"; ctx.textAlign = "center";
+      ctx.fillText(`STAGE ${stage}`, GAME_W/2, 39);
+      if (!gameRunning) {
+        ctx.fillStyle = "rgba(17,19,48,.56)"; ctx.fillRect(0,0,GAME_W,GAME_H);
+        ctx.fillStyle = "#fff"; ctx.font = "1000 30px system-ui";
+        ctx.fillText(gameStarted ? "RUN OVER!" : "FROG FLIGHT", GAME_W/2, 220);
+        ctx.font = "700 14px system-ui";
+        ctx.fillText(gameStarted ? `You cleared ${stage} stages` : "Tap START, then flap through the gaps!", GAME_W/2, 252);
+        ctx.fillStyle = "#d7ff8c"; ctx.font = "900 13px system-ui";
+        ctx.fillText(gameStarted ? "Press START to try again" : "Each pipe passed = +1 RP", GAME_W/2, 282);
+      }
+    }
+    function startGame() {
+      cancelAnimationFrame(animationId);
+      bird.y = 250; bird.vy = 0;
+      pipes = [makePipe(420)];
+      stage = 0;
+      gameRunning = true;
+      gameStarted = true;
+      $("runStage").textContent = "0";
+      $("gameStatus").textContent = "Game on! Pass pipes to earn points.";
+      $("startGame").textContent = "↻ Restart run";
+      animationId = requestAnimationFrame(gameLoop);
+    }
+    function flap() {
+      if (!gameRunning) return;
+      bird.vy = flapPower;
+    }
+    function endGame() {
+      gameRunning = false;
+      drawScene();
+      $("gameStatus").textContent = `Run finished at stage ${stage}. Give it another go!`;
+      $("startGame").textContent = "↻ Play again";
+    }
+    function gameLoop() {
+      if (!gameRunning) return;
+      bird.vy += gravity;
+      bird.y += bird.vy;
+      pipes.forEach(pipe => {
+        pipe.x -= pipeSpeed;
+        if (!pipe.passed && pipe.x + pipeWidth < bird.x) {
+          pipe.passed = true;
+          stage += 1;
+          $("runStage").textContent = String(stage);
+          awardRoyaltyPoint();
+        }
+      });
+      if (pipes.length && pipes[pipes.length - 1].x < 170) pipes.push(makePipe(420));
+      pipes = pipes.filter(pipe => pipe.x + pipeWidth > -12);
+      let hit = bird.y - bird.radius < 0 || bird.y + bird.radius > GAME_H - 45;
+      for (const pipe of pipes) {
+        const overlapsX = bird.x + bird.radius > pipe.x - 4 && bird.x - bird.radius < pipe.x + pipeWidth + 4;
+        const gapTop = pipe.gapY - gapHeight/2;
+        const gapBottom = pipe.gapY + gapHeight/2;
+        if (overlapsX && (bird.y - bird.radius < gapTop || bird.y + bird.radius > gapBottom)) hit = true;
+      }
+      if (hit) return endGame();
+      drawScene();
+      animationId = requestAnimationFrame(gameLoop);
+    }
+    $("startGame").addEventListener("click", startGame);
+    canvas.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      if (!gameRunning) startGame(); else flap();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.code === "Space" || event.code === "ArrowUp") {
+        event.preventDefault();
+        if (!gameRunning) startGame(); else flap();
+      }
+    });
+    drawScene();
+  </script>
 </body>
 </html>
